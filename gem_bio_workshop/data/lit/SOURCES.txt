@@ -1,0 +1,39 @@
+Provenance of siRNA sequence data for GSE5814 / Jackson et al. RNA 2006;12(7):1179-1187 (PMID 16682560, PMC1484447)
+Retrieved 2026-09-04. Every sequence in GSE5814_siRNA_guide_sequences_from_Garcia2011.tsv traces to a file below.
+
+PRIMARY SOURCE OF GUIDE-STRAND SEQUENCES (per GSM accession)
+  garcia2011/nsmb2115_MOESM7.xlsx   sheet "175 microarrays analyzed"
+  Garcia DM, Baek D, Shin C, Bell GW, Grimson A, Bartel DP. Nat Struct Mol Biol 2011;18:1139-1146. doi:10.1038/nsmb.2115
+  https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fnsmb.2115/MediaObjects/41594_2011_BFnsmb2115_MOESM7_ESM.xlsx   HTTP 200
+  Columns: Data set ID | Array ID (GSM) | Seed + nt 8 | sRNA sequence (guide/antisense 5'->3', 19 nt, 3' dTdT overhang NOT shown)
+  Other Garcia files retrieved: MOESM6 (pdf), MOESM8/10/11 (xlsx), MOESM9 (zip -> nsmb.2115-S4.fa)
+
+SENSE-STRAND SEQUENCES + luciferase control
+  jackson2003/nbt831_MOESM2.pdf -> jackson2003/m2.txt   "Supplementary Table 1 MAPK14 and IGF1R siRNA sequences (sense strand)"
+  Jackson AL et al. Nat Biotechnol 2003;21:635-637. doi:10.1038/nbt831
+  https://media.springernature.com/original/springer-static/esm/art%3A10.1038%2Fnbt831/MediaObjects/41587_2003_BFnbt831_MOESM2_ESM.pdf   HTTP 200
+  "MAPK14-1" sense strand == reverse complement of the GSE5814 MAPK14-193 guide strand.
+
+INDEPENDENT CONFIRMATION, PIK3CB siRNAs (sense strand + GSM mapping)
+  sigoillot/srep00428-s1.xls   sheet "Dataset 1", cols "siRNA" / " siRNA Sequence" / "GEO"
+  Sigoillot FD et al. Sci Rep 2012;2:428. PMC3361704
+  https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3361704/supplementaryFiles   HTTP 200
+
+GEO METADATA (GSM -> experiment label). Contains NO sequences.
+  https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5814/suppl/filelist.txt          HTTP 200
+  https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5814/suppl/GSE5814_RAW.tar       HTTP 200 (only GPL3992_feature_ids_locations.txt.gz)
+  https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5814/soft/GSE5814_family.soft.gz HTTP 200
+  https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5814/miniml/GSE5814_family.xml.tgz HTTP 200
+  https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5814/matrix/GSE5814_series_matrix.txt.gz HTTP 404
+
+DEAD ENDS (recorded for reproducibility)
+  https://www.ebi.ac.uk/europepmc/webservices/rest/PMC1484447/supplementaryFiles  HTTP 200, body = errorBean "not open access"
+  https://www.ebi.ac.uk/europepmc/webservices/rest/PMC1484447/fullTextXML         HTTP 404
+  https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC1484447                 HTTP 404
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC1484447/                               HTTP 200 but Google reCAPTCHA interstitial
+  https://rnajournal.cshlp.org/content/12/7/1179/suppl/DC1                        HTTP 403 (Cloudflare); WebFetch also 403
+  http://web.archive.org/ (Wayback)                                               service "Temporarily Offline"
+  https://www.ebi.ac.uk/europepmc/webservices/rest/PMC1484422/supplementaryFiles  HTTP 200, errorBean "not open access" (companion Jackson 2006 paper)
+  https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2782465/supplementaryFiles  HTTP 200, errorBean "not open access" (Khan 2009)
+  https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3190056/supplementaryFiles  HTTP 404 (Garcia 2011 in PMC; obtained from publisher instead)
+  vandongen_suppl/NIHMS2618-supplement-1.pdf (van Dongen 2008, PMC2635553)        HTTP 200 but scanned images, no siRNA sequence table

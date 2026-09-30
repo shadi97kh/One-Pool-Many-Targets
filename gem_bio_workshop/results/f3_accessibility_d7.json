@@ -1,0 +1,22 @@
+{
+  "name": "f3_accessibility_d7",
+  "status": "OK",
+  "values": {
+    "n_transcripts": 16492,
+    "n_errors": 0,
+    "errors": {},
+    "total_positions": 30493209,
+    "pfl_fold_W": 80,
+    "pfl_fold_L": 40,
+    "pfl_fold_u_max": 15,
+    "stretch_lengths_kept": [
+      8,
+      15
+    ],
+    "path": "data/accessibility_gse28786_u8_u15.npz"
+  },
+  "seed": 0,
+  "elapsed_s": 398.1955,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T16:14:52Z"
+}

@@ -1,0 +1,84 @@
+{
+  "name": "d2_birmingham",
+  "status": "OK",
+  "values": {
+    "attempts": [
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2635553/supplementaryFiles",
+        "downloaded": true,
+        "machine_readable": false,
+        "detail": "members=['ukmss-2618-f0002.jpg', 'NIHMS2618-supplement-1.pdf', 'ukmss-2618-f0002.gif', 'ukmss-2618-f0001.gif', 'ukmss-2618-f0001.jpg'] tabular=[]",
+        "note": "van Dongen S, Abreu-Goodger C, Enright AJ. Nat Methods 2008;5:1023-5. PMC2635553. Supplementary files, which reprocess the Birmingham and Jackson off-target datasets."
+      },
+      {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC1804340/supplementaryFiles",
+        "downloaded": false,
+        "machine_readable": false,
+        "detail": "not downloaded",
+        "note": "candidate PMC record for a Birmingham-related deposit"
+      },
+      {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5291/soft/GSE5291_family.soft.gz",
+        "downloaded": true,
+        "machine_readable": true,
+        "detail": "SOFT header parsed",
+        "note": "GSE5291, the GEO series that Garcia et al. 2011 lists alongside GSE5814 and which corresponds to a Dharmacon/Birmingham off-target experiment",
+        "is_birmingham": false,
+        "what_it_actually_is": "GSE5291 = Schwarz et al., 'Designing siRNA that distinguish between genes that differ by a single nucleotide', PMID 16965178. SOD1 allele-specific siRNAs in HeLa. A different study; retrieved and recorded, but it is NOT D2."
+      },
+      {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE5nnn/GSE5769/soft/GSE5769_family.soft.gz",
+        "downloaded": true,
+        "machine_readable": true,
+        "detail": "SOFT header parsed",
+        "note": "GSE5769, a further off-target series listed by Garcia et al. 2011",
+        "is_birmingham": false,
+        "what_it_actually_is": "GSE5769 = Jackson et al., 'Position-specific chemical modification of siRNAs reduces off-target transcript silencing', PMID 16682562. A different study; retrieved and recorded, but it is NOT D2."
+      },
+      {
+        "url": "https://www.ebi.ac.uk/biostudies/files/E-MEXP-668/E-MEXP-668.idf.txt",
+        "downloaded": true,
+        "machine_readable": true,
+        "detail": "non-archive file present",
+        "note": "ArrayExpress E-MEXP-668 investigation description; found by searching the ArrayExpress collection for the article title phrase, and the file that carries PubMed ID 16489337 and so identifies the deposit",
+        "is_birmingham": true,
+        "identification": {
+          "identified": true,
+          "pubmed_id_in_idf": "16489337",
+          "expected_pubmed_id": "16489337",
+          "publication_title_in_idf": "3' UTR seed matches, but not overall identity, are associated with RNAi off-targets",
+          "investigation_title_in_idf": "Transcription profiling of human HeLa cells treated with various functional siRNAs to investigate RNAi off-targets",
+          "author_list_in_idf": "Amanda Birmingham; Emily Anderson; Angela Reynolds; Diane Ilsley-Tyree; Devin Leake; Yuriy Fedorov; Scott Baskerville; Elena Maksimova; Kathryn Robinson; Jon Karpilow; William Marshall; Anastasia Khvorova"
+        },
+        "what_it_actually_is": "ArrayExpress E-MEXP-668. The IDF names PubMed ID 16489337, which is Birmingham et al. 2006, so this IS D2."
+      },
+      {
+        "url": "https://www.ebi.ac.uk/biostudies/files/E-MEXP-668/E-MEXP-668.sdrf.txt",
+        "downloaded": true,
+        "machine_readable": true,
+        "detail": "non-archive file present",
+        "note": "ArrayExpress E-MEXP-668 sample and data relationship file; names every array data file and gives the sense strand sequence of every siRNA as its compound factor value",
+        "is_birmingham": true,
+        "identification": {
+          "identified": true,
+          "pubmed_id_in_idf": "16489337",
+          "expected_pubmed_id": "16489337",
+          "publication_title_in_idf": "3' UTR seed matches, but not overall identity, are associated with RNAi off-targets",
+          "investigation_title_in_idf": "Transcription profiling of human HeLa cells treated with various functional siRNAs to investigate RNAi off-targets",
+          "author_list_in_idf": "Amanda Birmingham; Emily Anderson; Angela Reynolds; Diane Ilsley-Tyree; Devin Leake; Yuriy Fedorov; Scott Baskerville; Elena Maksimova; Kathryn Robinson; Jon Karpilow; William Marshall; Anastasia Khvorova"
+        },
+        "what_it_actually_is": "ArrayExpress E-MEXP-668. The IDF names PubMed ID 16489337, which is Birmingham et al. 2006, so this IS D2."
+      }
+    ],
+    "usable_sources": [
+      "https://www.ebi.ac.uk/biostudies/files/E-MEXP-668/E-MEXP-668.idf.txt",
+      "https://www.ebi.ac.uk/biostudies/files/E-MEXP-668/E-MEXP-668.sdrf.txt"
+    ],
+    "n_usable": 2,
+    "status_note": "D2 obtained; see attempts for what was tried"
+  },
+  "seed": 0,
+  "elapsed_s": 7.116,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T16:29:41Z"
+}

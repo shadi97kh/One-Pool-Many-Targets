@@ -1,0 +1,21 @@
+{
+  "name": "d3_gencode",
+  "status": "OK",
+  "values": {
+    "gencode_release": "50",
+    "n_pc_transcripts": 382428,
+    "n_gtf_transcript_records": 644292,
+    "n_transcripts_with_utr3": 357575,
+    "n_transcripts_with_cds": 382428,
+    "median_utr3_len": 1134.0,
+    "mean_utr3_len": 1663.6366105012935,
+    "total_utr3_nt": 594874861,
+    "total_cds_nt": 471142060,
+    "n_canonical_gene_symbols_with_utr3": 19786,
+    "n_canonical_mane_select": 18892
+  },
+  "seed": 0,
+  "elapsed_s": 28.6898,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T07:41:10Z"
+}

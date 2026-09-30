@@ -1,0 +1,268 @@
+{
+  "name": "e6_sim_interaction_recovery",
+  "status": "OK",
+  "values": {
+    "SIMULATION_ONLY": "Ground-truth K* is generated, not measured. Nothing in this experiment is evidence about any real cell, transcript or siRNA. It validates the training method under a known generating process and nothing else.",
+    "sim_n_rho": 4,
+    "sim_rho_values": [
+      0.005,
+      0.05,
+      0.5,
+      5.0
+    ],
+    "sim_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sim_training_steps": 350,
+    "sim_batch_train": 250,
+    "sim_batch_test": 60,
+    "sim_n_transcripts": 40,
+    "sim_per_run": [
+      {
+        "rho": 0.005,
+        "seed": 0,
+        "sim_spearman_offtarget_equilibrium_trained": 0.8358148571000141,
+        "sim_spearman_offtarget_pairwise_trained": 0.48634422715285874,
+        "sim_spearman_allpairs_equilibrium_trained": 0.8270941355886592,
+        "sim_spearman_allpairs_pairwise_trained": 0.48209485321150025,
+        "sim_gap_equilibrium_minus_pairwise": 0.3494706299471554
+      },
+      {
+        "rho": 0.005,
+        "seed": 1,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9340713616472235,
+        "sim_spearman_offtarget_pairwise_trained": 0.29121971668444324,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9225129550163602,
+        "sim_spearman_allpairs_pairwise_trained": 0.29256590476223415,
+        "sim_gap_equilibrium_minus_pairwise": 0.6428516449627802
+      },
+      {
+        "rho": 0.005,
+        "seed": 2,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9625133579878659,
+        "sim_spearman_offtarget_pairwise_trained": 0.3439214495284154,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9504990586017209,
+        "sim_spearman_allpairs_pairwise_trained": 0.3411015937374644,
+        "sim_gap_equilibrium_minus_pairwise": 0.6185919084594504
+      },
+      {
+        "rho": 0.005,
+        "seed": 3,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9153366227066954,
+        "sim_spearman_offtarget_pairwise_trained": 0.6156029426734063,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9067298955469342,
+        "sim_spearman_allpairs_pairwise_trained": 0.607579605404056,
+        "sim_gap_equilibrium_minus_pairwise": 0.29973368003328904
+      },
+      {
+        "rho": 0.005,
+        "seed": 4,
+        "sim_spearman_offtarget_equilibrium_trained": 0.908022180354049,
+        "sim_spearman_offtarget_pairwise_trained": 0.6051222785311768,
+        "sim_spearman_allpairs_equilibrium_trained": 0.896028902114836,
+        "sim_spearman_allpairs_pairwise_trained": 0.5918843560125722,
+        "sim_gap_equilibrium_minus_pairwise": 0.3028999018228722
+      },
+      {
+        "rho": 0.05,
+        "seed": 0,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9958829392386204,
+        "sim_spearman_offtarget_pairwise_trained": 0.9227855523537829,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9850582521476934,
+        "sim_spearman_allpairs_pairwise_trained": 0.9139416169924807,
+        "sim_gap_equilibrium_minus_pairwise": 0.07309738688483747
+      },
+      {
+        "rho": 0.05,
+        "seed": 1,
+        "sim_spearman_offtarget_equilibrium_trained": 0.994300996872213,
+        "sim_spearman_offtarget_pairwise_trained": 0.8656710353770408,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9833200347436183,
+        "sim_spearman_allpairs_pairwise_trained": 0.856585569052974,
+        "sim_gap_equilibrium_minus_pairwise": 0.12862996149517214
+      },
+      {
+        "rho": 0.05,
+        "seed": 2,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9943234006107954,
+        "sim_spearman_offtarget_pairwise_trained": 0.921960708751513,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9830070721626682,
+        "sim_spearman_allpairs_pairwise_trained": 0.9124052462684286,
+        "sim_gap_equilibrium_minus_pairwise": 0.07236269185928235
+      },
+      {
+        "rho": 0.05,
+        "seed": 3,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9930466038615486,
+        "sim_spearman_offtarget_pairwise_trained": 0.9208453495538069,
+        "sim_spearman_allpairs_equilibrium_trained": 0.982911384982783,
+        "sim_spearman_allpairs_pairwise_trained": 0.9100293958496237,
+        "sim_gap_equilibrium_minus_pairwise": 0.07220125430774171
+      },
+      {
+        "rho": 0.05,
+        "seed": 4,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9938614053097778,
+        "sim_spearman_offtarget_pairwise_trained": 0.9018617261669793,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9812968583244026,
+        "sim_spearman_allpairs_pairwise_trained": 0.8885177533424509,
+        "sim_gap_equilibrium_minus_pairwise": 0.0919996791427985
+      },
+      {
+        "rho": 0.5,
+        "seed": 0,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9988122400330596,
+        "sim_spearman_offtarget_pairwise_trained": 0.9963592608539881,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9878938925419597,
+        "sim_spearman_allpairs_pairwise_trained": 0.9850415646067504,
+        "sim_gap_equilibrium_minus_pairwise": 0.0024529791790715016
+      },
+      {
+        "rho": 0.5,
+        "seed": 1,
+        "sim_spearman_offtarget_equilibrium_trained": 0.998966512944686,
+        "sim_spearman_offtarget_pairwise_trained": 0.9959006551988299,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9877847300418346,
+        "sim_spearman_allpairs_pairwise_trained": 0.9849241630160543,
+        "sim_gap_equilibrium_minus_pairwise": 0.0030658577458561043
+      },
+      {
+        "rho": 0.5,
+        "seed": 2,
+        "sim_spearman_offtarget_equilibrium_trained": 0.998631053547602,
+        "sim_spearman_offtarget_pairwise_trained": 0.9959673500197409,
+        "sim_spearman_allpairs_equilibrium_trained": 0.987436145601921,
+        "sim_spearman_allpairs_pairwise_trained": 0.9847729588447283,
+        "sim_gap_equilibrium_minus_pairwise": 0.00266370352786105
+      },
+      {
+        "rho": 0.5,
+        "seed": 3,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9989179227494036,
+        "sim_spearman_offtarget_pairwise_trained": 0.9969253121979692,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9885085757016079,
+        "sim_spearman_allpairs_pairwise_trained": 0.9863002850671031,
+        "sim_gap_equilibrium_minus_pairwise": 0.001992610551434404
+      },
+      {
+        "rho": 0.5,
+        "seed": 4,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9989828260036434,
+        "sim_spearman_offtarget_pairwise_trained": 0.995972265944229,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9867521252255137,
+        "sim_spearman_allpairs_pairwise_trained": 0.9838457328618982,
+        "sim_gap_equilibrium_minus_pairwise": 0.0030105600594143578
+      },
+      {
+        "rho": 5.0,
+        "seed": 0,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9799270444464907,
+        "sim_spearman_offtarget_pairwise_trained": 0.9754284797262317,
+        "sim_spearman_allpairs_equilibrium_trained": 0.968498067284836,
+        "sim_spearman_allpairs_pairwise_trained": 0.9645948661109349,
+        "sim_gap_equilibrium_minus_pairwise": 0.004498564720259002
+      },
+      {
+        "rho": 5.0,
+        "seed": 1,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9388776168500734,
+        "sim_spearman_offtarget_pairwise_trained": 0.9240858215457197,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9282717634801072,
+        "sim_spearman_allpairs_pairwise_trained": 0.9144012613945023,
+        "sim_gap_equilibrium_minus_pairwise": 0.014791795304353705
+      },
+      {
+        "rho": 5.0,
+        "seed": 2,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9574018110257317,
+        "sim_spearman_offtarget_pairwise_trained": 0.9528546730732766,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9470870668867717,
+        "sim_spearman_allpairs_pairwise_trained": 0.9421567216651731,
+        "sim_gap_equilibrium_minus_pairwise": 0.004547137952455094
+      },
+      {
+        "rho": 5.0,
+        "seed": 3,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9468503564149916,
+        "sim_spearman_offtarget_pairwise_trained": 0.9583103118298465,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9365408534236909,
+        "sim_spearman_allpairs_pairwise_trained": 0.9474216857237823,
+        "sim_gap_equilibrium_minus_pairwise": -0.011459955414854894
+      },
+      {
+        "rho": 5.0,
+        "seed": 4,
+        "sim_spearman_offtarget_equilibrium_trained": 0.9875387973387731,
+        "sim_spearman_offtarget_pairwise_trained": 0.9756274386570404,
+        "sim_spearman_allpairs_equilibrium_trained": 0.9746662046986464,
+        "sim_spearman_allpairs_pairwise_trained": 0.9624611890514035,
+        "sim_gap_equilibrium_minus_pairwise": 0.011911358681732764
+      }
+    ],
+    "sim_summary_by_rho": [
+      {
+        "rho": 0.005,
+        "n_seeds": 5,
+        "sim_mean_spearman_equilibrium_trained": 0.9111516759591696,
+        "sim_sd_spearman_equilibrium_trained": 0.04708045818249697,
+        "sim_mean_spearman_pairwise_trained": 0.4684421229140601,
+        "sim_sd_spearman_pairwise_trained": 0.14796235713701694,
+        "sim_mean_gap": 0.4427095530451094,
+        "sim_sd_gap": 0.17296950274695821,
+        "sim_gap_positive_in_all_seeds": true
+      },
+      {
+        "rho": 0.05,
+        "n_seeds": 5,
+        "sim_mean_spearman_equilibrium_trained": 0.9942830691785909,
+        "sim_sd_spearman_equilibrium_trained": 0.0010329785978073045,
+        "sim_mean_spearman_pairwise_trained": 0.9066248744406245,
+        "sim_sd_spearman_pairwise_trained": 0.02448714842826311,
+        "sim_mean_gap": 0.08765819473796643,
+        "sim_sd_gap": 0.024405023556408206,
+        "sim_gap_positive_in_all_seeds": true
+      },
+      {
+        "rho": 0.5,
+        "n_seeds": 5,
+        "sim_mean_spearman_equilibrium_trained": 0.9988621110556789,
+        "sim_sd_spearman_equilibrium_trained": 0.0001453112944531192,
+        "sim_mean_spearman_pairwise_trained": 0.9962249688429514,
+        "sim_sd_spearman_pairwise_trained": 0.00043125419186493003,
+        "sim_mean_gap": 0.0026371422127274835,
+        "sim_sd_gap": 0.00043968184105277634,
+        "sim_gap_positive_in_all_seeds": true
+      },
+      {
+        "rho": 5.0,
+        "n_seeds": 5,
+        "sim_mean_spearman_equilibrium_trained": 0.9621191252152121,
+        "sim_sd_spearman_equilibrium_trained": 0.020969250005309914,
+        "sim_mean_spearman_pairwise_trained": 0.957261344966423,
+        "sim_sd_spearman_pairwise_trained": 0.02114528686093915,
+        "sim_mean_gap": 0.004857780248789134,
+        "sim_sd_gap": 0.01018493563375145,
+        "sim_gap_positive_in_all_seeds": false
+      }
+    ],
+    "sim_pilot_for_comparison": {
+      "rho_0.005": {
+        "equilibrium": 0.954,
+        "pairwise": 0.547
+      },
+      "rho_5.0": {
+        "equilibrium": 0.99,
+        "pairwise": 0.976
+      },
+      "note": "pilot figures quoted from the build brief for comparison; the measured values above supersede them"
+    }
+  },
+  "seed": 0,
+  "elapsed_s": 172.464,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T08:17:28Z"
+}

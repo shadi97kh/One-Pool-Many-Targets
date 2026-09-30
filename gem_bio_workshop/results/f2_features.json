@@ -1,0 +1,37 @@
+{
+  "name": "f2_features",
+  "status": "OK",
+  "values": {
+    "gencode_release": "50",
+    "viennarna_version": "2.6.4",
+    "RT_kcal_per_mol": 0.61633008,
+    "duplexfold_flank_nt": 12,
+    "local_au_window_nt": 30,
+    "n_sites": 50708,
+    "n_construct_transcript_pairs": 34953,
+    "n_constructs": 24,
+    "n_transcripts_hit": 8100,
+    "sites_by_class": {
+      "6mer": 29568,
+      "7mer-m8": 11938,
+      "7mer-A1": 6717,
+      "8mer": 2485
+    },
+    "median_sites_per_construct": 1085.0,
+    "median_pairs_per_construct": 951.0,
+    "dg_duplex_kcal_mean": -13.799741658121008,
+    "dg_duplex_kcal_sd": 3.3644750099068403,
+    "p_unpaired_15_median": 0.0009056988637894392,
+    "ddG_kcal_mean": -9.229005026479582,
+    "ddG_kcal_sd": 3.350330143596675,
+    "n_sites_with_nan_ddG": 0,
+    "log10_K_transcript_min": -18.728087331671034,
+    "log10_K_transcript_max": 7.560730646165305,
+    "log10_K_transcript_sd": 2.4356489316711416,
+    "features_path": "data/features.parquet"
+  },
+  "seed": 0,
+  "elapsed_s": 23.6534,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T19:42:44Z"
+}

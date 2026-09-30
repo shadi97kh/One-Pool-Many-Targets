@@ -1,0 +1,817 @@
+{
+  "name": "e10_cross_context",
+  "status": "OK",
+  "values": {
+    "data_source": "GSE14073 (Burchard et al. 2009, PMC2648714)",
+    "contexts": [
+      "HUH7",
+      "PLC/PRF/5"
+    ],
+    "timepoints_hours_used": [
+      6.0,
+      12.0,
+      48.0
+    ],
+    "gencode_release": 50,
+    "constants_used": {
+      "kd_seed_match_molar": 2.6e-11,
+      "kd_seed_match_molecules_per_cell": 46.972697928,
+      "hela_cell_volume_litres": 3e-12,
+      "anchor_site_class": "7mer-m8",
+      "median_boltzmann_factor_anchor_class": 0.17250543501637444,
+      "K_scale_constant_C": 272.29691588291865,
+      "mrna_molecules_per_cell": 80000.0,
+      "ago2_copies_per_cell_low": 15000.0,
+      "ago2_copies_per_cell_high": 170000.0
+    },
+    "n_bootstrap": 300,
+    "rho_grid": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003,
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "SEED_RECOVERY_NOTE": "the guide sequences are not in the deposit and the article is not open access, both recorded as failures in data/PROVENANCE.json. The 7-mer site is recovered from the measured response separately in each cell line by the enrichment scan of riscpool.kmers, and a construct enters the analysis only when the two recoveries agree exactly, so that K is literally the same object in both contexts.",
+    "AFFINITY_MODEL_LIMITATION": "recovery identifies guide positions 2-8 and nothing else, so K here is built from the SEED duplex rather than from the full 19-mer as in the HeLa pipeline. That costs resolution within the retrieved set. It does not threaten the cross-context comparison, which requires only that K be identical between contexts.",
+    "DELIVERY_CONFOUND": "the independent-scoring prediction of a pool ratio of exactly 1 holds only if the total loaded complex M is equal in the two cell lines. M is not measured. Different uptake, different Argonaute abundance or different loading would move the ratio away from 1 with no competition involved, so a ratio away from 1 is not by itself evidence for the equilibrium layer. The on-target knockdown in each context is reported below as the only available delivery readout.",
+    "seed_recovery": [
+      {
+        "construct": "APOB-Hs1",
+        "agree_exact_7mer": true,
+        "top_site_HUH7": "GAAAAAT",
+        "welch_t_HUH7": -11.657238706122953,
+        "delta_mean_log2fc_HUH7": -0.03865707267632641,
+        "top_site_PLC": "GAAAAAT",
+        "welch_t_PLC": -10.013408382913449,
+        "delta_mean_log2fc_PLC": -0.03429790196772204,
+        "n_transcripts_with_site": 3927,
+        "share_a_6mer": true,
+        "top10_HUH7": [
+          "GAAAAAT",
+          "AAAAATA",
+          "AGAAAAA",
+          "AAAATAT",
+          "TAAAAAT",
+          "TGAAAAA",
+          "AAAAATG",
+          "AAAAAAT",
+          "GAAAAAA",
+          "AAATATT"
+        ],
+        "top10_PLC": [
+          "GAAAAAT",
+          "AAAAATA",
+          "AGAAAAA",
+          "AAAATAT",
+          "GAAAAAA",
+          "TGAAAAA",
+          "GGAAAAA",
+          "TATAAAA",
+          "AAAAATG",
+          "AAGAAAA"
+        ]
+      },
+      {
+        "construct": "APOB-Hs2",
+        "agree_exact_7mer": false,
+        "top_site_HUH7": "GGGCCCC",
+        "welch_t_HUH7": -6.429715971337388,
+        "delta_mean_log2fc_HUH7": -0.020863699987510108,
+        "top_site_PLC": "ATAACTA",
+        "welch_t_PLC": -13.26337139441212,
+        "delta_mean_log2fc_PLC": -0.07361599675255706,
+        "n_transcripts_with_site": 1683,
+        "share_a_6mer": false,
+        "top10_HUH7": [
+          "GGGCCCC",
+          "CCCCTGC",
+          "CCCCTCC",
+          "CCCCCAG",
+          "GGGGCCC",
+          "CCACCCC",
+          "GGCCCCC",
+          "CCTGCCC",
+          "CGCCCTG",
+          "CCCCAGC"
+        ],
+        "top10_PLC": [
+          "ATAACTA",
+          "AATAACT",
+          "ATAACTT",
+          "TATAACT",
+          "TAACTTT",
+          "TAACTAT",
+          "AACTTTA",
+          "ATAACTG",
+          "AAATAAC",
+          "TTTAACT"
+        ]
+      },
+      {
+        "construct": "APOB-Hs3",
+        "agree_exact_7mer": true,
+        "top_site_HUH7": "CCTGAAA",
+        "welch_t_HUH7": -12.771611829505675,
+        "delta_mean_log2fc_HUH7": -0.044273700893945535,
+        "top_site_PLC": "CCTGAAA",
+        "welch_t_PLC": -16.084611901053893,
+        "delta_mean_log2fc_PLC": -0.06460070164590193,
+        "n_transcripts_with_site": 2425,
+        "share_a_6mer": true,
+        "top10_HUH7": [
+          "CCTGAAA",
+          "CTGAAAA",
+          "ACCTGAA",
+          "TCCTGAA",
+          "TCTGAAA",
+          "AGAGGGC",
+          "CTGAAAT",
+          "GGGGGAG",
+          "ACTGAAA",
+          "GCTCCTC"
+        ],
+        "top10_PLC": [
+          "CCTGAAA",
+          "CTGAAAA",
+          "CTGAAAT",
+          "ACTGAAA",
+          "ACCTGAA",
+          "TCTGAAA",
+          "TGAAAAT",
+          "TCCTGAA",
+          "CTGAAAC",
+          "TGAAAAA"
+        ]
+      },
+      {
+        "construct": "APOB-Hs4",
+        "agree_exact_7mer": false,
+        "top_site_HUH7": "GCCCCCA",
+        "welch_t_HUH7": -9.992377691524522,
+        "delta_mean_log2fc_HUH7": -0.02987955927975849,
+        "top_site_PLC": "TTTTTTA",
+        "welch_t_PLC": -12.535840599281615,
+        "delta_mean_log2fc_PLC": -0.030906042451202157,
+        "n_transcripts_with_site": 2226,
+        "share_a_6mer": false,
+        "top10_HUH7": [
+          "GCCCCCA",
+          "GGCCCCC",
+          "CCTGCCC",
+          "GGGCCCC",
+          "CCCCTCC",
+          "CCCGCCC",
+          "CCCACCC",
+          "CCACCCC",
+          "GGGGCCC",
+          "CCCCGCC"
+        ],
+        "top10_PLC": [
+          "TTTTTTA",
+          "TTTTTAA",
+          "TTTTAAA",
+          "TTTTTTT",
+          "ATATTTT",
+          "ATACCAA",
+          "ATTTTTT",
+          "AATACCA",
+          "GTTTTTT",
+          "TTTTGTT"
+        ]
+      },
+      {
+        "construct": "Apob-Mm1",
+        "agree_exact_7mer": false,
+        "top_site_HUH7": "GCCCCGG",
+        "welch_t_HUH7": -4.864466760409166,
+        "delta_mean_log2fc_HUH7": -0.015560487695062245,
+        "top_site_PLC": "AACGGCG",
+        "welch_t_PLC": -3.368375383545936,
+        "delta_mean_log2fc_PLC": -0.04046825898815757,
+        "n_transcripts_with_site": 842,
+        "share_a_6mer": false,
+        "top10_HUH7": [
+          "GCCCCGG",
+          "GGGGCCC",
+          "CGGCCCC",
+          "CCCGGAG",
+          "CTGCGGC",
+          "CCGCTCC",
+          "GCGGCCC",
+          "CGGCCAC",
+          "CCGGCGG",
+          "CCTGCCC"
+        ],
+        "top10_PLC": [
+          "AACGGCG",
+          "CGTAGCG",
+          "GAGGGGG",
+          "GGAGGGG",
+          "GTTACGG",
+          "CGGCCCC",
+          "GGTGCCG",
+          "ATCCGGG",
+          "CCGGAGG",
+          "ATAATCG"
+        ]
+      },
+      {
+        "construct": "Apob-Mm2",
+        "agree_exact_7mer": false,
+        "top_site_HUH7": "CCCGCGC",
+        "welch_t_HUH7": -4.365338155736792,
+        "delta_mean_log2fc_HUH7": -0.034769318657034656,
+        "top_site_PLC": "AAGCAAA",
+        "welch_t_PLC": -9.483831409727122,
+        "delta_mean_log2fc_PLC": -0.03156255052252187,
+        "n_transcripts_with_site": 259,
+        "share_a_6mer": false,
+        "top10_HUH7": [
+          "CCCGCGC",
+          "GCCCCGG",
+          "GCGGGCC",
+          "CGCGGGG",
+          "CGGGCCG",
+          "CCCCCGC",
+          "CCGACCG",
+          "CCCGGGC",
+          "AGGCCGC",
+          "CCGCGGG"
+        ],
+        "top10_PLC": [
+          "AAGCAAA",
+          "AGCAAAA",
+          "GCAAAAA",
+          "GAAGCAA",
+          "GCAAAAG",
+          "GCAAAAT",
+          "AAAGCAA",
+          "TGCAAAA",
+          "TAAGCAA",
+          "CCCTCCG"
+        ]
+      },
+      {
+        "construct": "RAD18",
+        "agree_exact_7mer": true,
+        "top_site_HUH7": "ATTAATA",
+        "welch_t_HUH7": -11.044922441010868,
+        "delta_mean_log2fc_HUH7": -0.034192491585814486,
+        "top_site_PLC": "ATTAATA",
+        "welch_t_PLC": -14.874496748358839,
+        "delta_mean_log2fc_PLC": -0.0568716383050133,
+        "n_transcripts_with_site": 2615,
+        "share_a_6mer": true,
+        "top10_HUH7": [
+          "ATTAATA",
+          "TTAATAA",
+          "ACATTAA",
+          "TAATAAT",
+          "TTAATAT",
+          "TATTAAT",
+          "AATAATA",
+          "AATTAAT",
+          "AAATATT",
+          "AACATTA"
+        ],
+        "top10_PLC": [
+          "ATTAATA",
+          "TTAATAA",
+          "TATTAAT",
+          "AATTAAT",
+          "TAATAAA",
+          "ACATTAA",
+          "TAATAAT",
+          "TTAATAT",
+          "TTAATAC",
+          "TTTAATA"
+        ]
+      }
+    ],
+    "n_constructs_attempted": 7,
+    "n_constructs_with_agreeing_seed": 3,
+    "constructs_with_agreeing_seed": [
+      "APOB-Hs1",
+      "APOB-Hs3",
+      "RAD18"
+    ],
+    "constructs_excluded_for_seed_disagreement": [
+      "APOB-Hs2",
+      "APOB-Hs4",
+      "Apob-Mm1",
+      "Apob-Mm2"
+    ],
+    "recovered_seeds": {
+      "APOB-Hs1": "GAAAAAT",
+      "APOB-Hs3": "CCTGAAA",
+      "RAD18": "ATTAATA"
+    },
+    "delivery_control_on_target_knockdown": [
+      {
+        "construct": "APOB-Hs1",
+        "on_target_gene": "APOB",
+        "on_target_log2fc_HUH7": -2.2571670005985323,
+        "on_target_log2fc_PLC/PRF/5": -2.9724969858562447,
+        "on_target_log2fc_difference": 0.7153299852577124
+      },
+      {
+        "construct": "APOB-Hs2",
+        "on_target_gene": "APOB",
+        "on_target_log2fc_HUH7": -2.8882065251154905,
+        "on_target_log2fc_PLC/PRF/5": -3.6299123501758177,
+        "on_target_log2fc_difference": 0.7417058250603272
+      },
+      {
+        "construct": "APOB-Hs3",
+        "on_target_gene": "APOB",
+        "on_target_log2fc_HUH7": -1.6504345970073044,
+        "on_target_log2fc_PLC/PRF/5": -2.7851524345498593,
+        "on_target_log2fc_difference": 1.1347178375425548
+      },
+      {
+        "construct": "APOB-Hs4",
+        "on_target_gene": "APOB",
+        "on_target_log2fc_HUH7": -2.3089218749085063,
+        "on_target_log2fc_PLC/PRF/5": -3.4799202606787163,
+        "on_target_log2fc_difference": 1.17099838577021
+      },
+      {
+        "construct": "Apob-Mm1",
+        "on_target_gene": "APOB",
+        "on_target_log2fc_HUH7": -1.3125362952737738,
+        "on_target_log2fc_PLC/PRF/5": -2.8018209159075957,
+        "on_target_log2fc_difference": 1.489284620633822
+      },
+      {
+        "construct": "Apob-Mm2",
+        "on_target_gene": "APOB",
+        "on_target_log2fc_HUH7": -0.9006348279301809,
+        "on_target_log2fc_PLC/PRF/5": -1.8676291096160924,
+        "on_target_log2fc_difference": 0.9669942816859115
+      },
+      {
+        "construct": "RAD18",
+        "on_target_gene": "RAD18",
+        "on_target_log2fc_HUH7": -1.7448316775693626,
+        "on_target_log2fc_PLC/PRF/5": -3.6397094116369466,
+        "on_target_log2fc_difference": 1.894877734067584
+      }
+    ],
+    "per_construct": [
+      {
+        "construct": "APOB-Hs1",
+        "status": "OK",
+        "recovered_site_7mer": "GAAAAAT",
+        "on_target_gene": "APOB",
+        "n_transcripts_shared_by_both_contexts": 8738,
+        "total_retrieved_abundance_HUH7": 37837.83322132776,
+        "total_retrieved_abundance_PLC": 38078.79601649415,
+        "retrieved_abundance_ratio_HUH7_over_PLC": 0.9936719954312103,
+        "mean_log2fc_HUH7": -0.004005809147298294,
+        "mean_log2fc_PLC": 0.004618100522625752,
+        "fit": {
+          "pool_per_dose": [
+            9.851698103239148,
+            10.196914422120075
+          ],
+          "log10_pool_per_dose": [
+            0.993511094792499,
+            1.0084687744898377
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.08174024104862358,
+          "rss": 497.1642836728314,
+          "n_observations": 17476,
+          "sigma_pooled": 0.1686665425938758,
+          "residual_sd_per_dose": [
+            0.16510829470569752,
+            0.17217017270061796
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.2417180176849227,
+            0.24587383645201383
+          ],
+          "max_bound_fraction_per_dose": [
+            0.9646907354924674,
+            0.965845301549458
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.19203479056992448,
+            0.19798580910963606
+          ],
+          "optimiser_converged": true,
+          "nll": -31104.337635303127
+        },
+        "observed_pool_ratio_HUH7_over_PLC": 0.9661450214653118,
+        "observed_pool_ratio_ci95": [
+          0.6046633432831504,
+          1.5632308805653479
+        ],
+        "observed_ratio_ci_excludes_1": false,
+        "bootstrap_n_successful": 300,
+        "predicted_ratio_by_rho": [
+          {
+            "rho": 0.0001,
+            "M_molecules_per_cell": 8.0,
+            "f_HUH7": 0.003874197520759324,
+            "f_PLC": 0.0037531168100935182,
+            "predicted_pool_ratio_equilibrium": 1.0322613754893466,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.0003,
+            "M_molecules_per_cell": 23.999999999999996,
+            "f_HUH7": 0.011655444003277577,
+            "f_PLC": 0.011291245120889866,
+            "predicted_pool_ratio_equilibrium": 1.0322549797199876,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.001,
+            "M_molecules_per_cell": 80.0,
+            "f_HUH7": 0.03923311670080688,
+            "f_PLC": 0.03800831157168419,
+            "predicted_pool_ratio_equilibrium": 1.0322246655659169,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.003,
+            "M_molecules_per_cell": 240.0,
+            "f_HUH7": 0.1209345057027916,
+            "f_PLC": 0.11717585324005222,
+            "predicted_pool_ratio_equilibrium": 1.0320770223455442,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.01,
+            "M_molecules_per_cell": 800.0,
+            "f_HUH7": 0.4400368409362575,
+            "f_PLC": 0.4267793754850173,
+            "predicted_pool_ratio_equilibrium": 1.0310639787505513,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.03,
+            "M_molecules_per_cell": 2400.0,
+            "f_HUH7": 1.6400021661170197,
+            "f_PLC": 1.597424059310065,
+            "predicted_pool_ratio_equilibrium": 1.0266542290751175,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.1,
+            "M_molecules_per_cell": 8000.0,
+            "f_HUH7": 10.568921089309633,
+            "f_PLC": 10.439705066677675,
+            "predicted_pool_ratio_equilibrium": 1.0123773633265178,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.3,
+            "M_molecules_per_cell": 24000.0,
+            "f_HUH7": 258.6873981319968,
+            "f_PLC": 258.4785011170188,
+            "predicted_pool_ratio_equilibrium": 1.000808179458157,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 1.0,
+            "M_molecules_per_cell": 80000.0,
+            "f_HUH7": 43632.372984431495,
+            "f_PLC": 43503.35198042799,
+            "predicted_pool_ratio_equilibrium": 1.0029657715585123,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 3.0,
+            "M_molecules_per_cell": 240000.0,
+            "f_HUH7": 202890.93853390624,
+            "f_PLC": 202754.66997768567,
+            "predicted_pool_ratio_equilibrium": 1.0006720859067542,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 10.0,
+            "M_molecules_per_cell": 800000.0,
+            "f_HUH7": 762622.1296862485,
+            "f_PLC": 762469.9028759087,
+            "predicted_pool_ratio_equilibrium": 1.0001996495989751,
+            "predicted_pool_ratio_independent": 1.0
+          }
+        ],
+        "rho_at_which_equilibrium_matches_observed_ratio": null,
+        "independent_prediction_pool_ratio": 1.0
+      },
+      {
+        "construct": "APOB-Hs3",
+        "status": "OK",
+        "recovered_site_7mer": "CCTGAAA",
+        "on_target_gene": "APOB",
+        "n_transcripts_shared_by_both_contexts": 6584,
+        "total_retrieved_abundance_HUH7": 26771.805175327514,
+        "total_retrieved_abundance_PLC": 26389.94557774298,
+        "retrieved_abundance_ratio_HUH7_over_PLC": 1.0144698895440918,
+        "mean_log2fc_HUH7": -0.009432295337454035,
+        "mean_log2fc_PLC": -0.018073945553406776,
+        "fit": {
+          "pool_per_dose": [
+            0.012777690582950469,
+            0.05222164935135331
+          ],
+          "log10_pool_per_dose": [
+            -1.8935476326966176,
+            -1.282149415682749
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.09722182495171067,
+          "rss": 287.3011300769305,
+          "n_observations": 13168,
+          "sigma_pooled": 0.14770961228824223,
+          "residual_sd_per_dose": [
+            0.1383824403500088,
+            0.15650299663461387
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.1735697009491658,
+            0.3152679227809737
+          ],
+          "max_bound_fraction_per_dose": [
+            0.9811992840100462,
+            0.9953335395659902
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.1295565006075334,
+            0.2735419198055893
+          ],
+          "optimiser_converged": true,
+          "nll": -25183.89233072842
+        },
+        "observed_pool_ratio_HUH7_over_PLC": 0.24468186550334106,
+        "observed_pool_ratio_ci95": [
+          0.12557459862672907,
+          0.4506319699835748
+        ],
+        "observed_ratio_ci_excludes_1": true,
+        "bootstrap_n_successful": 300,
+        "predicted_ratio_by_rho": [
+          {
+            "rho": 0.0001,
+            "M_molecules_per_cell": 8.0,
+            "f_HUH7": 6.26771035816561e-06,
+            "f_PLC": 6.356607748780637e-06,
+            "predicted_pool_ratio_equilibrium": 0.986014963620796,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.0003,
+            "M_molecules_per_cell": 23.999999999999996,
+            "f_HUH7": 1.8936918305431604e-05,
+            "f_PLC": 1.920873422141506e-05,
+            "predicted_pool_ratio_equilibrium": 0.9858493582736744,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.001,
+            "M_molecules_per_cell": 80.0,
+            "f_HUH7": 6.466878500123484e-05,
+            "f_PLC": 6.56324349050036e-05,
+            "predicted_pool_ratio_equilibrium": 0.985317474429167,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.003,
+            "M_molecules_per_cell": 240.0,
+            "f_HUH7": 0.00020704616367830833,
+            "f_PLC": 0.00021038599657198167,
+            "predicted_pool_ratio_equilibrium": 0.9841252129509929,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.01,
+            "M_molecules_per_cell": 800.0,
+            "f_HUH7": 0.0008441633984189692,
+            "f_PLC": 0.0008592622923336742,
+            "predicted_pool_ratio_equilibrium": 0.9824280734190048,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.03,
+            "M_molecules_per_cell": 2400.0,
+            "f_HUH7": 0.004102255048005881,
+            "f_PLC": 0.004158818308956097,
+            "predicted_pool_ratio_equilibrium": 0.9863991988232799,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.1,
+            "M_molecules_per_cell": 8000.0,
+            "f_HUH7": 0.05017072841497987,
+            "f_PLC": 0.050593265656903655,
+            "predicted_pool_ratio_equilibrium": 0.9916483501027744,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.3,
+            "M_molecules_per_cell": 24000.0,
+            "f_HUH7": 18.651989424889138,
+            "f_PLC": 21.269418722553638,
+            "predicted_pool_ratio_equilibrium": 0.8769393121736311,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 1.0,
+            "M_molecules_per_cell": 80000.0,
+            "f_HUH7": 53376.46079178703,
+            "f_PLC": 53719.871969770786,
+            "predicted_pool_ratio_equilibrium": 0.9936073716226093,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 3.0,
+            "M_molecules_per_cell": 240000.0,
+            "f_HUH7": 213357.87345095142,
+            "f_PLC": 213701.50449179887,
+            "predicted_pool_ratio_equilibrium": 0.9983920045782334,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 10.0,
+            "M_molecules_per_cell": 800000.0,
+            "f_HUH7": 773348.0315368385,
+            "f_PLC": 773691.9493538127,
+            "predicted_pool_ratio_equilibrium": 0.9995554848189109,
+            "predicted_pool_ratio_independent": 1.0
+          }
+        ],
+        "rho_at_which_equilibrium_matches_observed_ratio": null,
+        "independent_prediction_pool_ratio": 1.0
+      },
+      {
+        "construct": "RAD18",
+        "status": "OK",
+        "recovered_site_7mer": "ATTAATA",
+        "on_target_gene": "RAD18",
+        "n_transcripts_shared_by_both_contexts": 6285,
+        "total_retrieved_abundance_HUH7": 27310.557526800254,
+        "total_retrieved_abundance_PLC": 27739.630425621675,
+        "retrieved_abundance_ratio_HUH7_over_PLC": 0.984532133549079,
+        "mean_log2fc_HUH7": -0.003993620594124539,
+        "mean_log2fc_PLC": -0.01093453431207851,
+        "fit": {
+          "pool_per_dose": [
+            3.575868323165877,
+            9.79836923861333
+          ],
+          "log10_pool_per_dose": [
+            0.5533815180726072,
+            0.9911538012430706
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.1273413148933099,
+          "rss": 263.04074031205516,
+          "n_observations": 12570,
+          "sigma_pooled": 0.14465847094090492,
+          "residual_sd_per_dose": [
+            0.13259800199355684,
+            0.1558094233660314
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.0897788337466685,
+            0.1868334402744355
+          ],
+          "max_bound_fraction_per_dose": [
+            0.587505496083055,
+            0.7960310883623868
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.002863961813842482,
+            0.07239459029435164
+          ],
+          "optimiser_converged": true,
+          "nll": -24302.582673595563
+        },
+        "observed_pool_ratio_HUH7_over_PLC": 0.36494525120303956,
+        "observed_pool_ratio_ci95": [
+          0.2088660978517566,
+          0.5719790095564452
+        ],
+        "observed_ratio_ci_excludes_1": true,
+        "bootstrap_n_successful": 300,
+        "predicted_ratio_by_rho": [
+          {
+            "rho": 0.0001,
+            "M_molecules_per_cell": 8.0,
+            "f_HUH7": 0.009129073320435721,
+            "f_PLC": 0.009292981515896272,
+            "predicted_pool_ratio_equilibrium": 0.9823621519982392,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.0003,
+            "M_molecules_per_cell": 23.999999999999996,
+            "f_HUH7": 0.027435170411159893,
+            "f_PLC": 0.02792809818851274,
+            "predicted_pool_ratio_equilibrium": 0.982350112992814,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.001,
+            "M_molecules_per_cell": 80.0,
+            "f_HUH7": 0.09201188648265843,
+            "f_PLC": 0.09366887900617787,
+            "predicted_pool_ratio_equilibrium": 0.9823101061836114,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.003,
+            "M_molecules_per_cell": 240.0,
+            "f_HUH7": 0.2808964603743983,
+            "f_PLC": 0.28598314247096823,
+            "predicted_pool_ratio_equilibrium": 0.9822133498757315,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.01,
+            "M_molecules_per_cell": 800.0,
+            "f_HUH7": 0.9950500500668711,
+            "f_PLC": 1.0132327348410253,
+            "predicted_pool_ratio_equilibrium": 0.9820547795694669,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.03,
+            "M_molecules_per_cell": 2400.0,
+            "f_HUH7": 3.547879639241021,
+            "f_PLC": 3.6104469702239435,
+            "predicted_pool_ratio_equilibrium": 0.9826704750135018,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.1,
+            "M_molecules_per_cell": 8000.0,
+            "f_HUH7": 22.055978381393523,
+            "f_PLC": 22.309336080131757,
+            "predicted_pool_ratio_equilibrium": 0.9886434227433657,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 0.3,
+            "M_molecules_per_cell": 24000.0,
+            "f_HUH7": 1137.9030141742383,
+            "f_PLC": 1080.3278239786723,
+            "predicted_pool_ratio_equilibrium": 1.0532941843370522,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 1.0,
+            "M_molecules_per_cell": 80000.0,
+            "f_HUH7": 53301.57860775254,
+            "f_PLC": 52923.64299167895,
+            "predicted_pool_ratio_equilibrium": 1.0071411489215323,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 3.0,
+            "M_molecules_per_cell": 240000.0,
+            "f_HUH7": 213017.59998936206,
+            "f_PLC": 212628.25191095995,
+            "predicted_pool_ratio_equilibrium": 1.0018311210993973,
+            "predicted_pool_ratio_independent": 1.0
+          },
+          {
+            "rho": 10.0,
+            "M_molecules_per_cell": 800000.0,
+            "f_HUH7": 772887.581304739,
+            "f_PLC": 772494.8445624234,
+            "predicted_pool_ratio_equilibrium": 1.0005084004703462,
+            "predicted_pool_ratio_independent": 1.0
+          }
+        ],
+        "rho_at_which_equilibrium_matches_observed_ratio": null,
+        "independent_prediction_pool_ratio": 1.0
+      }
+    ],
+    "n_constructs_fitted": 3,
+    "observed_pool_ratios": [
+      0.9661450214653118,
+      0.24468186550334106,
+      0.36494525120303956
+    ],
+    "pooled_geometric_mean_pool_ratio": 0.4418660216277117,
+    "pooled_pool_ratio_ci95": [
+      0.3238770545400938,
+      0.608247752392519
+    ],
+    "pooled_ratio_ci_excludes_1": true,
+    "n_constructs_whose_ci_excludes_1": 2,
+    "POWER_LIMITATION": "three constructs survive the seed-agreement requirement out of seven attempted, two contexts each, and the bootstrap resamples transcripts rather than cell lines, so it propagates uncertainty in each fitted pool and says nothing about between-context variability beyond the one pair observed. Two of the three surviving constructs target the same gene."
+  },
+  "seed": 0,
+  "elapsed_s": 33.8669,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T19:51:40Z"
+}

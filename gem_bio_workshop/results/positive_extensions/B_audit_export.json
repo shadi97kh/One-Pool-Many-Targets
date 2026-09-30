@@ -1,0 +1,754 @@
+{
+ "frozen_configuration": {
+  "method": "bins",
+  "R": 100,
+  "B": 100,
+  "cost_terms": 200,
+  "n_dev_cases": 180,
+  "worst_dev_focal_rel_err": 1.4930307266183918e-05,
+  "worst_dev_grad_rel_err": 0.006227439349469615
+ },
+ "configuration_selection_record": {
+  "method": "bins",
+  "R": 100,
+  "B": 100,
+  "cost_terms": 200,
+  "n_dev_cases": 180,
+  "worst_dev_focal_rel_err": 1.4930307266183918e-05,
+  "worst_dev_grad_rel_err": 0.006227439349469615
+ },
+ "reselection_performed": false,
+ "family_split": {
+  "development": [
+   "ATTGGAA",
+   "CACCGTA",
+   "CTTGATC",
+   "GGTGAAG",
+   "MAPK14",
+   "PLK1",
+   "TCTCCTG",
+   "TTGTAGC"
+  ],
+  "test": [
+   "CAAATCT",
+   "CACGATG",
+   "GAACCTC",
+   "GTTGCTT",
+   "PIK3CB",
+   "TTGAGGC",
+   "TTTTGGA"
+  ]
+ },
+ "counts": {
+  "n_constructs_total": 39,
+  "n_families_total": 15,
+  "development_families": [
+   "ATTGGAA",
+   "CACCGTA",
+   "CTTGATC",
+   "GGTGAAG",
+   "MAPK14",
+   "PLK1",
+   "TCTCCTG",
+   "TTGTAGC"
+  ],
+  "n_development_families": 8,
+  "test_families": [
+   "CAAATCT",
+   "CACGATG",
+   "GAACCTC",
+   "GTTGCTT",
+   "PIK3CB",
+   "TTGAGGC",
+   "TTTTGGA"
+  ],
+  "n_test_families": 7,
+  "n_test_constructs": 9,
+  "n_test_evaluation_cases": 54,
+  "cases_per_construct": 6,
+  "counting_note": "the 54 held-out evaluation cases are 9 constructs times 6 values of rho, drawn from 7 independent families. The case count is NOT a count of independent units: the families are the independent units and there are only 7 of them.",
+  "exclusions": {
+   "constructs_dropped_fewer_than_60_positive_abundance": "constructs whose retrieved set had fewer than 60 transcripts with positive abundance are not in systems()",
+   "exact_cases_R_ge_N": 0
+  }
+ },
+ "accuracy_heldout": {
+  "worst_focal_rel_err": 1.160881721184173e-05,
+  "worst_grad_rel_err": 0.004661335177260349,
+  "median_focal_rel_err": 3.9968029100880555e-14,
+  "median_grad_rel_err": 5.372371232584981e-05,
+  "p90_focal_rel_err": 5.098954171053748e-07,
+  "p90_grad_rel_err": 0.001097290949419895,
+  "target_focal_rel_err": 0.01,
+  "target_grad_rel_err": 0.01,
+  "meets_both_tolerances_on_all_test_cases": true,
+  "n_cases": 54,
+  "n_families": 7,
+  "normalisation_denominator": "every residual and defect below is divided by max(M, 1), where M is the loaded pool of that case in molecules per cell; the unnormalised absolute values are in B_audit_residuals.csv",
+  "separation_orders_of_magnitude_median": 11.669936068285816,
+  "separation_orders_of_magnitude_worst": 12.869826187358118,
+  "compressed_residual_over_M_worst": 2.6957602816679583e-16,
+  "full_system_defect_over_M_worst": 0.0019975950705898526,
+  "full_system_defect_over_M_median": 1.73936651511724e-05,
+  "note": "targets were fixed before the held-out families were scored; no reselection was performed against these numbers"
+ },
+ "accuracy_heldout_comparators": {
+  "available": true,
+  "note": "all three methods at the same retrieval depth, on the same held-out families and the same cases. Shown for context only: the frozen configuration was selected on development data and is not revised in light of these numbers.",
+  "per_method": {
+   "truncate": {
+    "R": 100,
+    "B": 0,
+    "n_cases": 54,
+    "median_focal_rel_err": 3.7668646074245097e-10,
+    "p90_focal_rel_err": 0.0001549658885115,
+    "worst_focal_rel_err": 0.0024022363762699,
+    "median_grad_rel_err": 0.2041425947464273,
+    "p90_grad_rel_err": 0.84486713239853,
+    "worst_grad_rel_err": 0.9969013613651544,
+    "meets_both_targets_on_all_cases": false
+   },
+   "linear": {
+    "R": 100,
+    "B": 0,
+    "n_cases": 54,
+    "median_focal_rel_err": 7.715327992829552e-08,
+    "p90_focal_rel_err": 1.4952453538268573e-05,
+    "worst_focal_rel_err": 0.0001234318796084,
+    "median_grad_rel_err": 40.34501135953336,
+    "p90_grad_rel_err": 6179.02602919371,
+    "worst_grad_rel_err": 17632.06462135749,
+    "meets_both_targets_on_all_cases": false
+   },
+   "bins": {
+    "R": 100,
+    "B": 100,
+    "n_cases": 54,
+    "median_focal_rel_err": 3.9968029100880555e-14,
+    "p90_focal_rel_err": 5.098954171053748e-07,
+    "worst_focal_rel_err": 1.160881721184173e-05,
+    "median_grad_rel_err": 5.372371232584981e-05,
+    "p90_grad_rel_err": 0.0010972909494198603,
+    "worst_grad_rel_err": 0.0046613351772603,
+    "meets_both_targets_on_all_cases": true
+   }
+  }
+ },
+ "timing": {
+  "construct": "MAPK14-193_pos04mut",
+  "N_reference": 4919,
+  "device": "cpu",
+  "dtype": "float64",
+  "threads": 1,
+  "torch": "2.11.0+cu130",
+  "warmup": 10,
+  "repetitions": 50,
+  "matched_outputs": "every method returns f, the focal occupancy and the retained occupancy vector; the forward+backward rows additionally return dL/dlogK, dL/dlogx and dL/dlogM",
+  "per_method": {
+   "full": {
+    "n_retained": 4919,
+    "n_omitted": 0,
+    "preparation_total": {
+     "median_ms": 0.4651090130209923,
+     "p90_ms": 0.4690610454417765,
+     "min_ms": 0.460611074231565,
+     "iqr_ms": 0.005077454261481762,
+     "rel_iqr": 0.010916697202882618,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "solve_cached": {
+     "median_ms": 6.745303515344858,
+     "p90_ms": 6.846937071532011,
+     "min_ms": 6.556621985509992,
+     "iqr_ms": 0.06522575858980417,
+     "rel_iqr": 0.009669803358947808,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward": {
+     "median_ms": 7.323838479351252,
+     "p90_ms": 7.548255531582981,
+     "min_ms": 7.220254046842456,
+     "iqr_ms": 0.110241788206622,
+     "rel_iqr": 0.015052460334486685,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward_backward": {
+     "median_ms": 7.63896998250857,
+     "p90_ms": 7.743101799860597,
+     "min_ms": 7.5425440445542336,
+     "iqr_ms": 0.09594360017217696,
+     "rel_iqr": 0.012559756144069822,
+     "n_reps": 50,
+     "n_warmup": 10
+    }
+   },
+   "truncate": {
+    "n_retained": 100,
+    "n_omitted": 4819,
+    "preparation_total": {
+     "median_ms": 0.2816499909386039,
+     "p90_ms": 0.2865788876079023,
+     "min_ms": 0.28002297040075064,
+     "iqr_ms": 0.004292756784707308,
+     "rel_iqr": 0.015241458983902735,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "solve_cached": {
+     "median_ms": 5.282942962367088,
+     "p90_ms": 5.521206220146269,
+     "min_ms": 5.221531027927995,
+     "iqr_ms": 0.18113077385351062,
+     "rel_iqr": 0.0342859605231007,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward": {
+     "median_ms": 5.741501518059522,
+     "p90_ms": 5.823654879350215,
+     "min_ms": 5.6777429999783635,
+     "iqr_ms": 0.03496749559417367,
+     "rel_iqr": 0.0060903050333063,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward_backward": {
+     "median_ms": 6.018745014443994,
+     "p90_ms": 6.192563951481134,
+     "min_ms": 5.9636670630425215,
+     "iqr_ms": 0.05968142068013549,
+     "rel_iqr": 0.009915924422269084,
+     "n_reps": 50,
+     "n_warmup": 10
+    }
+   },
+   "linear": {
+    "n_retained": 100,
+    "n_omitted": 4819,
+    "preparation_total": {
+     "median_ms": 0.3452784731052816,
+     "p90_ms": 0.3503001178614795,
+     "min_ms": 0.34229597076773643,
+     "iqr_ms": 0.005507172318175435,
+     "rel_iqr": 0.01594994402241868,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "solve_cached": {
+     "median_ms": 6.991564470808953,
+     "p90_ms": 7.072749955113977,
+     "min_ms": 6.915178964845836,
+     "iqr_ms": 0.056379736633971334,
+     "rel_iqr": 0.008063965778956475,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward": {
+     "median_ms": 7.553952047601342,
+     "p90_ms": 7.649800949729979,
+     "min_ms": 7.47990095987916,
+     "iqr_ms": 0.04159222589805722,
+     "rel_iqr": 0.005506021965186327,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward_backward": {
+     "median_ms": 7.923580531496555,
+     "p90_ms": 8.073430263902992,
+     "min_ms": 7.728490047156811,
+     "iqr_ms": 0.06593624129891396,
+     "rel_iqr": 0.008321520938269602,
+     "n_reps": 50,
+     "n_warmup": 10
+    }
+   },
+   "bins": {
+    "n_retained": 100,
+    "n_omitted": 4819,
+    "preparation_total": {
+     "median_ms": 8.07873549638316,
+     "p90_ms": 8.126729738432914,
+     "min_ms": 8.038341999053955,
+     "iqr_ms": 0.03420727443881333,
+     "rel_iqr": 0.00423423621854285,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "solve_cached": {
+     "median_ms": 7.026477949693799,
+     "p90_ms": 7.190979679580778,
+     "min_ms": 6.965175969526172,
+     "iqr_ms": 0.045377673814073205,
+     "rel_iqr": 0.006458096665065416,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward": {
+     "median_ms": 15.268348972313106,
+     "p90_ms": 15.445171867031606,
+     "min_ms": 15.165947028435767,
+     "iqr_ms": 0.09299558587372303,
+     "rel_iqr": 0.006090742754331643,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "end_to_end_forward_backward": {
+     "median_ms": 26.128591503947973,
+     "p90_ms": 26.454852696042508,
+     "min_ms": 25.99483507219702,
+     "iqr_ms": 0.16323477029800415,
+     "rel_iqr": 0.006247362023832771,
+     "n_reps": 50,
+     "n_warmup": 10
+    },
+    "bin_construction_actual_omitted_set": {
+     "median_ms": 7.838315505068749,
+     "p90_ms": 8.092928119003773,
+     "min_ms": 7.729743956588209,
+     "iqr_ms": 0.25986882974393666,
+     "rel_iqr": 0.033153657769438995,
+     "n_reps": 50,
+     "n_warmup": 10
+    }
+   }
+  },
+  "cached_solve_validity": "solve_cached reuses a prepared system and is therefore valid ONLY for repeated solves at fixed K and fixed x, for example a dose or rho sweep in which only M changes. Any change to K or x invalidates the retrieval order and the bin aggregates and requires preparation to be redone. For optimisation of K or x the end_to_end rows are the applicable cost, because preparation is differentiable and sits inside every step.",
+  "break_even_solves_including_preparation": null,
+  "cached_solve_saving_per_solve_ms": -0.28117443434894085,
+  "cached_solve_saving_stability": {
+   "n_blocks": 5,
+   "reps_per_block": 15,
+   "saving_per_block_ms": [
+    -0.29482110403478146,
+    -0.21419802214950323,
+    -0.2609039656817913,
+    -0.27293397579342127,
+    -0.2148570492863655
+   ],
+   "median_ms": -0.2609039656817913,
+   "min_ms": -0.29482110403478146,
+   "max_ms": -0.21419802214950323,
+   "spread_ms": 0.08062308188527822,
+   "sign_is_stable": true,
+   "note": "the sign of the cached-solve difference is the claim; its magnitude drifts between blocks by more than the within-block interquartile range, so the magnitude should be read as approximate and the headline number is the one in cached_solve_saving_per_solve_ms from the main block"
+  },
+  "break_even_per_method": {
+   "truncate": {
+    "cached_solve_saving_per_solve_ms": 1.4623605529777706,
+    "preparation_cost_ms": 0.2816499909386039,
+    "full_reference_preparation_cost_ms": 0.4651090130209923,
+    "extra_preparation_vs_full_ms": -0.1834590220823884,
+    "break_even_solves": 0.0,
+    "verdict": "faster from the first solve: it is cheaper to prepare AND cheaper per solve"
+   },
+   "linear": {
+    "cached_solve_saving_per_solve_ms": -0.24626095546409488,
+    "preparation_cost_ms": 0.3452784731052816,
+    "full_reference_preparation_cost_ms": 0.4651090130209923,
+    "extra_preparation_vs_full_ms": -0.11983053991571069,
+    "break_even_solves": null,
+    "verdict": "never: the cached solve is not faster"
+   },
+   "bins": {
+    "cached_solve_saving_per_solve_ms": -0.28117443434894085,
+    "preparation_cost_ms": 8.07873549638316,
+    "full_reference_preparation_cost_ms": 0.4651090130209923,
+    "extra_preparation_vs_full_ms": 7.613626483362168,
+    "break_even_solves": null,
+    "verdict": "never: the cached solve is not faster"
+   }
+  },
+  "solve_cost_is_not_dominated_by_N": "the full system has 4919 terms and the selected configuration has 200, yet the selected configuration's cached solve costs 0.281 ms MORE per solve. The solver is a fixed-iteration bisection, so both run the same number of iterations and iteration count explains nothing; see timing.profiling for the measured decomposition.",
+  "units": "all timing values are milliseconds",
+  "preparation_composition": "bin_construction_actual_omitted_set is a COMPONENT of preparation_total for the bins method, not an additional cost. preparation_total is the whole preparation step: ordering by x/K, splitting retained from omitted, and for bins also building the bin aggregates.",
+  "scope_of_runtime_claims": "one construct with 4919 competitors, CPU, float64, 1 thread(s), 50 timed repetitions after 10 warm-up. These numbers describe this workload on this machine. They do not establish how the methods scale, and no claim is made about larger systems, batched solves, GPU execution, or other dtypes.",
+  "profiling": {
+   "solver": "fixed-iteration bisection on [0, M]",
+   "iterations_per_solve": 200,
+   "iterations_identical_across_methods": true,
+   "iteration_count_cannot_explain_method_differences": true,
+   "reduction_passes_per_iteration": {
+    "full": 1,
+    "truncate": 1,
+    "linear": 2,
+    "bins": 2
+   },
+   "solve_time_vs_n_terms_single_reduction": [
+    {
+     "n_terms": 25,
+     "median_ms": 5.2520749741233885,
+     "rel_iqr": 0.005565546016361461,
+     "ms_per_iteration": 0.026260374870616943
+    },
+    {
+     "n_terms": 50,
+     "median_ms": 5.226794979535043,
+     "rel_iqr": 0.007715289873605687,
+     "ms_per_iteration": 0.026133974897675216
+    },
+    {
+     "n_terms": 100,
+     "median_ms": 5.349621991626918,
+     "rel_iqr": 0.010200117280947408,
+     "ms_per_iteration": 0.02674810995813459
+    },
+    {
+     "n_terms": 200,
+     "median_ms": 5.433258949778974,
+     "rel_iqr": 0.004404394739992354,
+     "ms_per_iteration": 0.02716629474889487
+    },
+    {
+     "n_terms": 500,
+     "median_ms": 5.535164964385331,
+     "rel_iqr": 0.0023753433597554236,
+     "ms_per_iteration": 0.027675824821926653
+    },
+    {
+     "n_terms": 1000,
+     "median_ms": 5.6348039652220905,
+     "rel_iqr": 0.0029675990012726075,
+     "ms_per_iteration": 0.028174019826110452
+    },
+    {
+     "n_terms": 2000,
+     "median_ms": 5.943585943896323,
+     "rel_iqr": 0.012936672459470167,
+     "ms_per_iteration": 0.029717929719481617
+    },
+    {
+     "n_terms": 4919,
+     "median_ms": 6.604094000067562,
+     "rel_iqr": 0.007577182819454877,
+     "ms_per_iteration": 0.03302047000033781
+    }
+   ],
+   "marginal_cost_ms": {
+    "adding_4819_elements_to_one_reduction": 1.2544720084406435,
+    "adding_a_second_reduction_of_one_element": 1.6321850707754493,
+    "second_reduction_costs_more_than_the_extra_elements": true
+   },
+   "interpretation": "iteration count is fixed at 200 for every method, so it explains nothing. Adding 4819 elements to an existing reduction costs 1.254 ms, while adding a SECOND reduction holding a single element costs 1.632 ms. A second pass over one element is therefore about as expensive as thousands of extra elements in an existing pass, which is what per-pass fixed cost dominating the O(n) work means. The linear and bins methods each add that second pass, which is why they do not beat the full solve at this size. This is a measurement of this workload on this machine, not a complexity claim."
+  },
+  "break_even_note": "number of fixed-K, fixed-x solves after which paying preparation once is cheaper than solving the full system each time. None means the cached solve is not faster than the full solve, so preparation never pays back.",
+  "variability_note": "rel_iqr is the interquartile range over the median; repetitions are not independent biological samples"
+ },
+ "invariance_check": {
+  "max_abs_delta_focal_q": 0.0,
+  "max_abs_delta_grad": 0.0,
+  "stored_grid_comparison": {
+   "available": true,
+   "n_rows_compared": 234,
+   "max_abs_delta_focal_q_vs_stored": 1.1102230246251565e-16,
+   "csv_round_trip_precision_floor": 1.1102230246251565e-16,
+   "delta_is_below_storage_precision": true,
+   "stored_grid_dimensionless_residual_median": 4.547473508864642e-17,
+   "recomputed_compressed_residual_median": 4.5474735088646414e-17,
+   "ratio_stored_over_recomputed": 1.0000000000000002,
+   "note": "the double-counting fault was in this audit's own residual evaluation, not in the stored grid: B_grid's dimensionless_residual already was the compressed residual, and the recomputed values reproduce it to within one part in 1e15. The focal occupancies likewise agree with the stored values to better than the precision at which those values were written to disk. The correction changed the reported error, not any prediction. The orders-of-magnitude separation reported under accuracy_heldout is between the compressed residual and the full-system defect, which are two different quantities, not two versions of one."
+  }
+ },
+ "finite_difference_check": {
+  "n_coordinates_resolvable": 17,
+  "n_unresolvable_below_float64_noise": 0,
+  "n_skipped_membership_moved": 0,
+  "worst_rel_err": 0.043333929234454796,
+  "worst_rel_err_above_1e9_of_max": 0.0014410576661019099,
+  "n_coordinates_above_1e9_of_max": 13,
+  "stratification_note": "relative error is only informative where the gradient is well above the difference noise floor. Coordinates whose analytic gradient is below 1e-9 need a large step to be resolved at all, so their relative error is dominated by finite-difference truncation rather than by any error in the gradient; their absolute errors are of order 1e-13.",
+  "worst_rel_err_parameter": "K_omitted",
+  "worst_abs_err_among_unresolvable": null,
+  "largest_analytic_among_unresolvable": null,
+  "unresolvable_note": "these coordinates have analytic gradients so small that perturbing them changes the loss by less than float64 can represent, so a central difference returns rounding noise and a relative error against it is meaningless. Their absolute errors are reported instead.",
+  "includes_omitted_coordinates": true,
+  "per_coordinate": [
+   {
+    "parameter": "K_retained",
+    "index": 3305,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -1.617724591439001e-05,
+    "central_difference": -1.617728173641808e-05,
+    "abs_err": 3.5822028069537604e-11,
+    "rel_err": 2.214341609004406e-06,
+    "loss_difference": -3.235456347283616e-11,
+    "noise_floor": 2.663843391253838e-15
+   },
+   {
+    "parameter": "K_retained",
+    "index": 988,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -3.204403462513355e-05,
+    "central_difference": -3.2044034092848506e-05,
+    "abs_err": 5.322850450337202e-13,
+    "rel_err": 1.6611049766437304e-08,
+    "loss_difference": -6.408806818569701e-11,
+    "noise_floor": 2.663843391282023e-15
+   },
+   {
+    "parameter": "K_retained",
+    "index": 1722,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -1.2118931408931586e-06,
+    "central_difference": -1.2118084313783584e-06,
+    "abs_err": 8.47095148002816e-11,
+    "rel_err": 6.990338786794022e-05,
+    "loss_difference": -2.4236168627567167e-12,
+    "noise_floor": 2.663843391227254e-15
+   },
+   {
+    "parameter": "K_retained",
+    "index": 3822,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -1.7860080901212027e-07,
+    "central_difference": -1.7852386235972517e-07,
+    "abs_err": 7.69466523950965e-11,
+    "rel_err": 0.0004310160634999548,
+    "loss_difference": -3.5704772471945034e-13,
+    "noise_floor": 2.6638433912254186e-15
+   },
+   {
+    "parameter": "K_omitted",
+    "index": 1583,
+    "status": "ok",
+    "h": 0.0001,
+    "analytic": 1.5931690479623815e-11,
+    "central_difference": 1.6653345369377348e-11,
+    "abs_err": 7.216548897535335e-13,
+    "rel_err": 0.043333929234454796,
+    "loss_difference": 3.3306690738754696e-15,
+    "noise_floor": 2.6638433912251042e-15
+   },
+   {
+    "parameter": "K_omitted",
+    "index": 1263,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": 2.4051375420359076e-07,
+    "central_difference": 2.405853294362714e-07,
+    "abs_err": 7.157523268066109e-11,
+    "rel_err": 0.00029750456043339346,
+    "loss_difference": 4.811706588725428e-13,
+    "noise_floor": 2.6638433912255286e-15
+   },
+   {
+    "parameter": "K_omitted",
+    "index": 3899,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": 3.4921628570569785e-08,
+    "central_difference": 3.497202527569243e-08,
+    "abs_err": 5.0396705122646334e-11,
+    "rel_err": 0.0014410576661019099,
+    "loss_difference": 6.994405055138486e-14,
+    "noise_floor": 2.6638433912251634e-15
+   },
+   {
+    "parameter": "K_omitted",
+    "index": 4406,
+    "status": "ok",
+    "h": 0.001,
+    "analytic": 8.715432684656672e-12,
+    "central_difference": 8.770761894538737e-12,
+    "abs_err": 5.532920988206452e-14,
+    "rel_err": 0.006308369848292904,
+    "loss_difference": 1.7541523789077473e-14,
+    "noise_floor": 2.663843391225117e-15
+   },
+   {
+    "parameter": "x_retained",
+    "index": 3305,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -8.567010334253848e-06,
+    "central_difference": -8.566924947217558e-06,
+    "abs_err": 8.538703629011222e-11,
+    "rel_err": 9.967057820186108e-06,
+    "loss_difference": -1.7133849894435116e-11,
+    "noise_floor": 2.6638433912403194e-15
+   },
+   {
+    "parameter": "x_retained",
+    "index": 988,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -3.606653379396441e-05,
+    "central_difference": -3.606648313336791e-05,
+    "abs_err": 5.066059649962238e-11,
+    "rel_err": 1.4046447587442292e-06,
+    "loss_difference": -7.213296626673582e-11,
+    "noise_floor": 2.663843391289168e-15
+   },
+   {
+    "parameter": "x_retained",
+    "index": 1722,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -2.265784542277773e-06,
+    "central_difference": -2.2657431486550195e-06,
+    "abs_err": 4.1393622753568035e-11,
+    "rel_err": 1.8269335947519e-05,
+    "loss_difference": -4.531486297310039e-12,
+    "noise_floor": 2.6638433912291262e-15
+   },
+   {
+    "parameter": "x_retained",
+    "index": 3822,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -8.825958956139533e-08,
+    "central_difference": -8.837375276016246e-08,
+    "abs_err": 1.1416319876712631e-10,
+    "rel_err": 0.0012918224608719948,
+    "loss_difference": -1.7674750552032492e-13,
+    "noise_floor": 2.6638433912252585e-15
+   },
+   {
+    "parameter": "x_omitted",
+    "index": 1583,
+    "status": "ok",
+    "h": 0.0001,
+    "analytic": -1.5933080320409316e-11,
+    "central_difference": -1.6653345369377348e-11,
+    "abs_err": 7.202650489680321e-13,
+    "rel_err": 0.043250472081872285,
+    "loss_difference": -3.3306690738754696e-15,
+    "noise_floor": 2.6638433912251042e-15
+   },
+   {
+    "parameter": "x_omitted",
+    "index": 1263,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -2.601461537974343e-07,
+    "central_difference": -2.601252546696742e-07,
+    "abs_err": 2.089912776009856e-11,
+    "rel_err": 8.034255569163317e-05,
+    "loss_difference": -5.202505093393484e-13,
+    "noise_floor": 2.6638433912255634e-15
+   },
+   {
+    "parameter": "x_omitted",
+    "index": 3899,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": -4.3473610225632535e-08,
+    "central_difference": -4.3520742565306136e-08,
+    "abs_err": 4.713233967360167e-11,
+    "rel_err": 0.0010829856499547557,
+    "loss_difference": -8.704148513061227e-14,
+    "noise_floor": 2.6638433912251788e-15
+   },
+   {
+    "parameter": "x_omitted",
+    "index": 4406,
+    "status": "ok",
+    "h": 0.001,
+    "analytic": -8.715445218466798e-12,
+    "central_difference": -8.770761894538737e-12,
+    "abs_err": 5.531667607193834e-14,
+    "rel_err": 0.00630694080366977,
+    "loss_difference": -1.7541523789077473e-14,
+    "noise_floor": 2.663843391225117e-15
+   },
+   {
+    "parameter": "M",
+    "index": -1,
+    "status": "ok",
+    "h": 1e-06,
+    "analytic": 0.0018778043863571382,
+    "central_difference": 0.0018778044674760963,
+    "abs_err": 8.111895812186465e-11,
+    "rel_err": 4.3198831149280595e-08,
+    "loss_difference": 3.755608934952193e-09
+   }
+  ],
+  "note": "perturbations are multiplicative in K and x, so the difference estimates dL/dlog(parameter), matching the analytic gradients. Coordinates whose retrieval or bin membership moved under the perturbation are skipped rather than reported, because the derivative does not exist there."
+ },
+ "preparation_agreement": {
+  "keep_identical": true,
+  "out_identical": true,
+  "Ki_identical": true,
+  "Xb_identical": true,
+  "focal_in_retained": true,
+  "focal_position_consistent": true,
+  "retained_and_omitted_partition": true,
+  "focal_prediction_matches_with_and_without_reused_prep": true,
+  "max_abs_delta_focal_q": 0.0
+ },
+ "verification": {
+  "available": true,
+  "source": "results/px_verify.json",
+  "n_checks": 12,
+  "n_failed": 0,
+  "verdict": "PASS",
+  "checks": [
+   {
+    "check": "features.build() with defaults is bit-identical to the committed features.parquet",
+    "ok": true,
+    "detail": "max abs difference 0.0"
+   },
+   {
+    "check": "zero offsets reproduce the uncorrected thermodynamic score exactly (7mer-m8 anchor is inert)",
+    "ok": true,
+    "detail": "max abs diff 0.0"
+   },
+   {
+    "check": "logsumexp site aggregation equals the direct 1/K = sum 1/K_js form",
+    "ok": true,
+    "detail": "max abs diff 0.0"
+   },
+   {
+    "check": "no exact guide overlap between GSE5814 and E-MEXP-668",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "no exact seed(2-8) overlap between GSE5814 and E-MEXP-668",
+    "ok": true,
+    "detail": "[]"
+   },
+   {
+    "check": "all three A comparators are scored on identical rows",
+    "ok": true,
+    "detail": "{'M1_thermodynamic': 15, 'M2_class_only': 15, 'M3_thermo_plus_offsets': 15}"
+   },
+   {
+    "check": "equilibrium and independent fractional occupancies rank identically within a construct (Proposition 1)",
+    "ok": true,
+    "detail": "Spearman 1.0"
+   },
+   {
+    "check": "retained and omitted sets partition the reference exactly",
+    "ok": true,
+    "detail": "100 + 962 = 1062"
+   },
+   {
+    "check": "saturable bin masses sum to the omitted abundance (no mass lost or double counted)",
+    "ok": true,
+    "detail": "bins 5280.864161017704 vs omitted 5280.864161017703"
+   },
+   {
+    "check": "primary effect recomputes from the saved per-family table",
+    "ok": true,
+    "detail": "-0.00010597014274606278 vs -0.00010597014274608067"
+   },
+   {
+    "check": "frozen lambda is the strongest-regularisation maximiser as specified",
+    "ok": true,
+    "detail": "1.0"
+   },
+   {
+    "check": "no pre-existing result file was modified",
+    "ok": true,
+    "detail": "[]"
+   }
+  ]
+ }
+}

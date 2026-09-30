@@ -1,0 +1,480 @@
+{
+  "name": "pxa_affinity_correction",
+  "status": "OK",
+  "values": {
+    "WHAT_THIS_TESTS": "whether a three-parameter correction to per-site thermodynamic affinities improves within-guide repression ranking on guides that were never used to fit it. It does NOT test conservation coupling: for fixed affinities the equilibrium and independent fractional occupancies induce identical within-construct rankings, so neither can win this comparison.",
+    "frozen_before_external_evaluation": {
+      "lambda": 1.0,
+      "offsets_thermo_plus_class": {
+        "6mer": -0.02777371399140542,
+        "7mer-A1": -0.0003700504164132457,
+        "8mer": 0.0071827411837012585
+      },
+      "anchor": {
+        "7mer-m8": 0.0
+      },
+      "class_only_constants": {
+        "6mer": 0.008346200847129288,
+        "7mer-A1": -0.0015471730788597482,
+        "8mer": -0.004447652361237556
+      },
+      "optimiser_success": true,
+      "n_iter": 2,
+      "final_objective": 2.8121228315022466,
+      "training_pairs_with_exact_response_ties_dropped": 65
+    },
+    "lambda_selection_D1_leave_one_family_out": [
+      {
+        "lambda": 0.0,
+        "loo_equal_family_mean_spearman": 0.044003568607427664,
+        "per_held_out_family": {
+          "MAPK14": 0.05603187333163011,
+          "PIK3CB": 0.04048906437070515,
+          "PLK1": 0.03548976811994774
+        },
+        "offsets_if_selected": {
+          "6mer": -2.9694780299936396,
+          "7mer-A1": -1.9190179785495218,
+          "8mer": 0.4017013869591871
+        },
+        "offset_max_abs": 2.9694780299936396
+      },
+      {
+        "lambda": 0.01,
+        "loo_equal_family_mean_spearman": 0.05309980732778504,
+        "per_held_out_family": {
+          "MAPK14": 0.06109305292244409,
+          "PIK3CB": 0.05585452404120643,
+          "PLK1": 0.0423518450197046
+        },
+        "offsets_if_selected": {
+          "6mer": -1.310902755902361,
+          "7mer-A1": -0.37843014651202955,
+          "8mer": 0.3871742980309884
+        },
+        "offset_max_abs": 1.310902755902361
+      },
+      {
+        "lambda": 0.1,
+        "loo_equal_family_mean_spearman": 0.06041006305551689,
+        "per_held_out_family": {
+          "MAPK14": 0.06534367245332451,
+          "PIK3CB": 0.06885178519364772,
+          "PLK1": 0.04703473151957846
+        },
+        "offsets_if_selected": {
+          "6mer": -0.25020173340518004,
+          "7mer-A1": -0.013760547723372105,
+          "8mer": 0.06674290964294359
+        },
+        "offset_max_abs": 0.25020173340518004
+      },
+      {
+        "lambda": 1.0,
+        "loo_equal_family_mean_spearman": 0.06198368476281202,
+        "per_held_out_family": {
+          "MAPK14": 0.06641235108913034,
+          "PIK3CB": 0.0714748062131752,
+          "PLK1": 0.0480638969861305
+        },
+        "offsets_if_selected": {
+          "6mer": -0.02777371399140542,
+          "7mer-A1": -0.0003700504164132457,
+          "8mer": 0.0071827411837012585
+        },
+        "offset_max_abs": 0.02777371399140542
+      }
+    ],
+    "D1_baseline_M1_equal_family_mean_spearman": 0.06217514043467029,
+    "fit_movement_diagnostic": "offsets_if_selected at each lambda shows how far the fit moves from zero. If the selected offsets are near zero the corrected model is numerically almost the baseline, and a null external effect means the correction did not move rather than that it moved and failed.",
+    "eligibility": {
+      "D1_families": [
+        "MAPK14",
+        "PIK3CB",
+        "PLK1"
+      ],
+      "D1_constructs": [
+        "MAPK14-193_parent",
+        "MAPK14-193_pos01mut",
+        "MAPK14-193_pos02mut",
+        "MAPK14-193_pos03mut",
+        "MAPK14-193_pos04mut",
+        "MAPK14-193_pos05mut",
+        "MAPK14-193_pos06mut",
+        "MAPK14-193_pos07mut",
+        "MAPK14-193_pos08mut",
+        "MAPK14-193_pos09mut",
+        "MAPK14-193_pos10mut",
+        "MAPK14-193_pos11mut",
+        "MAPK14-193_pos12mut",
+        "MAPK14-193_pos13mut",
+        "MAPK14-193_pos14mut",
+        "MAPK14-193_pos15mut",
+        "MAPK14-193_pos16mut",
+        "MAPK14-193_pos17mut",
+        "MAPK14-193_pos18mut",
+        "MAPK14-193_pos19mut",
+        "PIK3CB-6338_parent",
+        "PIK3CB-6340_parent",
+        "PLK1-319_parent",
+        "PLK1-772_parent"
+      ],
+      "D1_eligible_pairs": 34679,
+      "D2_families": [
+        "ATTGGAA",
+        "CAAATCT",
+        "CACCGTA",
+        "CACGATG",
+        "CTTGATC",
+        "GAACCTC",
+        "GGTGAAG",
+        "GTTGCTT",
+        "TCTCCTG",
+        "TTGAGGC",
+        "TTGTAGC",
+        "TTTTGGA"
+      ],
+      "D2_constructs": [
+        "BIRM-ACAGCAAA-100nM",
+        "BIRM-CAGGGCGG-100nM",
+        "BIRM-GAAAGAGC-100nM",
+        "BIRM-GAAAGGAT-100nM",
+        "BIRM-GAGCAGAT-100nM",
+        "BIRM-GAGGTTCT-100nM",
+        "BIRM-GCACATGG-100nM",
+        "BIRM-GCAGAGAG-100nM",
+        "BIRM-GGAAAGAC-100nM",
+        "BIRM-GGCCTTAG-100nM",
+        "BIRM-GGCCTTAG-50nM",
+        "BIRM-GTATGACA-100nM",
+        "BIRM-GTATGACA-50nM",
+        "BIRM-TGGTTTAC-100nM",
+        "BIRM-TGGTTTAC-50nM"
+      ],
+      "D2_eligible_pairs": 31153
+    },
+    "external_D2": {
+      "M1_thermodynamic": {
+        "equal_family_mean_spearman": 0.028191425754754283,
+        "per_construct": {
+          "BIRM-ACAGCAAA-100nM": {
+            "family": "CACGATG",
+            "spearman": -0.008448027337262631,
+            "n": 628
+          },
+          "BIRM-CAGGGCGG-100nM": {
+            "family": "GGTGAAG",
+            "spearman": 0.03723503267097548,
+            "n": 2406
+          },
+          "BIRM-GAAAGAGC-100nM": {
+            "family": "CACCGTA",
+            "spearman": 0.009005136202474012,
+            "n": 797
+          },
+          "BIRM-GAAAGGAT-100nM": {
+            "family": "TTGTAGC",
+            "spearman": 0.0633704701389495,
+            "n": 1801
+          },
+          "BIRM-GAGCAGAT-100nM": {
+            "family": "GTTGCTT",
+            "spearman": 0.029043619412660867,
+            "n": 1746
+          },
+          "BIRM-GAGGTTCT-100nM": {
+            "family": "CTTGATC",
+            "spearman": 0.0344656162363701,
+            "n": 1960
+          },
+          "BIRM-GCACATGG-100nM": {
+            "family": "GAACCTC",
+            "spearman": 0.04678455789822533,
+            "n": 1861
+          },
+          "BIRM-GCAGAGAG-100nM": {
+            "family": "CAAATCT",
+            "spearman": 0.05397745165731259,
+            "n": 2505
+          },
+          "BIRM-GGAAAGAC-100nM": {
+            "family": "TTTTGGA",
+            "spearman": 0.03570799268232765,
+            "n": 2983
+          },
+          "BIRM-GGCCTTAG-100nM": {
+            "family": "TCTCCTG",
+            "spearman": -0.024689090152281143,
+            "n": 3119
+          },
+          "BIRM-GGCCTTAG-50nM": {
+            "family": "TCTCCTG",
+            "spearman": -0.0217680062200323,
+            "n": 3119
+          },
+          "BIRM-GTATGACA-100nM": {
+            "family": "TTGAGGC",
+            "spearman": 0.03503037758197758,
+            "n": 2289
+          },
+          "BIRM-GTATGACA-50nM": {
+            "family": "TTGAGGC",
+            "spearman": 0.03308416405654599,
+            "n": 2289
+          },
+          "BIRM-TGGTTTAC-100nM": {
+            "family": "ATTGGAA",
+            "spearman": 0.02349574031097463,
+            "n": 1825
+          },
+          "BIRM-TGGTTTAC-50nM": {
+            "family": "ATTGGAA",
+            "spearman": 0.029157333412852288,
+            "n": 1825
+          }
+        },
+        "per_family": {
+          "CACGATG": -0.008448027337262631,
+          "GGTGAAG": 0.03723503267097548,
+          "CACCGTA": 0.009005136202474012,
+          "TTGTAGC": 0.0633704701389495,
+          "GTTGCTT": 0.029043619412660867,
+          "CTTGATC": 0.0344656162363701,
+          "GAACCTC": 0.04678455789822533,
+          "CAAATCT": 0.05397745165731259,
+          "TTTTGGA": 0.03570799268232765,
+          "TCTCCTG": -0.023228548186156724,
+          "TTGAGGC": 0.034057270819261784,
+          "ATTGGAA": 0.02632653686191346
+        }
+      },
+      "M2_class_only": {
+        "equal_family_mean_spearman": 0.03499417971051843,
+        "per_construct": {
+          "BIRM-ACAGCAAA-100nM": {
+            "family": "CACGATG",
+            "spearman": -0.007462845286675412,
+            "n": 628
+          },
+          "BIRM-CAGGGCGG-100nM": {
+            "family": "GGTGAAG",
+            "spearman": 0.023550658983968208,
+            "n": 2406
+          },
+          "BIRM-GAAAGAGC-100nM": {
+            "family": "CACCGTA",
+            "spearman": 0.010634761233174975,
+            "n": 797
+          },
+          "BIRM-GAAAGGAT-100nM": {
+            "family": "TTGTAGC",
+            "spearman": 0.05795138956656518,
+            "n": 1801
+          },
+          "BIRM-GAGCAGAT-100nM": {
+            "family": "GTTGCTT",
+            "spearman": 0.05942979290224761,
+            "n": 1746
+          },
+          "BIRM-GAGGTTCT-100nM": {
+            "family": "CTTGATC",
+            "spearman": 0.033835357845451275,
+            "n": 1960
+          },
+          "BIRM-GCACATGG-100nM": {
+            "family": "GAACCTC",
+            "spearman": 0.05867864567855323,
+            "n": 1861
+          },
+          "BIRM-GCAGAGAG-100nM": {
+            "family": "CAAATCT",
+            "spearman": 0.07574483821123415,
+            "n": 2505
+          },
+          "BIRM-GGAAAGAC-100nM": {
+            "family": "TTTTGGA",
+            "spearman": 0.03479807452596516,
+            "n": 2983
+          },
+          "BIRM-GGCCTTAG-100nM": {
+            "family": "TCTCCTG",
+            "spearman": 0.005335092323823042,
+            "n": 3119
+          },
+          "BIRM-GGCCTTAG-50nM": {
+            "family": "TCTCCTG",
+            "spearman": 0.011021643713391274,
+            "n": 3119
+          },
+          "BIRM-GTATGACA-100nM": {
+            "family": "TTGAGGC",
+            "spearman": 0.035625961221637095,
+            "n": 2289
+          },
+          "BIRM-GTATGACA-50nM": {
+            "family": "TTGAGGC",
+            "spearman": 0.05129778190252829,
+            "n": 2289
+          },
+          "BIRM-TGGTTTAC-100nM": {
+            "family": "ATTGGAA",
+            "spearman": 0.01576874724574405,
+            "n": 1825
+          },
+          "BIRM-TGGTTTAC-50nM": {
+            "family": "ATTGGAA",
+            "spearman": 0.026489739324349573,
+            "n": 1825
+          }
+        },
+        "per_family": {
+          "CACGATG": -0.007462845286675412,
+          "GGTGAAG": 0.023550658983968208,
+          "CACCGTA": 0.010634761233174975,
+          "TTGTAGC": 0.05795138956656518,
+          "GTTGCTT": 0.05942979290224761,
+          "CTTGATC": 0.033835357845451275,
+          "GAACCTC": 0.05867864567855323,
+          "CAAATCT": 0.07574483821123415,
+          "TTTTGGA": 0.03479807452596516,
+          "TCTCCTG": 0.008178368018607158,
+          "TTGAGGC": 0.04346187156208269,
+          "ATTGGAA": 0.02112924328504681
+        }
+      },
+      "M3_thermo_plus_offsets": {
+        "equal_family_mean_spearman": 0.028085455612008203,
+        "per_construct": {
+          "BIRM-ACAGCAAA-100nM": {
+            "family": "CACGATG",
+            "spearman": -0.008658014321122053,
+            "n": 628
+          },
+          "BIRM-CAGGGCGG-100nM": {
+            "family": "GGTGAAG",
+            "spearman": 0.03722983778810888,
+            "n": 2406
+          },
+          "BIRM-GAAAGAGC-100nM": {
+            "family": "CACCGTA",
+            "spearman": 0.009204978016691668,
+            "n": 797
+          },
+          "BIRM-GAAAGGAT-100nM": {
+            "family": "TTGTAGC",
+            "spearman": 0.06308736530108874,
+            "n": 1801
+          },
+          "BIRM-GAGCAGAT-100nM": {
+            "family": "GTTGCTT",
+            "spearman": 0.028935238154505813,
+            "n": 1746
+          },
+          "BIRM-GAGGTTCT-100nM": {
+            "family": "CTTGATC",
+            "spearman": 0.03435877362004957,
+            "n": 1960
+          },
+          "BIRM-GCACATGG-100nM": {
+            "family": "GAACCTC",
+            "spearman": 0.046696561702890126,
+            "n": 1861
+          },
+          "BIRM-GCAGAGAG-100nM": {
+            "family": "CAAATCT",
+            "spearman": 0.05385398964036513,
+            "n": 2505
+          },
+          "BIRM-GGAAAGAC-100nM": {
+            "family": "TTTTGGA",
+            "spearman": 0.035524553156263315,
+            "n": 2983
+          },
+          "BIRM-GGCCTTAG-100nM": {
+            "family": "TCTCCTG",
+            "spearman": -0.0247878587313654,
+            "n": 3119
+          },
+          "BIRM-GGCCTTAG-50nM": {
+            "family": "TCTCCTG",
+            "spearman": -0.021834210561594385,
+            "n": 3119
+          },
+          "BIRM-GTATGACA-100nM": {
+            "family": "TTGAGGC",
+            "spearman": 0.03478862534357409,
+            "n": 2289
+          },
+          "BIRM-GTATGACA-50nM": {
+            "family": "TTGAGGC",
+            "spearman": 0.03288024050055805,
+            "n": 2289
+          },
+          "BIRM-TGGTTTAC-100nM": {
+            "family": "ATTGGAA",
+            "spearman": 0.023486260886852836,
+            "n": 1825
+          },
+          "BIRM-TGGTTTAC-50nM": {
+            "family": "ATTGGAA",
+            "spearman": 0.02905131113248932,
+            "n": 1825
+          }
+        },
+        "per_family": {
+          "CACGATG": -0.008658014321122053,
+          "GGTGAAG": 0.03722983778810888,
+          "CACCGTA": 0.009204978016691668,
+          "TTGTAGC": 0.06308736530108874,
+          "GTTGCTT": 0.028935238154505813,
+          "CTTGATC": 0.03435877362004957,
+          "GAACCTC": 0.046696561702890126,
+          "CAAATCT": 0.05385398964036513,
+          "TTTTGGA": 0.035524553156263315,
+          "TCTCCTG": -0.023311034646479892,
+          "TTGAGGC": 0.033834432922066074,
+          "ATTGGAA": 0.02626878600967108
+        }
+      }
+    },
+    "secondary_paired_effect_M2_minus_M1": 0.0068027539557641336,
+    "secondary_effect_ci95_family_cluster_bootstrap": [
+      -0.0005474987697613969,
+      0.014875356500546087
+    ],
+    "secondary_interpretation": "M2 uses site class alone and no thermodynamic energy. A positive M2 minus M1 means the ViennaRNA energies are not adding usable ranking information beyond the site class on these guides.",
+    "primary_paired_effect_M3_minus_M1": -0.00010597014274608067,
+    "primary_effect_ci95_family_cluster_bootstrap": [
+      -0.00016748517717764307,
+      -3.282881215787906e-05
+    ],
+    "bootstrap_n": 5000,
+    "bootstrap_seed": 1730,
+    "bootstrap_targets": "sampling variation across THIS set of 12 guide families, not across guides in general",
+    "sign_randomisation_p": 0.01708984375,
+    "sign_randomisation_mode": "exact enumeration over 2^12 sign flips",
+    "sign_randomisation_null": "family-level exchangeability and symmetry of the paired difference",
+    "n_independent_families_external": 12,
+    "per_family_paired_difference": {
+      "ATTGGAA": -5.775085224237961e-05,
+      "CAAATCT": -0.00012346201694746206,
+      "CACCGTA": 0.00019984181421765605,
+      "CACGATG": -0.00020998698385942156,
+      "CTTGATC": -0.00010684261632053216,
+      "GAACCTC": -8.799619533520625e-05,
+      "GGTGAAG": -5.194882866599304e-06,
+      "GTTGCTT": -0.00010838125815505403,
+      "TCTCCTG": -8.248646032316814e-05,
+      "TTGAGGC": -0.00022283789719571012,
+      "TTGTAGC": -0.00028310483786075924,
+      "TTTTGGA": -0.0001834395260643315
+    },
+    "supported_positive_result": false,
+    "CLAIM_SCOPE": "a positive result here supports better AFFINITIES, not added predictive value from coupling and not an identified rho",
+    "LIMITATION_family_count": "12 independent guide families support the external interval. Thousands of genes do not increase that number, and the interval is correspondingly unstable."
+  },
+  "seed": 0,
+  "elapsed_s": 5.441,
+  "traceback": null,
+  "timestamp_utc": "2026-09-06T19:06:27Z"
+}

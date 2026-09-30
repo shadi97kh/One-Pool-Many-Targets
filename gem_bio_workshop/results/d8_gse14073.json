@@ -1,0 +1,49 @@
+{
+  "name": "d8_gse14073",
+  "status": "OK",
+  "values": {
+    "n_probes": 43483,
+    "n_arrays": 56,
+    "n_probes_without_platform_annotation": 16674,
+    "n_gene_symbols": 18503,
+    "cell_lines": [
+      "HUH7",
+      "PLC/PRF/5"
+    ],
+    "constructs": [
+      "APOB-Hs1",
+      "APOB-Hs2",
+      "APOB-Hs3",
+      "APOB-Hs4",
+      "Apob-Mm1",
+      "Apob-Mm2",
+      "RAD18"
+    ],
+    "hours": [
+      6.0,
+      12.0,
+      24.0,
+      48.0
+    ],
+    "n_mock_arrays_per_cell_line": {
+      "HUH7": 4,
+      "PLC/PRF/5": 3
+    },
+    "timepoints_shared_by_both_cell_lines": [
+      6.0,
+      12.0,
+      48.0
+    ],
+    "value_scale_note": "the deposited matrix carries linear RMA intensities, not log ratios; log2fc is formed here against the mock arrays of the same cell line at the same timepoint",
+    "paths": {
+      "expression": "data/gse14073_expression.parquet",
+      "samples": "data/gse14073_samples.parquet",
+      "abundance": "data/gse14073_abundance.parquet",
+      "response": "data/gse14073_response.parquet"
+    }
+  },
+  "seed": 0,
+  "elapsed_s": 2.2863,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T16:21:01Z"
+}

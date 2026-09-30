@@ -1,0 +1,218 @@
+{
+ "spec_version": 1,
+ "frozen_utc": "2026-09-06T19:07:22Z",
+ "purpose": "freezes the NEW analysis only; the historical archival study is not preregistered by this file",
+ "datasets_by_accession": {
+  "D1_training": "GSE5814",
+  "D2_external": "E-MEXP-668",
+  "note": "resolved by accession, not by repository D-number"
+ },
+ "rho_convention": {
+  "definition": "rho = M / N_mRNA_whole_cell",
+  "denominator": "total cellular mRNA count, NOT the retrieved competitor abundance sum",
+  "verified_in": [
+   "scripts/run_e5.py:total_x = float(n_mrna)",
+   "src/riscpool/calibration.py:rho_from_alpha",
+   "src/riscpool/real_experiments.py:score_construct"
+  ]
+ },
+ "physics_preserved": {
+  "dG_open": "-R*T*log(P_unpaired) >= 0",
+  "dG_eff": "dG_duplex + dG_open",
+  "K_site": "K_ref*exp((dG_eff-dG_ref)/(R*T))",
+  "RT_kcal_per_mol": 0.61633008,
+  "temperature_K": 310.15,
+  "energy_units": "kcal/mol",
+  "p_unpaired_floor": 1e-12,
+  "aggregation": "1/K_j = sum_s 1/K_js (mutually exclusive sites)",
+  "no_site_transcripts": "zero binding capacity, represented explicitly rather than as infinite K"
+ },
+ "experiment_A": {
+  "model": "log K_js_corrected = log K_js_thermo + delta[class]",
+  "anchor_class": "7mer-m8",
+  "anchor_value": 0.0,
+  "free_classes": [
+   "8mer",
+   "7mer-A1",
+   "6mer"
+  ],
+  "init": 0.0,
+  "bounds": [
+   -3.0,
+   3.0
+  ],
+  "score": "score_j = -log K_j = logsumexp_s(-log K_js_corrected)",
+  "loss": "within-guide pairwise softplus(-t_jk*(score_j-score_k))",
+  "y": "-log(expression ratio); larger y = stronger repression",
+  "pairs_per_guide": 4096,
+  "pair_seed": 1729,
+  "drop_exact_ties": true,
+  "balance": "equal weight per guide within family, then per family",
+  "lambda_grid": [
+   0.0,
+   0.01,
+   0.1,
+   1.0
+  ],
+  "lambda_selection": "leave-one-family-out on D1 only; equal-family average of per-guide Spearman; ties to stronger regularisation",
+  "dtype": "float64",
+  "comparators": [
+   "thermodynamic (current corrected baseline)",
+   "class-only (no thermodynamic energy)",
+   "thermodynamic + 3 class offsets"
+  ],
+  "primary_comparison": "model 3 minus model 1",
+  "primary_metric": "equal-family average of within-guide Spearman between score_j and y_j",
+  "bootstrap": {
+   "n": 5000,
+   "seed": 1730,
+   "unit": "family cluster, paired, retaining all guides of a sampled family",
+   "targets": "sampling variation across THIS set of families"
+  },
+  "sign_randomisation": {
+   "unit": "family",
+   "exact_if_families_le": 20,
+   "draws_otherwise": 10000,
+   "null": "family-level exchangeability and symmetry of the paired difference"
+  },
+  "eligible_population": "measured guide-gene pairs with a valid canonical UTR and >=1 canonical site under the shared response-independent pipeline; identical rows for all models",
+  "external_exclusion_rule": "D2 families whose guide OR seed(2-8) exactly matches any D1 guide are removed from the primary external analysis and reported separately"
+ },
+ "experiment_B": {
+  "reference": "the construct's full retrieved competitor set, which is a site-filtered universe and is NOT the whole transcriptome",
+  "methods": [
+   "full reference",
+   "top-R truncation (omitted dropped)",
+   "top-R + linear beta_omit = sum x_j/K_j",
+   "top-R + saturable affinity-quantile bins"
+  ],
+  "bins": {
+   "X_b": "sum_{j in b} x_j",
+   "K_b": "X_b / sum_{j in b}(x_j/K_j)",
+   "background_b": "X_b*f/(K_b+f)",
+   "skip_zero_mass_bins": true
+  },
+  "rho_grid": [
+   0.001,
+   0.01,
+   0.1,
+   0.5,
+   1.0,
+   10.0
+  ],
+  "R_grid": [
+   25,
+   50,
+   100,
+   200,
+   500
+  ],
+  "B_grid": [
+   1,
+   5,
+   10,
+   25,
+   50,
+   100,
+   200
+  ],
+  "retrieval_order": "by x/K (weighted load), the project's existing rule; response-independent",
+  "downstream_loss": {
+   "definition": "L = q_focal + 0.5 * mean_j q_j over the retained explicitly represented transcripts",
+   "why": "dimensionless, O(1), and touches both the focal target and the retained outputs, so a gradient error cannot hide in either alone",
+   "frozen_before_any_B_evaluation": true,
+   "gradients_wrt": [
+    "log K",
+    "log x (positive x only)",
+    "log M"
+   ],
+   "membership": "retrieval and bin membership are treated as piecewise constant; no gradient is claimed through a discrete sorting boundary"
+  },
+  "constructs": "GSE5814 and E-MEXP-668 constructs, family split balanced by dataset of origin",
+  "tolerances": {
+   "rel_focal_occupancy": 0.01,
+   "rel_L2_gradient": 0.01,
+   "near_zero_occupancy_abs": 1e-12,
+   "near_zero_gradient_abs": 1e-12
+  },
+  "timing": {
+   "warmup": 10,
+   "repetitions": 50,
+   "note": "repetitions are not independent biological samples"
+  },
+  "split": "deterministic family-level development/test split over usable constructs, defined before configuration choice"
+ },
+ "families": {
+  "D1_rule": "target gene",
+  "D1_families": [
+   "MAPK14",
+   "PIK3CB",
+   "PLK1"
+  ],
+  "D1_construct_to_family": {
+   "MAPK14-193_parent": "MAPK14",
+   "MAPK14-193_pos01mut": "MAPK14",
+   "MAPK14-193_pos02mut": "MAPK14",
+   "MAPK14-193_pos03mut": "MAPK14",
+   "MAPK14-193_pos04mut": "MAPK14",
+   "MAPK14-193_pos05mut": "MAPK14",
+   "MAPK14-193_pos06mut": "MAPK14",
+   "MAPK14-193_pos07mut": "MAPK14",
+   "MAPK14-193_pos08mut": "MAPK14",
+   "MAPK14-193_pos09mut": "MAPK14",
+   "MAPK14-193_pos10mut": "MAPK14",
+   "MAPK14-193_pos11mut": "MAPK14",
+   "MAPK14-193_pos12mut": "MAPK14",
+   "MAPK14-193_pos13mut": "MAPK14",
+   "MAPK14-193_pos14mut": "MAPK14",
+   "MAPK14-193_pos15mut": "MAPK14",
+   "MAPK14-193_pos16mut": "MAPK14",
+   "MAPK14-193_pos17mut": "MAPK14",
+   "MAPK14-193_pos18mut": "MAPK14",
+   "MAPK14-193_pos19mut": "MAPK14",
+   "PIK3CB-6338_parent": "PIK3CB",
+   "PIK3CB-6340_parent": "PIK3CB",
+   "PLK1-319_parent": "PLK1",
+   "PLK1-772_parent": "PLK1"
+  },
+  "D2_rule": "distinct seed (guide positions 2-8)",
+  "D2_families": [
+   "ATTGGAA",
+   "CAAATCT",
+   "CACCGTA",
+   "CACGATG",
+   "CTTGATC",
+   "GAACCTC",
+   "GGTGAAG",
+   "GTTGCTT",
+   "TCTCCTG",
+   "TTGAGGC",
+   "TTGTAGC",
+   "TTTTGGA"
+  ],
+  "D2_construct_to_family": {
+   "BIRM-GAGCAGAT-100nM": "GTTGCTT",
+   "BIRM-GAGGTTCT-100nM": "CTTGATC",
+   "BIRM-GCAGAGAG-100nM": "CAAATCT",
+   "BIRM-GCACATGG-100nM": "GAACCTC",
+   "BIRM-GAAAGAGC-100nM": "CACCGTA",
+   "BIRM-GAAAGGAT-100nM": "TTGTAGC",
+   "BIRM-ACAGCAAA-100nM": "CACGATG",
+   "BIRM-GGAAAGAC-100nM": "TTTTGGA",
+   "BIRM-CAGGGCGG-100nM": "GGTGAAG",
+   "BIRM-TGGTTTAC-100nM": "ATTGGAA",
+   "BIRM-TGGTTTAC-50nM": "ATTGGAA",
+   "BIRM-GTATGACA-100nM": "TTGAGGC",
+   "BIRM-GTATGACA-50nM": "TTGAGGC",
+   "BIRM-GGCCTTAG-100nM": "TCTCCTG",
+   "BIRM-GGCCTTAG-50nM": "TCTCCTG"
+  }
+ },
+ "overlap_audit": {
+  "exact_guide_overlap_D1_D2": [],
+  "exact_seed_2_8_overlap_D1_D2": [],
+  "n_guide_overlap": 0,
+  "n_seed_overlap": 0
+ },
+ "outputs": "results/positive_extensions/"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "e2_redistribution",
+  "status": "OK",
+  "values": {
+    "source_of_K": "ViennaRNA ddG on GENCODE v50 3'UTRs",
+    "source_of_x": "GSE5814 mock Cy3 channel, real HeLa abundance",
+    "n_draws": 1200,
+    "n_transcripts_per_draw": 120,
+    "rho_sampled_log10_uniform_over": [
+      -3,
+      1
+    ],
+    "claim_A_d_o_i_d_K_t_positive_violations": 0,
+    "claim_B_d_o_t_d_K_t_negative_violations": 0,
+    "min_margin_1_minus_u_over_D": 0.08984429228276458,
+    "mean_margin_1_minus_u_over_D": 0.9930851140349852,
+    "max_d_o_t_d_K_t": -1.4354146629279616e-32,
+    "min_d_o_i_d_K_t_offtarget_sum": 1.4258811868874644e-32,
+    "all_margins_strictly_positive": true
+  },
+  "seed": 0,
+  "elapsed_s": 22.0555,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T19:43:44Z"
+}

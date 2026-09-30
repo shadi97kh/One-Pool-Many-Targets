@@ -1,0 +1,64 @@
+{
+  "name": "d4_hela_abundance",
+  "status": "OK",
+  "values": {
+    "n_expr_rows_before_quality_filter": 1585182,
+    "n_expr_rows_after": 1575964,
+    "n_mock_arrays_used": 67,
+    "n_probes_with_signal": 35672,
+    "n_gene_symbols": 16839,
+    "n_genes_joined_to_gencode_canonical_with_utr3": 11306,
+    "abundance_gini_like_top1pct_share": 0.19556900012485987,
+    "abundance_dynamic_range_log10": 4.11142469698583,
+    "path": "data/hela_abundance.parquet",
+    "source": "GSE5814 INTENSITY1 (raw Cy3, CH1 = mock control channel)",
+    "top10_genes_by_relative_abundance": [
+      {
+        "gene_symbol": "RPS27A",
+        "x_rel": 0.0021522010855086183
+      },
+      {
+        "gene_symbol": "RPS17",
+        "x_rel": 0.0020636986488917312
+      },
+      {
+        "gene_symbol": "RPS29",
+        "x_rel": 0.0020378771859570124
+      },
+      {
+        "gene_symbol": "RPL32",
+        "x_rel": 0.0020029351418010314
+      },
+      {
+        "gene_symbol": "ALDOA",
+        "x_rel": 0.00199197026047666
+      },
+      {
+        "gene_symbol": "NCL",
+        "x_rel": 0.0019907731053481702
+      },
+      {
+        "gene_symbol": "MYL6",
+        "x_rel": 0.0019584120721436006
+      },
+      {
+        "gene_symbol": "IFITM3",
+        "x_rel": 0.00194204800857483
+      },
+      {
+        "gene_symbol": "ARF1",
+        "x_rel": 0.0019332377541835027
+      },
+      {
+        "gene_symbol": "PARK7",
+        "x_rel": 0.0019310957421622436
+      }
+    ],
+    "sum_x_rel": 1.0,
+    "median_x_rel": 8.934511272418997e-06
+  },
+  "seed": 0,
+  "elapsed_s": 2.9504,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T07:41:13Z"
+}

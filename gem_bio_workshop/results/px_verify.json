@@ -1,0 +1,75 @@
+{
+  "name": "px_verify",
+  "status": "OK",
+  "values": {
+    "n_checks": 12,
+    "n_failed": 0,
+    "verdict": "PASS",
+    "checks": [
+      {
+        "check": "features.build() with defaults is bit-identical to the committed features.parquet",
+        "ok": true,
+        "detail": "max abs difference 0.0"
+      },
+      {
+        "check": "zero offsets reproduce the uncorrected thermodynamic score exactly (7mer-m8 anchor is inert)",
+        "ok": true,
+        "detail": "max abs diff 0.0"
+      },
+      {
+        "check": "logsumexp site aggregation equals the direct 1/K = sum 1/K_js form",
+        "ok": true,
+        "detail": "max abs diff 0.0"
+      },
+      {
+        "check": "no exact guide overlap between GSE5814 and E-MEXP-668",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "check": "no exact seed(2-8) overlap between GSE5814 and E-MEXP-668",
+        "ok": true,
+        "detail": "[]"
+      },
+      {
+        "check": "all three A comparators are scored on identical rows",
+        "ok": true,
+        "detail": "{'M1_thermodynamic': 15, 'M2_class_only': 15, 'M3_thermo_plus_offsets': 15}"
+      },
+      {
+        "check": "equilibrium and independent fractional occupancies rank identically within a construct (Proposition 1)",
+        "ok": true,
+        "detail": "Spearman 1.0"
+      },
+      {
+        "check": "retained and omitted sets partition the reference exactly",
+        "ok": true,
+        "detail": "100 + 962 = 1062"
+      },
+      {
+        "check": "saturable bin masses sum to the omitted abundance (no mass lost or double counted)",
+        "ok": true,
+        "detail": "bins 5280.864161017704 vs omitted 5280.864161017703"
+      },
+      {
+        "check": "primary effect recomputes from the saved per-family table",
+        "ok": true,
+        "detail": "-0.00010597014274606278 vs -0.00010597014274608067"
+      },
+      {
+        "check": "frozen lambda is the strongest-regularisation maximiser as specified",
+        "ok": true,
+        "detail": "1.0"
+      },
+      {
+        "check": "no pre-existing result file was modified",
+        "ok": true,
+        "detail": "[]"
+      }
+    ]
+  },
+  "seed": 0,
+  "elapsed_s": 46.8363,
+  "traceback": null,
+  "timestamp_utc": "2026-09-07T08:11:51Z"
+}

@@ -1,0 +1,870 @@
+{
+  "generated_utc": "2026-09-07T08:55:19Z",
+  "stages_run": "A",
+  "rtol": 1e-06,
+  "allow_missing": false,
+  "n_checks": 143,
+  "n_failed": 0,
+  "exit_status": 0,
+  "verdict": "PASS",
+  "checks": [
+    {
+      "stage": "A",
+      "name": "data/raw/GSE5814_family.soft.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE5814-GPL2029_series_matrix.txt.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE5814-GPL3991_series_matrix.txt.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE5814-GPL3992_series_matrix.txt.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE5814_filelist.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/gencode_README.TXT",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/gencode_MD5SUMS.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/gencode.v50.pc_transcripts.fa.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/gencode.v50.annotation.gtf.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/refseq_NM_001315.fasta",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/refseq_NM_005030.fasta",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/refseq_NM_006219.fasta",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/refseq_NM_139013.fasta",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gencode_transcripts.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gencode_tx_tags.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gencode_canonical_by_symbol.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse5814_expression.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse5814_probe_annotation.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/hela_abundance.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/garcia2011/nsmb2115_MOESM7.xlsx",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/jackson2003/nbt831_MOESM2.pdf",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/sigoillot/srep00428-s1.xls",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/GSE5814_RAW.tar",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/recovered_seeds.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/sirna_sequences.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/accessibility_u8_u15.npz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_Hu.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_Hu_unnorm.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_HuTD.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/oligoformer_tree.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/C6orf110.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/CD81P3.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/CDC34.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/FLJ11011.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/HIP2.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/HSPC150.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/NOG.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/P2RX3.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/RAB6IP1.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_Cacng4.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_Dcbld2.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_Fxyd6.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_Mmp7_1.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_Mmp7_2.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_P2rx2.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_TCAP.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Rn_cacnb1.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/SOST.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/TC10.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2B.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2C.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2D3.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2E3.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2G1.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2H.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2I.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2J1.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2L3.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2L6.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2M.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2N.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2S.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/UBE2V1.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/huesken_genes/Ufc1.csv",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/constants.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/constants/CONSTANTS_SOURCES.md",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/constants/wang2012_genesdev_PMC3323880.pdf",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/constants/janas2012_PMC3479394.pdf",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/constants/rna_errata_PMC3504684.pdf",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/constants/marinov2014_PMC3941114.xml",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/constants/wee2012_PMC3595543.html",
+      "ok": true,
+      "detail": "hash not enforced: server-side rendering of a PMC article page; re-fetching the same URL during this build returned different bytes. Europe PMC returns 404 for both fullTextXML and pdf=render for PMC3595543, so no byte-stable form of this source exists. The verbatim Kd sentences quoted in data/lit/constants/CONSTANTS_SOURCES.md are the durable record."
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/constants/qiagen_faq_rna_per_cell.html",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/huesken.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/d2_vandongen_PMC2635553_suppl.zip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/d2_GSE5291_family.soft.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/d2_GSE5769_family.soft.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/caffrey2011/PMC3130022_fulltext.xml",
+      "ok": true,
+      "detail": "hash not enforced: volatile source"
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE28786_series_matrix.txt.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE28786_filelist.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE28786_family.soft.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/Homo_sapiens.gene_info.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/caffrey2011/pone.0021503.s014.doc",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/caffrey2011/pone.0021503.s016.doc",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/caffrey2011/pone.0021503.s018.doc",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/caffrey2011/pone.0021503.s020.doc",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse28786_expression.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse28786_samples.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse28786_abundance.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse28786_response.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/candidate_utr3_gse28786.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/burchard2009/GSE14073_esummary.json",
+      "ok": true,
+      "detail": "hash not enforced: volatile source"
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE14073-GPL6793_series_matrix.txt.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE14073-GPL6794_series_matrix.txt.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GSE14073_filelist.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/burchard2009/PMC2648714_suppl.zip",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/accessibility_gse28786_u8_u15.npz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/GPL6793_family.soft.gz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse14073_expression.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse14073_samples.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse14073_abundance.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/gse14073_response.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/candidate_utr3_gse14073.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/accessibility_gse14073_u8_u15.npz",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/E-MEXP-668.idf.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/E-MEXP-668.sdrf.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016656_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016657_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016658_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016659_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016666_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016667_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016668_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097016669_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017936_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017938_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017939_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017940_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017951_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017952_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017953_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097017954_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097018568_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097018569_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097018911_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097018912_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_16012097018913_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725370_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725371_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725411_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725412_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725425_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725538_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725539_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/raw/birmingham/US22502584_251209725545_S01_A01.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/birmingham_response.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/birmingham_sirna.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/jackson2006/PMC1484447_suppl_retry.zip",
+      "ok": true,
+      "detail": "hash not enforced: volatile source"
+    },
+    {
+      "stage": "A",
+      "name": "data/lit/jackson2006/efetch_PMC1484447.xml",
+      "ok": true,
+      "detail": "hash not enforced: volatile source"
+    },
+    {
+      "stage": "A",
+      "name": "data/features.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/features_gse28786.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "data/features_emexp668.parquet",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "figures/CAPTIONS.json",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "stage": "A",
+      "name": "figures/CAPTIONS.md",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

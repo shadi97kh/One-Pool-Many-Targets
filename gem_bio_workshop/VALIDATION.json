@@ -1,0 +1,54 @@
+{
+  "validated_on": "2026-09-30",
+  "source_commit": "bd7850d3cac09b9564ea4b394fbdad111d399f3e",
+  "historical_files_verified": 154,
+  "historical_python_files_parsed": 69,
+  "submission_text_matches_saved_workshop_pdf": true,
+  "checks": [
+    {
+      "command": "python3 scripts/run_all.py --list",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONPATH=src OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 python3 -m riscpool.checks",
+      "exit_code": 0,
+      "reported_conservation_residual": 4.263e-14,
+      "reported_worst_gradient_error": 1.074e-07
+    },
+    {
+      "command": "python3 scripts/make_figures.py",
+      "exit_code": 0,
+      "skipped_panels": 0
+    },
+    {
+      "command": "python3 scripts/make_px_figures.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/make_paper.py",
+      "exit_code": 0,
+      "numeric_macros": 235
+    }
+  ],
+  "regenerated_pngs_byte_identical": [
+    "fig1_mechanism.png",
+    "fig2_regime.png",
+    "fig4_retrieval.png",
+    "figA1_phase_2d.png",
+    "figA2_dose_detail.png",
+    "figA3_theory.png",
+    "fig_approx.png",
+    "fig_assoc.png",
+    "fig_dose.png",
+    "fig_hier.png",
+    "px_A_external.png",
+    "px_B_approx.png"
+  ],
+  "execution_isolation": "Regeneration and solver checks ran in a disposable copy; published results remain unmodified.",
+  "not_run": [
+    "Full data download",
+    "Full scientific experiment reruns",
+    "LaTeX PDF compilation"
+  ],
+  "scope": "Artifact extraction, source integrity, saved-result figure regeneration, manuscript source generation and original solver checks. Historical saved validation files are not claimed as newly executed."
+}

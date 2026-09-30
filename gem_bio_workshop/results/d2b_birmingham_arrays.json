@@ -1,0 +1,274 @@
+{
+  "name": "d2b_birmingham_arrays",
+  "status": "OK",
+  "values": {
+    "accession": "E-MEXP-668",
+    "identification_from_idf": {
+      "identified": true,
+      "pubmed_id_in_idf": "16489337",
+      "expected_pubmed_id": "16489337",
+      "publication_title_in_idf": "3' UTR seed matches, but not overall identity, are associated with RNAi off-targets",
+      "investigation_title_in_idf": "Transcription profiling of human HeLa cells treated with various functional siRNAs to investigate RNAi off-targets",
+      "author_list_in_idf": "Amanda Birmingham; Emily Anderson; Angela Reynolds; Diane Ilsley-Tyree; Devin Leake; Yuriy Fedorov; Scott Baskerville; Elena Maksimova; Kathryn Robinson; Jon Karpilow; William Marshall; Anastasia Khvorova"
+    },
+    "route": "found by searching the ArrayExpress collection for the article title phrase, not by guessing an accession; the IDF's PubMed id is checked in code before the deposit is accepted",
+    "n_array_files_named_by_sdrf": 29,
+    "n_array_files_downloaded": 29,
+    "n_array_files_failed": 0,
+    "n_arrays_parsed": 24,
+    "n_constructs": 15,
+    "constructs": [
+      "BIRM-ACAGCAAA-100nM",
+      "BIRM-CAGGGCGG-100nM",
+      "BIRM-GAAAGAGC-100nM",
+      "BIRM-GAAAGGAT-100nM",
+      "BIRM-GAGCAGAT-100nM",
+      "BIRM-GAGGTTCT-100nM",
+      "BIRM-GCACATGG-100nM",
+      "BIRM-GCAGAGAG-100nM",
+      "BIRM-GGAAAGAC-100nM",
+      "BIRM-GGCCTTAG-100nM",
+      "BIRM-GGCCTTAG-50nM",
+      "BIRM-GTATGACA-100nM",
+      "BIRM-GTATGACA-50nM",
+      "BIRM-TGGTTTAC-100nM",
+      "BIRM-TGGTTTAC-50nM"
+    ],
+    "n_distinct_guides": 12,
+    "doses_nM": [
+      50.0,
+      100.0
+    ],
+    "cell_line": [
+      "HeLa"
+    ],
+    "n_gene_symbols": 19780,
+    "n_rows": 474720,
+    "median_probes_per_gene": 1.0,
+    "value_definition": "log10 of the siRNA channel over the mock channel, per gene, median over probes. Negative is repression. Same sign convention as the GSE5814 pipeline.",
+    "guides": [
+      {
+        "construct": "BIRM-GAGCAGAT-100nM",
+        "sense_5to3_dna": "GAGCAGATTTGAAGCAACT",
+        "guide_5to3_dna": "AGTTGCTTCAAATCTGCTC",
+        "seed_2_8_dna": "GTTGCTT",
+        "site_7mer_m8_dna": "AAGCAAC",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GAGGTTCT-100nM",
+        "sense_5to3_dna": "GAGGTTCTCTGGATCAAGT",
+        "guide_5to3_dna": "ACTTGATCCAGAGAACCTC",
+        "seed_2_8_dna": "CTTGATC",
+        "site_7mer_m8_dna": "GATCAAG",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GCAGAGAG-100nM",
+        "sense_5to3_dna": "GCAGAGAGAGCAGATTTGA",
+        "guide_5to3_dna": "TCAAATCTGCTCTCTCTGC",
+        "seed_2_8_dna": "CAAATCT",
+        "site_7mer_m8_dna": "AGATTTG",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GCACATGG-100nM",
+        "sense_5to3_dna": "GCACATGGATGGAGGTTCT",
+        "guide_5to3_dna": "AGAACCTCCATCCATGTGC",
+        "seed_2_8_dna": "GAACCTC",
+        "site_7mer_m8_dna": "GAGGTTC",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GAAAGAGC-100nM",
+        "sense_5to3_dna": "GAAAGAGCATCTACGGTGA",
+        "guide_5to3_dna": "TCACCGTAGATGCTCTTTC",
+        "seed_2_8_dna": "CACCGTA",
+        "site_7mer_m8_dna": "TACGGTG",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GAAAGGAT-100nM",
+        "sense_5to3_dna": "GAAAGGATTTGGCTACAAA",
+        "guide_5to3_dna": "TTTGTAGCCAAATCCTTTC",
+        "seed_2_8_dna": "TTGTAGC",
+        "site_7mer_m8_dna": "GCTACAA",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-ACAGCAAA-100nM",
+        "sense_5to3_dna": "ACAGCAAATTCCATCGTGT",
+        "guide_5to3_dna": "ACACGATGGAATTTGCTGT",
+        "seed_2_8_dna": "CACGATG",
+        "site_7mer_m8_dna": "CATCGTG",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GGAAAGAC-100nM",
+        "sense_5to3_dna": "GGAAAGACTGTTCCAAAAA",
+        "guide_5to3_dna": "TTTTTGGAACAGTCTTTCC",
+        "seed_2_8_dna": "TTTTGGA",
+        "site_7mer_m8_dna": "TCCAAAA",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-CAGGGCGG-100nM",
+        "sense_5to3_dna": "CAGGGCGGAGACTTCACCA",
+        "guide_5to3_dna": "TGGTGAAGTCTCCGCCCTG",
+        "seed_2_8_dna": "GGTGAAG",
+        "site_7mer_m8_dna": "CTTCACC",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-TGGTTTAC-100nM",
+        "sense_5to3_dna": "TGGTTTACATGTTCCAATA",
+        "guide_5to3_dna": "TATTGGAACATGTAAACCA",
+        "seed_2_8_dna": "ATTGGAA",
+        "site_7mer_m8_dna": "TTCCAAT",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-TGGTTTAC-50nM",
+        "sense_5to3_dna": "TGGTTTACATGTTCCAATA",
+        "guide_5to3_dna": "TATTGGAACATGTAAACCA",
+        "seed_2_8_dna": "ATTGGAA",
+        "site_7mer_m8_dna": "TTCCAAT",
+        "dose": "50"
+      },
+      {
+        "construct": "BIRM-GTATGACA-100nM",
+        "sense_5to3_dna": "GTATGACAACAGCCTCAAG",
+        "guide_5to3_dna": "CTTGAGGCTGTTGTCATAC",
+        "seed_2_8_dna": "TTGAGGC",
+        "site_7mer_m8_dna": "GCCTCAA",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GTATGACA-50nM",
+        "sense_5to3_dna": "GTATGACAACAGCCTCAAG",
+        "guide_5to3_dna": "CTTGAGGCTGTTGTCATAC",
+        "seed_2_8_dna": "TTGAGGC",
+        "site_7mer_m8_dna": "GCCTCAA",
+        "dose": "50"
+      },
+      {
+        "construct": "BIRM-GGCCTTAG-100nM",
+        "sense_5to3_dna": "GGCCTTAGCTACAGGAGAG",
+        "guide_5to3_dna": "CTCTCCTGTAGCTAAGGCC",
+        "seed_2_8_dna": "TCTCCTG",
+        "site_7mer_m8_dna": "CAGGAGA",
+        "dose": "100"
+      },
+      {
+        "construct": "BIRM-GGCCTTAG-50nM",
+        "sense_5to3_dna": "GGCCTTAGCTACAGGAGAG",
+        "guide_5to3_dna": "CTCTCCTGTAGCTAAGGCC",
+        "seed_2_8_dna": "TCTCCTG",
+        "site_7mer_m8_dna": "CAGGAGA",
+        "dose": "50"
+      }
+    ],
+    "per_construct": [
+      {
+        "construct": "BIRM-ACAGCAAA-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.001155972297471183
+      },
+      {
+        "construct": "BIRM-CAGGGCGG-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": -0.0012887820893397372
+      },
+      {
+        "construct": "BIRM-GAAAGAGC-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.000705883789324823
+      },
+      {
+        "construct": "BIRM-GAAAGGAT-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": -0.001002744313329626
+      },
+      {
+        "construct": "BIRM-GAGCAGAT-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.007160536847602377
+      },
+      {
+        "construct": "BIRM-GAGGTTCT-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.012381450278499746
+      },
+      {
+        "construct": "BIRM-GCACATGG-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.005984670149464816
+      },
+      {
+        "construct": "BIRM-GCAGAGAG-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.010178657379603008
+      },
+      {
+        "construct": "BIRM-GGAAAGAC-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.00035736899999999996,
+        "mean_log10ratio": 0.0021545803788526286
+      },
+      {
+        "construct": "BIRM-GGCCTTAG-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.0023633193951096733
+      },
+      {
+        "construct": "BIRM-GGCCTTAG-50nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.004941471787840702
+      },
+      {
+        "construct": "BIRM-GTATGACA-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.001146682720340575
+      },
+      {
+        "construct": "BIRM-GTATGACA-50nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.00019346148767320108
+      },
+      {
+        "construct": "BIRM-TGGTTTAC-100nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": -0.0016484614414193444
+      },
+      {
+        "construct": "BIRM-TGGTTTAC-50nM",
+        "n_genes": 19780,
+        "median_log10ratio": 0.0,
+        "mean_log10ratio": 0.0006587445248211582
+      }
+    ],
+    "overall_median_log10ratio": 0.0,
+    "supersedes": "the earlier FAILED record for D2. That record was correct that no GEO deposit exists and that the van Dongen archive carries no table; it was wrong that the data was unobtainable, because it was deposited in ArrayExpress instead.",
+    "paths": {
+      "response": "data/birmingham_response.parquet",
+      "sirna": "data/birmingham_sirna.parquet"
+    }
+  },
+  "seed": 0,
+  "elapsed_s": 9.1155,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T16:33:12Z"
+}

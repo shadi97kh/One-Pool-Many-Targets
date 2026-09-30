@@ -1,0 +1,3472 @@
+{
+  "name": "e9_dose_response",
+  "status": "OK",
+  "values": {
+    "PREDICTION_DIRECTION_CORRECTION": "The brief states that the equilibrium free pool grows SUBLINEARLY in dose and that a log-log slope below 1 is the signature of competition. The conservation equation says the opposite. M(f) is strictly concave in f because d2M/df2 = -sum_j 2 x_j K_j/(K_j+f)^3 < 0, so f is strictly convex in M, and with f(0)=0 this forces d log f / d log M >= 1 everywhere. Independent scoring predicts a slope of exactly 1; equilibrium predicts at least 1, and strictly more than 1 except in the deep weak-binding limit where the two models agree about everything else too. A slope of 1 is therefore not discriminating, a slope above 1 is evidence of competition, and a slope below 1 is predicted by neither model. What IS true in the brief's sense is a statement about the LEVEL of the pool, not about its exponent: M/(1 + beta + sum_j x_j/K_j) <= f(M) <= M/(1 + beta), the lower bound because f/(K_j+f) <= f/K_j and the upper because the occupancy terms are nonnegative. f is convex with f(0)=0, so it lies above its tangent at the origin, which is the lower bound; superlinear elasticity does not put f above M/(1+beta).",
+    "identifying_assumption": "the amplitude c, the log2 repression of a fully occupied transcript, is shared across doses within a construct because it is a property of the silencing machinery and cannot depend on how much siRNA was pipetted on. In the weak-binding limit only the product c * pool is identified, so the ABSOLUTE pool and therefore rho rest on curvature in the data, while the SLOPE survives the degeneracy intact. Wide rho intervals alongside a tight slope are the expected signature of that, not a fitting failure.",
+    "PROPORTIONAL_LOADING_ASSUMPTION": "We ASSUME that the intracellular guide-specific loaded pool M is proportional to the administered guide dose. Total transfected duplex is held constant across doses by making the specific siRNA up to 25 nM with non-targeting control siRNA, and to 10 nM with AllStars for HK2-4031, as the CEL file names record. That makes the assumption more plausible, but it does not establish proportional uptake, strand selection, Argonaute loading, displacement of endogenous microRNA, or recycling. The assumption is checked, not asserted: M_vs_dose_slope_summary reports the log-log slope of the conservation-inverted M against dose for each construct, which must be 1 if the assumption holds.",
+    "data_source": "GSE28786 (Caffrey et al. 2011, PMC3130022)",
+    "gencode_release": 50,
+    "constants_used": {
+      "kd_seed_match_molar": 2.6e-11,
+      "kd_seed_match_molecules_per_cell": 46.972697928,
+      "hela_cell_volume_litres": 3e-12,
+      "anchor_site_class": "7mer-m8",
+      "median_boltzmann_factor_anchor_class": 1.6317529820402435e-06,
+      "K_scale_constant_C": 28786647.51650598,
+      "mrna_molecules_per_cell": 80000.0,
+      "ago2_copies_per_cell_low": 15000.0,
+      "ago2_copies_per_cell_high": 170000.0
+    },
+    "K_source": "ViennaRNA duplex energy discounted by the pfl_fold opening cost on GENCODE v50 3'UTRs, anchored on the published seed-match Kd. K is never fitted to the expression response and is held fixed across doses, which is the whole point of the design.",
+    "n_bootstrap": 300,
+    "min_transcripts_required": 100,
+    "constructs": [
+      "HK2-3581",
+      "HK2-3581M",
+      "HK2-4031",
+      "STAT3-1676",
+      "STAT3-1676M"
+    ],
+    "n_constructs_fitted": 5,
+    "per_construct": [
+      {
+        "construct": "HK2-3581",
+        "status": "OK",
+        "cell_line": "Hep3B liver cancer cells",
+        "target_gene": "HK2",
+        "doses_nM": [
+          1.0,
+          10.0,
+          25.0
+        ],
+        "n_transcripts_retrieved_at_every_dose": 4633,
+        "n_transcripts_strong_site_classes": 2303,
+        "total_retrieved_abundance_molecules_per_cell": 19848.563058030297,
+        "background_beta_bracket_high": 14.475914636055771,
+        "free_fit": {
+          "pool_per_dose": [
+            1362014.0718594096,
+            14107.394396129037,
+            1853.779012148735
+          ],
+          "log10_pool_per_dose": [
+            6.1341815945806735,
+            4.149446807951465,
+            3.26805796091709
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.13325186694095498,
+          "rss": 2166.4211530811826,
+          "n_observations": 13899,
+          "sigma_pooled": 0.3948022929248032,
+          "residual_sd_per_dose": [
+            0.23169347775616775,
+            0.2867698136008684,
+            0.5760110321831216
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.9881724513451995,
+            0.8979068114215828,
+            0.7717781016419456
+          ],
+          "max_bound_fraction_per_dose": [
+            0.9999999999999877,
+            0.9999999999988164,
+            0.999999999990992
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.9926613425426289,
+            0.926829268292683,
+            0.7996978199870495
+          ],
+          "optimiser_converged": true,
+          "nll": -12917.315904239042
+        },
+        "loglog_slope_pool_vs_dose": {
+          "slope": -2.0375759216714378,
+          "intercept": 6.14589039557732,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 0.02997059237484696
+        },
+        "constrained_independent": {
+          "mode": "independent",
+          "log10_kappa": 1.4827169904279593,
+          "kappa_complexes_per_cell_per_nM": 30.389040674553566,
+          "pool_per_dose": [
+            30.389040674553566,
+            303.89040674553564,
+            759.7260168638392
+          ],
+          "M_per_dose": [
+            30.389040674553566,
+            303.89040674553564,
+            759.7260168638392
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.06380898035916793,
+          "rss": 2170.721780464648,
+          "n_observations": 13899,
+          "sigma_pooled": 0.3951939655569076,
+          "n_parameters": 6,
+          "aic": -25795.067838136605,
+          "nll": -12903.533919068303
+        },
+        "constrained_equilibrium": {
+          "mode": "equilibrium",
+          "log10_kappa": 2.757430460390082,
+          "kappa_complexes_per_cell_per_nM": 572.0453509198935,
+          "pool_per_dose": [
+            0.002542331291601179,
+            7.891508108883039,
+            882.7079973555847
+          ],
+          "M_per_dose": [
+            572.0453509198935,
+            5720.453509198935,
+            14301.133772997338
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.07970853963760835,
+          "rss": 2170.273367715517,
+          "n_observations": 13899,
+          "sigma_pooled": 0.39515314522544426,
+          "n_parameters": 6,
+          "aic": -25797.939294385502,
+          "nll": -12904.969647192751
+        },
+        "aic_free_unconstrained": -25818.631808478083,
+        "aic_independent": -25795.067838136605,
+        "aic_equilibrium": -25797.939294385502,
+        "aic_equilibrium_minus_independent": -2.8714562488967204,
+        "preferred_by_aic": "equilibrium",
+        "rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              1381593.04760661,
+              31526.265866811147,
+              16551.35099545795
+            ],
+            "rho_per_dose": [
+              17.269913095082625,
+              0.3940783233351393,
+              0.20689188744322437
+            ],
+            "M_over_dose": [
+              1381593.04760661,
+              3152.6265866811145,
+              662.054039818318
+            ],
+            "loglog_slope_M_vs_dose": -1.426230302996288,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              92.106203173774,
+              2.1017510577874097,
+              1.1034233996971967
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              8.127017927097706,
+              0.18544862274594792,
+              0.09736088820857618
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.475914636055771,
+            "M_per_dose_molecules_per_cell": [
+              21097992.484950155,
+              235743.70288234664,
+              43386.497729434835
+            ],
+            "rho_per_dose": [
+              263.72490606187694,
+              2.946796286029333,
+              0.5423312216179355
+            ],
+            "M_over_dose": [
+              21097992.484950155,
+              23574.370288234662,
+              1735.4599091773935
+            ],
+            "loglog_slope_M_vs_dose": -1.927790779491703,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              1406.5328323300103,
+              15.716246858823109,
+              2.8924331819623226
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              124.10583814676562,
+              1.3867276640138038,
+              0.25521469252608725
+            ]
+          }
+        ],
+        "class_fit": {
+          "pool_per_dose": [
+            18.741372060993957,
+            24.703332931480404,
+            39.51694199025337
+          ],
+          "log10_pool_per_dose": [
+            1.272801382533924,
+            1.3927555514823688,
+            1.5967833294342215
+          ],
+          "K_by_class_molecules_per_cell": {
+            "7mer-m8": 46.972697928,
+            "6mer": 62.776550775885866,
+            "7mer-A1": 25.90427482402089,
+            "8mer": 11.567712061295042
+          },
+          "log10_K_by_class": {
+            "7mer-m8": 1.6718455050755958,
+            "6mer": 1.7977974499407727,
+            "7mer-A1": 1.4133714389572694,
+            "8mer": 1.063247469806349
+          },
+          "anchor_class": "7mer-m8",
+          "K_anchor_molecules_per_cell": 46.972697928,
+          "class_order_by_increasing_K": [
+            "8mer",
+            "7mer-A1",
+            "7mer-m8",
+            "6mer"
+          ],
+          "class_ordering_is_8mer_strongest": true,
+          "expected_ordering_if_model_sane": [
+            "8mer",
+            "7mer-m8",
+            "7mer-A1",
+            "6mer"
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.33037870086786814,
+          "rss": 7019.693903217192,
+          "n_observations": 51951,
+          "sigma_pooled": 0.36758868249068766,
+          "mean_bound_fraction_per_dose": [
+            0.10485528108308365,
+            0.12075508049944085,
+            0.14857631495350707
+          ],
+          "n_transcripts_with_no_site": 12684,
+          "optimiser_converged": true,
+          "u_hat": [
+            1.7977974499407727,
+            1.4133714389572694,
+            1.063247469806349,
+            1.272801382533924,
+            1.3927555514823688,
+            1.5967833294342215
+          ],
+          "nll": -51992.076436965384
+        },
+        "class_fit_n_genes": 17317,
+        "class_fit_loglog_slope_pool_vs_dose": {
+          "slope": 0.2101310423641603,
+          "intercept": 1.2528195433005114,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 0.051146787680100975
+        },
+        "class_fit_rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              7484.476179620041,
+              8661.016616931161,
+              10746.916680232733
+            ],
+            "rho_per_dose": [
+              0.09355595224525051,
+              0.10826270771163952,
+              0.13433645850290915
+            ],
+            "M_over_dose": [
+              7484.476179620041,
+              866.1016616931162,
+              429.8766672093093
+            ],
+            "loglog_slope_M_vs_dose": 0.10292005787736384,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.49896507864133605,
+              0.5774011077954108,
+              0.7164611120155155
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.044026330468353185,
+              0.050947156570183304,
+              0.06321715694254548
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.472530976780309,
+            "M_per_dose_molecules_per_cell": [
+              7755.711267320141,
+              9018.53636801173,
+              11318.826847294304
+            ],
+            "rho_per_dose": [
+              0.09694639084150176,
+              0.11273170460014663,
+              0.1414853355911788
+            ],
+            "M_over_dose": [
+              7755.711267320141,
+              901.853636801173,
+              452.75307389177215
+            ],
+            "loglog_slope_M_vs_dose": 0.1073994770693043,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.5170474178213428,
+              0.6012357578674487,
+              0.7545884564862869
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.045621830984236125,
+              0.05305021392948076,
+              0.06658133439584885
+            ]
+          }
+        ],
+        "class_fit_model_comparison": {
+          "n_folds_completed": 5,
+          "fold_assignment": "random over genes, one draw, shared by all three",
+          "aic_free_unconstrained": -103962.15287393077,
+          "n_parameters_free": 11,
+          "aic_independent": -103779.76038908784,
+          "aic_equilibrium": -103708.60677528603,
+          "aic_equilibrium_minus_independent": 71.15361380181275,
+          "aic_free_minus_best_constrained": -182.39248484293057,
+          "preferred_by_aic": "free",
+          "constrained_independent": {
+            "mode": "independent",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 95.00574385373413,
+              "7mer-A1": 7.261562247276459,
+              "8mer": 4.290533095210999
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-A1",
+              "7mer-m8",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 5.426827177716979,
+            "log10_kappa": 0.7345459912940583,
+            "M_per_dose": [
+              5.426827177716979,
+              54.268271777169794,
+              135.67067944292447
+            ],
+            "pool_per_dose": [
+              5.426827177716979,
+              54.268271777169794,
+              135.67067944292447
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.24861047354948093,
+            "intercept_per_dose": [
+              0.04700640010323301,
+              0.07118815984474132,
+              0.058081409648229936
+            ],
+            "rss": 7044.924759299772,
+            "n_observations": 51951,
+            "sigma_pooled": 0.3682487011698209,
+            "n_parameters": 9,
+            "aic": -103779.76038908784,
+            "nll": -51898.88019454392,
+            "optimiser_converged": true,
+            "u_hat": [
+              1.9777498626422494,
+              0.8610300645544944,
+              0.6325112562697514,
+              0.7345459912940583
+            ]
+          },
+          "constrained_equilibrium": {
+            "mode": "equilibrium",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 31.392092061328142,
+              "7mer-A1": 13.815359477167902,
+              "8mer": 6.8848390005098725
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-A1",
+              "6mer",
+              "7mer-m8"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 14991.401151021219,
+            "log10_kappa": 4.175842225491312,
+            "M_per_dose": [
+              14991.401151021219,
+              149914.01151021218,
+              374785.02877553046
+            ],
+            "pool_per_dose": [
+              63.910608236124844,
+              130068.96497778504,
+              354937.75456037524
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.16963211081838728,
+            "intercept_per_dose": [
+              0.06469398897917918,
+              0.074602695482442,
+              0.05155352250731862
+            ],
+            "rss": 7054.580305693126,
+            "n_observations": 51951,
+            "sigma_pooled": 0.3685009696511662,
+            "n_parameters": 9,
+            "aic": -103708.60677528603,
+            "nll": -51863.30338764301,
+            "optimiser_converged": true,
+            "u_hat": [
+              1.4968202593258797,
+              1.1403621897895737,
+              0.8378937888910273,
+              4.175842225491312
+            ]
+          },
+          "heldout_gene_rmse_free": 0.3677136813882775,
+          "heldout_gene_n_free": 51951,
+          "heldout_gene_rmse_independent": 0.3683610512135489,
+          "heldout_gene_n_independent": 51951,
+          "heldout_gene_rmse_equilibrium": 0.3685491324065939,
+          "heldout_gene_n_equilibrium": 51951,
+          "preferred_by_heldout_gene_rmse": "free",
+          "heldout_rmse_equilibrium_minus_independent": 0.00018808119304503101
+        },
+        "class_fit_positive_control": [
+          {
+            "dose_nM": 1.0,
+            "n_no_site": 12684,
+            "median_log2fc_no_site": 0.06082371716666746,
+            "n_6mer": 1990,
+            "median_log2fc_6mer": -0.043067454000000005,
+            "delta_vs_no_site_6mer": -0.10389117116666746,
+            "mann_whitney_p_less_6mer": 3.8913719218998414e-94,
+            "n_7mer-A1": 1153,
+            "median_log2fc_7mer-A1": -0.06263817366666657,
+            "delta_vs_no_site_7mer-A1": -0.12346189083333403,
+            "mann_whitney_p_less_7mer-A1": 1.440985345271512e-87,
+            "n_7mer-m8": 1079,
+            "median_log2fc_7mer-m8": -0.0409073536666682,
+            "delta_vs_no_site_7mer-m8": -0.10173107083333566,
+            "mann_whitney_p_less_7mer-m8": 2.8376883913587258e-64,
+            "n_8mer": 411,
+            "median_log2fc_8mer": -0.05735351599999916,
+            "delta_vs_no_site_8mer": -0.11817723316666662,
+            "mann_whitney_p_less_8mer": 1.8392818304084716e-31
+          },
+          {
+            "dose_nM": 10.0,
+            "n_no_site": 12684,
+            "median_log2fc_no_site": 0.05701725183333339,
+            "n_6mer": 1990,
+            "median_log2fc_6mer": -0.028397827000000042,
+            "delta_vs_no_site_6mer": -0.08541507883333344,
+            "mann_whitney_p_less_6mer": 9.338178099722835e-64,
+            "n_7mer-A1": 1153,
+            "median_log2fc_7mer-A1": -0.08347233333333381,
+            "delta_vs_no_site_7mer-A1": -0.1404895851666672,
+            "mann_whitney_p_less_7mer-A1": 1.7147060335071731e-81,
+            "n_7mer-m8": 1079,
+            "median_log2fc_7mer-m8": -0.05492269599999933,
+            "delta_vs_no_site_7mer-m8": -0.11193994783333272,
+            "mann_whitney_p_less_7mer-m8": 9.348653665647162e-60,
+            "n_8mer": 411,
+            "median_log2fc_8mer": -0.09214667366666873,
+            "delta_vs_no_site_8mer": -0.14916392550000213,
+            "mann_whitney_p_less_8mer": 1.1647863347965564e-39
+          },
+          {
+            "dose_nM": 25.0,
+            "n_no_site": 12684,
+            "median_log2fc_no_site": 0.07345981016666725,
+            "n_6mer": 1990,
+            "median_log2fc_6mer": 0.020030425833332366,
+            "delta_vs_no_site_6mer": -0.053429384333334884,
+            "mann_whitney_p_less_6mer": 1.5263277906215485e-17,
+            "n_7mer-A1": 1153,
+            "median_log2fc_7mer-A1": -0.06502325599999992,
+            "delta_vs_no_site_7mer-A1": -0.13848306616666717,
+            "mann_whitney_p_less_7mer-A1": 2.8848179469658643e-48,
+            "n_7mer-m8": 1079,
+            "median_log2fc_7mer-m8": -0.037803111333333916,
+            "delta_vs_no_site_7mer-m8": -0.11126292150000117,
+            "mann_whitney_p_less_7mer-m8": 1.4548459079229682e-31,
+            "n_8mer": 411,
+            "median_log2fc_8mer": -0.10200930199999991,
+            "delta_vs_no_site_8mer": -0.17546911216666716,
+            "mann_whitney_p_less_8mer": 1.6695591415099488e-32
+          }
+        ],
+        "sensitivity": {
+          "strong_sites_only": {
+            "n_transcripts": 2303,
+            "site_classes": [
+              "7mer-m8",
+              "8mer",
+              "7mer-A1"
+            ],
+            "pool_per_dose": [
+              318038.4642660791,
+              1390.7724645647825,
+              314.8027228961755
+            ],
+            "slope": -2.1898176309268913,
+            "amplitude_c": 0.09129990676274354
+          },
+          "excluding_top_dose": {
+            "doses": [
+              1.0,
+              10.0
+            ],
+            "pool_per_dose": [
+              651466.0306526441,
+              712.7940884966501
+            ],
+            "slope": -2.9609276859967713
+          }
+        },
+        "predictor_diagnostics_per_dose": [
+          {
+            "dose_nM": 1.0,
+            "spearman_minus_log10K_vs_log2fc": -0.013521109361371185,
+            "p": 0.35750822562852796,
+            "median_log2fc": -0.049188565333333045,
+            "mean_log2fc": -0.06612996625030579
+          },
+          {
+            "dose_nM": 10.0,
+            "spearman_minus_log10K_vs_log2fc": -0.06067136010943972,
+            "p": 3.5906029299063655e-05,
+            "median_log2fc": -0.050602626999999956,
+            "mean_log2fc": -0.07916042065450754
+          },
+          {
+            "dose_nM": 25.0,
+            "spearman_minus_log10K_vs_log2fc": -0.07885012579077694,
+            "p": 7.703275716051047e-08,
+            "median_log2fc": -0.02383503366666684,
+            "mean_log2fc": -0.1318229123405281
+          }
+        ],
+        "bootstrap": {
+          "n_resamples": 300,
+          "n_successful": 300,
+          "slope_ci95": [
+            -4.106845718734523,
+            -1.1032295066981115
+          ],
+          "slope_median": -2.120240586439105,
+          "slope_sd": 0.776682619389462,
+          "M_vs_dose_slope_ci95": [
+            -3.0006813761349513,
+            -0.9532579032784368
+          ],
+          "aic_equilibrium_minus_independent_ci95": [
+            -15.044210673867473,
+            9.410968820738578
+          ],
+          "frac_resamples_preferring_equilibrium": 0.7033333333333334,
+          "frac_resamples_slope_above_1": 0.0,
+          "pool_ci95_per_dose": [
+            [
+              440707.53011537966,
+              100000000.0
+            ],
+            [
+              232.73133744560172,
+              836579.4506400689
+            ],
+            [
+              183.98493480588857,
+              44716.51060524447
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              5.7537922735167015,
+              1250.2554682254247
+            ],
+            [
+              0.13660802371549818,
+              10.692801149006938
+            ],
+            [
+              0.13110842221101843,
+              0.7888170216115226
+            ]
+          ],
+          "rho_ci95_per_dose_max_background": [
+            [
+              85.49934959123186,
+              19345.148763295136
+            ],
+            [
+              0.18025094930458288,
+              162.07096007080779
+            ],
+            [
+              0.16388954153177232,
+              8.880221900909042
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            24.764345928304063,
+            0.4868753963385425,
+            0.21175286560506557
+          ]
+        },
+        "class_fit_bootstrap": {
+          "n_successful": 300,
+          "slope_ci95": [
+            0.12769673781546753,
+            0.2723893016155588
+          ],
+          "slope_median": 0.21135525493121726,
+          "frac_resamples_slope_above_1": 0.0,
+          "M_vs_dose_slope_ci95": [
+            0.05754863924707973,
+            0.14098123205342034
+          ],
+          "pool_ci95_per_dose": [
+            [
+              11.230275559587842,
+              30.45149550879661
+            ],
+            [
+              14.954132480824017,
+              38.432191156596396
+            ],
+            [
+              24.190748626273503,
+              57.73740204733447
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              0.06994263105354216,
+              0.11917672446391764
+            ],
+            [
+              0.0829147622536947,
+              0.1322094243089307
+            ],
+            [
+              0.10589462577968248,
+              0.1554239234504929
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            0.09236838189776428,
+            0.10742729682368195,
+            0.13373445261418576
+          ]
+        }
+      },
+      {
+        "construct": "HK2-3581M",
+        "status": "OK",
+        "cell_line": "Hep3B liver cancer cells",
+        "target_gene": "HK2",
+        "doses_nM": [
+          1.0,
+          10.0,
+          25.0
+        ],
+        "n_transcripts_retrieved_at_every_dose": 4633,
+        "n_transcripts_strong_site_classes": 2303,
+        "total_retrieved_abundance_molecules_per_cell": 19848.563058030297,
+        "background_beta_bracket_high": 14.475914636055771,
+        "free_fit": {
+          "pool_per_dose": [
+            1e-08,
+            3.136550378709291e-06,
+            8823.648190059212
+          ],
+          "log10_pool_per_dose": [
+            -8.0,
+            -5.503547732510597,
+            3.945648183910617
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.08103740472520893,
+          "rss": 851.5524674432666,
+          "n_observations": 13899,
+          "sigma_pooled": 0.2475220700309454,
+          "residual_sd_per_dose": [
+            0.12220461788734223,
+            0.16080520070924106,
+            0.37821809192845957
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.00011783511760966757,
+            0.0027833112870567353,
+            0.8746789494537576
+          ],
+          "max_bound_fraction_per_dose": [
+            0.3745496813504942,
+            0.9947042789000687,
+            0.9999999999981075
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.0,
+            0.0019425857975393912,
+            0.9043816101877833
+          ],
+          "optimiser_converged": true,
+          "nll": -19406.55559905487
+        },
+        "loglog_slope_pool_vs_dose": {
+          "slope": 7.37519118320302,
+          "intercept": -9.081055186135917,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 2.76713767085612
+        },
+        "constrained_independent": {
+          "mode": "independent",
+          "log10_kappa": 2.2099851534233204,
+          "kappa_complexes_per_cell_per_nM": 162.1754655907534,
+          "pool_per_dose": [
+            162.1754655907534,
+            1621.754655907534,
+            4054.386639768835
+          ],
+          "M_per_dose": [
+            162.1754655907534,
+            1621.754655907534,
+            4054.386639768835
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.02109605141618845,
+          "rss": 852.6194251258539,
+          "n_observations": 13899,
+          "sigma_pooled": 0.2476770886064775,
+          "n_parameters": 6,
+          "aic": -38783.70726505275,
+          "nll": -19397.853632526374
+        },
+        "constrained_equilibrium": {
+          "mode": "equilibrium",
+          "log10_kappa": 2.8129452605757024,
+          "kappa_complexes_per_cell_per_nM": 650.047751742054,
+          "pool_per_dose": [
+            0.0035565252311621845,
+            14.137176413921281,
+            1698.540378749603
+          ],
+          "M_per_dose": [
+            650.047751742054,
+            6500.47751742054,
+            16251.193793551349
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.023662367151615078,
+          "rss": 852.5743939363565,
+          "n_observations": 13899,
+          "sigma_pooled": 0.24767054797366364,
+          "n_parameters": 6,
+          "aic": -38784.44136166508,
+          "nll": -19398.22068083254
+        },
+        "aic_free_unconstrained": -38797.11119810974,
+        "aic_independent": -38783.70726505275,
+        "aic_equilibrium": -38784.44136166508,
+        "aic_equilibrium_minus_independent": -0.7340966123301769,
+        "preferred_by_aic": "equilibrium",
+        "rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              2.3889315382599046,
+              38.130427180557945,
+              25730.927982398556
+            ],
+            "rho_per_dose": [
+              2.9861644228248805e-05,
+              0.0004766303397569743,
+              0.32163659977998194
+            ],
+            "M_over_dose": [
+              2.3889315382599046,
+              3.8130427180557946,
+              1029.2371192959422
+            ],
+            "loglog_slope_M_vs_dose": 2.5592040644531915,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.0001592621025506603,
+              0.002542028478703863,
+              1.7153951988265703
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              1.405253846035238e-05,
+              0.00022429663047387026,
+              0.1513583998964621
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.475914636055771,
+            "M_per_dose_molecules_per_cell": [
+              2.388931683019051,
+              38.130472584993484,
+              153461.3059602837
+            ],
+            "rho_per_dose": [
+              2.9861646037738138e-05,
+              0.0004766309073124185,
+              1.9182663245035463
+            ],
+            "M_over_dose": [
+              2.388931683019051,
+              3.8130472584993482,
+              6138.452238411348
+            ],
+            "loglog_slope_M_vs_dose": 3.006671314781706,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.00015926211220127008,
+              0.002542031505666232,
+              10.23075373068558
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              1.405253931187677e-05,
+              0.0002242968975587852,
+              0.902713564472257
+            ]
+          }
+        ],
+        "class_fit": {
+          "pool_per_dose": [
+            0.43702459487775863,
+            1.1757895663766589,
+            24.51321827675239
+          ],
+          "log10_pool_per_dose": [
+            -0.35949412110938717,
+            0.07032960206402752,
+            1.3894003323896507
+          ],
+          "K_by_class_molecules_per_cell": {
+            "7mer-m8": 46.972697928,
+            "6mer": 48.72205803022983,
+            "7mer-A1": 15.685260945989835,
+            "8mer": 4.004857973146086
+          },
+          "log10_K_by_class": {
+            "7mer-m8": 1.6718455050755958,
+            "6mer": 1.6877256247047692,
+            "7mer-A1": 1.1954917481826817,
+            "8mer": 0.6025871190288334
+          },
+          "anchor_class": "7mer-m8",
+          "K_anchor_molecules_per_cell": 46.972697928,
+          "class_order_by_increasing_K": [
+            "8mer",
+            "7mer-A1",
+            "7mer-m8",
+            "6mer"
+          ],
+          "class_ordering_is_8mer_strongest": true,
+          "expected_ordering_if_model_sane": [
+            "8mer",
+            "7mer-m8",
+            "7mer-A1",
+            "6mer"
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.22595805490439302,
+          "rss": 2837.2695934022718,
+          "n_observations": 51951,
+          "sigma_pooled": 0.23369711232529422,
+          "mean_bound_fraction_per_dose": [
+            0.008211538268683611,
+            0.019848318600702117,
+            0.1386444614847108
+          ],
+          "n_transcripts_with_no_site": 12684,
+          "optimiser_converged": true,
+          "u_hat": [
+            1.6877256247047692,
+            1.1954917481826817,
+            0.6025871190288334,
+            -0.35949412110938717,
+            0.07032960206402757,
+            1.3894003323896507
+          ],
+          "nll": -75522.69573965776
+        },
+        "class_fit_n_genes": 17317,
+        "class_fit_loglog_slope_pool_vs_dose": {
+          "slope": 1.0922034440709896,
+          "intercept": -0.5062675076009754,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 0.3756905031756024
+        },
+        "class_fit_rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              557.1708277841271,
+              1356.5203808694184,
+              9977.495738479189
+            ],
+            "rho_per_dose": [
+              0.00696463534730159,
+              0.01695650476086773,
+              0.12471869673098986
+            ],
+            "M_over_dose": [
+              557.1708277841271,
+              135.65203808694184,
+              399.09982953916756
+            ],
+            "loglog_slope_M_vs_dose": 0.7977131820687425,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.037144721852275145,
+              0.09043469205796123,
+              0.6651663825652793
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.003277475457553689,
+              0.00797953165217305,
+              0.058691151402818754
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.472530976780309,
+            "M_per_dose_molecules_per_cell": [
+              563.4956797711103,
+              1373.5370317909799,
+              10332.264049330066
+            ],
+            "rho_per_dose": [
+              0.007043695997138878,
+              0.017169212897387248,
+              0.12915330061662583
+            ],
+            "M_over_dose": [
+              563.4956797711103,
+              137.35370317909798,
+              413.2905619732026
+            ],
+            "loglog_slope_M_vs_dose": 0.8037386852356916,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.037566378651407356,
+              0.09156913545273199,
+              0.688817603288671
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.0033146804692418255,
+              0.00807962959877047,
+              0.06077802381958863
+            ]
+          }
+        ],
+        "class_fit_model_comparison": {
+          "n_folds_completed": 5,
+          "fold_assignment": "random over genes, one draw, shared by all three",
+          "aic_free_unconstrained": -151023.39147931553,
+          "n_parameters_free": 11,
+          "aic_independent": -150895.5532560146,
+          "aic_equilibrium": -150962.7995769724,
+          "aic_equilibrium_minus_independent": -67.24632095781271,
+          "aic_free_minus_best_constrained": -60.59190234311973,
+          "preferred_by_aic": "free",
+          "constrained_independent": {
+            "mode": "independent",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 48.287152957468955,
+              "7mer-A1": 24.181229241182525,
+              "8mer": 9.582459170676469
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-A1",
+              "7mer-m8",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 0.4860962927429798,
+            "log10_kappa": -0.3132776910986865,
+            "M_per_dose": [
+              0.4860962927429798,
+              4.860962927429798,
+              12.152407318574495
+            ],
+            "pool_per_dose": [
+              0.4860962927429798,
+              4.860962927429798,
+              12.152407318574495
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.2761189924688985,
+            "intercept_per_dose": [
+              0.009955676378724052,
+              0.02512403834764528,
+              0.06134758625985738
+            ],
+            "rss": 2844.4789949259957,
+            "n_observations": 51951,
+            "sigma_pooled": 0.2339938319980662,
+            "n_parameters": 9,
+            "aic": -150895.5532560146,
+            "nll": -75456.7766280073,
+            "optimiser_converged": true,
+            "u_hat": [
+              1.6838315998648037,
+              1.3834783742374577,
+              0.9814769774711134,
+              -0.3132776910986865
+            ]
+          },
+          "constrained_equilibrium": {
+            "mode": "equilibrium",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 48.0550298548239,
+              "7mer-A1": 18.808620667651947,
+              "8mer": 6.547022645839033
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-A1",
+              "7mer-m8",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 372.62996281134093,
+            "log10_kappa": 2.5712777731593786,
+            "M_per_dose": [
+              372.62996281134093,
+              3726.299628113409,
+              9315.749070283524
+            ],
+            "pool_per_dose": [
+              0.339007682093161,
+              4.819238338677167,
+              22.288772822152374
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.21657750169664539,
+            "intercept_per_dose": [
+              0.009333137925716228,
+              0.02325236918687392,
+              0.06462963778461206
+            ],
+            "rss": 2840.799431448746,
+            "n_observations": 51951,
+            "sigma_pooled": 0.23384243805534355,
+            "n_parameters": 9,
+            "aic": -150962.7995769724,
+            "nll": -75490.3997884862,
+            "optimiser_converged": true,
+            "u_hat": [
+              1.6817388513983147,
+              1.2743569476826417,
+              0.8160438431284913,
+              2.5712777731593786
+            ]
+          },
+          "heldout_gene_rmse_free": 0.2337785589597959,
+          "heldout_gene_n_free": 51951,
+          "heldout_gene_rmse_independent": 0.23406504185791022,
+          "heldout_gene_n_independent": 51951,
+          "heldout_gene_rmse_equilibrium": 0.23392030866755242,
+          "heldout_gene_n_equilibrium": 51951,
+          "preferred_by_heldout_gene_rmse": "free",
+          "heldout_rmse_equilibrium_minus_independent": -0.00014473319035779308
+        },
+        "class_fit_positive_control": [
+          {
+            "dose_nM": 1.0,
+            "n_no_site": 12684,
+            "median_log2fc_no_site": -0.0025016609999986006,
+            "n_6mer": 1990,
+            "median_log2fc_6mer": -0.01640478333333295,
+            "delta_vs_no_site_6mer": -0.01390312233333435,
+            "mann_whitney_p_less_6mer": 2.878135196825848e-06,
+            "n_7mer-A1": 1153,
+            "median_log2fc_7mer-A1": -0.02273242000000053,
+            "delta_vs_no_site_7mer-A1": -0.02023075900000193,
+            "mann_whitney_p_less_7mer-A1": 4.6048400976313543e-07,
+            "n_7mer-m8": 1079,
+            "median_log2fc_7mer-m8": -0.01008533333333439,
+            "delta_vs_no_site_7mer-m8": -0.007583672333335789,
+            "mann_whitney_p_less_7mer-m8": 0.012453721869337103,
+            "n_8mer": 411,
+            "median_log2fc_8mer": -0.022325276666666838,
+            "delta_vs_no_site_8mer": -0.019823615666668237,
+            "mann_whitney_p_less_8mer": 0.004022451569739675
+          },
+          {
+            "dose_nM": 10.0,
+            "n_no_site": 12684,
+            "median_log2fc_no_site": 0.009504234,
+            "n_6mer": 1990,
+            "median_log2fc_6mer": -0.009488421499999511,
+            "delta_vs_no_site_6mer": -0.01899265549999951,
+            "mann_whitney_p_less_6mer": 1.0240225092750067e-06,
+            "n_7mer-A1": 1153,
+            "median_log2fc_7mer-A1": -0.0146259183333326,
+            "delta_vs_no_site_7mer-A1": -0.0241301523333326,
+            "mann_whitney_p_less_7mer-A1": 8.759708730631786e-08,
+            "n_7mer-m8": 1079,
+            "median_log2fc_7mer-m8": -0.0075689800000002805,
+            "delta_vs_no_site_7mer-m8": -0.01707321400000028,
+            "mann_whitney_p_less_7mer-m8": 9.196796481213242e-05,
+            "n_8mer": 411,
+            "median_log2fc_8mer": -0.024521389999998533,
+            "delta_vs_no_site_8mer": -0.03402562399999853,
+            "mann_whitney_p_less_8mer": 1.223579611855424e-08
+          },
+          {
+            "dose_nM": 25.0,
+            "n_no_site": 12684,
+            "median_log2fc_no_site": 0.11120118833333281,
+            "n_6mer": 1990,
+            "median_log2fc_6mer": 0.030597857000000284,
+            "delta_vs_no_site_6mer": -0.08060333133333253,
+            "mann_whitney_p_less_6mer": 2.585146035245444e-26,
+            "n_7mer-A1": 1153,
+            "median_log2fc_7mer-A1": -0.015518546999999216,
+            "delta_vs_no_site_7mer-A1": -0.12671973533333203,
+            "mann_whitney_p_less_7mer-A1": 3.778246299121674e-41,
+            "n_7mer-m8": 1079,
+            "median_log2fc_7mer-m8": 0.03297090833333316,
+            "delta_vs_no_site_7mer-m8": -0.07823027999999965,
+            "mann_whitney_p_less_7mer-m8": 1.3025179765403472e-20,
+            "n_8mer": 411,
+            "median_log2fc_8mer": -0.058427665666666684,
+            "delta_vs_no_site_8mer": -0.1696288539999995,
+            "mann_whitney_p_less_8mer": 7.987594683059039e-23
+          }
+        ],
+        "sensitivity": {
+          "strong_sites_only": {
+            "n_transcripts": 2303,
+            "site_classes": [
+              "7mer-m8",
+              "8mer",
+              "7mer-A1"
+            ],
+            "pool_per_dose": [
+              19194.528522552388,
+              0.09780444010962959,
+              6637.853904873605
+            ],
+            "slope": -1.2898457159867387,
+            "amplitude_c": 0.041736234453165794
+          },
+          "excluding_top_dose": {
+            "doses": [
+              1.0,
+              10.0
+            ],
+            "pool_per_dose": [
+              6969.24875582592,
+              778.4422033767701
+            ],
+            "slope": -0.9519595929729743
+          }
+        },
+        "predictor_diagnostics_per_dose": [
+          {
+            "dose_nM": 1.0,
+            "spearman_minus_log10K_vs_log2fc": -0.01922126471886661,
+            "p": 0.19084441918362136,
+            "median_log2fc": -0.01730557133333477,
+            "mean_log2fc": -0.0031371042867112623
+          },
+          {
+            "dose_nM": 10.0,
+            "spearman_minus_log10K_vs_log2fc": -0.025052986889380745,
+            "p": 0.08818180266631992,
+            "median_log2fc": -0.012215314000000532,
+            "mean_log2fc": -0.005706864417799838
+          },
+          {
+            "dose_nM": 25.0,
+            "spearman_minus_log10K_vs_log2fc": -0.03499741367705887,
+            "p": 0.017208335483711062,
+            "median_log2fc": 0.015732408666667475,
+            "mean_log2fc": -0.04942353661011583
+          }
+        ],
+        "bootstrap": {
+          "n_resamples": 300,
+          "n_successful": 300,
+          "slope_ci95": [
+            5.712358617024579,
+            7.872613259096178
+          ],
+          "slope_median": 7.0529987916622305,
+          "slope_sd": 0.627422620006426,
+          "M_vs_dose_slope_ci95": [
+            1.810229772567726,
+            3.4305636051778357
+          ],
+          "aic_equilibrium_minus_independent_ci95": [
+            -10.661597337165222,
+            5.160221842790995
+          ],
+          "frac_resamples_preferring_equilibrium": 0.55,
+          "frac_resamples_slope_above_1": 1.0,
+          "pool_ci95_per_dose": [
+            [
+              1e-08,
+              1.307892991714921e-06
+            ],
+            [
+              1e-08,
+              0.004265220382864401
+            ],
+            [
+              315.29248652687113,
+              108738.88304170626
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              1.9596630472564735e-06,
+              0.00031230050395426813
+            ],
+            [
+              2.8701582022824235e-05,
+              0.009134014191731486
+            ],
+            [
+              0.14776236684795946,
+              1.5925139534636612
+            ]
+          ],
+          "rho_ci95_per_dose_max_background": [
+            [
+              1.959664856745803e-06,
+              0.00031230061521341217
+            ],
+            [
+              2.8701583832313568e-05,
+              0.009134785978808565
+            ],
+            [
+              0.20354053431798796,
+              21.267603822747937
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            5.498324738051806e-05,
+            0.00046225868121014705,
+            0.32937234146894123
+          ]
+        },
+        "class_fit_bootstrap": {
+          "n_successful": 300,
+          "slope_ci95": [
+            0.8703855732107202,
+            1.406434323845668
+          ],
+          "slope_median": 1.0840212031800127,
+          "frac_resamples_slope_above_1": 0.7833333333333333,
+          "M_vs_dose_slope_ci95": [
+            0.6560871180954891,
+            1.0110749177618108
+          ],
+          "pool_ci95_per_dose": [
+            [
+              0.13694060611404613,
+              0.8986915830044313
+            ],
+            [
+              0.4818717610447945,
+              2.16698920358363
+            ],
+            [
+              11.391304653414828,
+              48.4790374708787
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              0.003625573227505375,
+              0.01026656081481128
+            ],
+            [
+              0.011970664424736877,
+              0.021937158118429757
+            ],
+            [
+              0.08997684573075605,
+              0.15484642934692838
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            0.006777905419328131,
+            0.016294925056663984,
+            0.12321064573962023
+          ]
+        }
+      },
+      {
+        "construct": "HK2-4031",
+        "status": "OK",
+        "cell_line": "Hep3B liver cancer cells",
+        "target_gene": "HK2",
+        "doses_nM": [
+          1.0,
+          10.0
+        ],
+        "n_transcripts_retrieved_at_every_dose": 5625,
+        "n_transcripts_strong_site_classes": 3335,
+        "total_retrieved_abundance_molecules_per_cell": 24228.228635662497,
+        "background_beta_bracket_high": 13.421913796517398,
+        "free_fit": {
+          "pool_per_dose": [
+            0.04342524986326507,
+            1274.5817644820884
+          ],
+          "log10_pool_per_dose": [
+            -1.3622576739994576,
+            3.1053677007110396
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.009678560180496358,
+          "rss": 283.77935353217356,
+          "n_observations": 11250,
+          "sigma_pooled": 0.1588232710438936,
+          "residual_sd_per_dose": [
+            0.10622192417401123,
+            0.19792810840966463
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.06219385066527031,
+            0.5998599211666877
+          ],
+          "max_bound_fraction_per_dose": [
+            0.99999978840889,
+            0.9999999999927911
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.05262222222222222,
+            0.6053333333333333
+          ],
+          "optimiser_converged": true,
+          "nll": -20699.585975339167
+        },
+        "loglog_slope_pool_vs_dose": {
+          "slope": 4.467625374710498,
+          "intercept": -1.3622576739994579,
+          "n_points": 2,
+          "residual_df": 0,
+          "residual_rms_log10": 6.473657049138938e-16
+        },
+        "constrained_independent": {
+          "mode": "independent",
+          "log10_kappa": 1.2632624893977473,
+          "kappa_complexes_per_cell_per_nM": 18.334222156004657,
+          "pool_per_dose": [
+            18.334222156004657,
+            183.34222156004657
+          ],
+          "M_per_dose": [
+            18.334222156004657,
+            183.34222156004657
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.004377947882530052,
+          "rss": 283.8529958791722,
+          "n_observations": 11250,
+          "sigma_pooled": 0.15884387747559545,
+          "n_parameters": 5,
+          "aic": -41386.252890800075,
+          "nll": -20698.126445400037
+        },
+        "constrained_equilibrium": {
+          "mode": "equilibrium",
+          "log10_kappa": 3.189514593120865,
+          "kappa_complexes_per_cell_per_nM": 1547.0864881239631,
+          "pool_per_dose": [
+            0.058773413451020065,
+            1232.1269075244995
+          ],
+          "M_per_dose": [
+            1547.0864881239631,
+            15470.864881239631
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.009583297372803591,
+          "rss": 283.77951890838176,
+          "n_observations": 11250,
+          "sigma_pooled": 0.15882331732207802,
+          "n_parameters": 5,
+          "aic": -41389.16539459249,
+          "nll": -20699.582697296246
+        },
+        "aic_free_unconstrained": -41387.171950678334,
+        "aic_independent": -41386.252890800075,
+        "aic_equilibrium": -41389.16539459249,
+        "aic_equilibrium_minus_independent": -2.912503792416828,
+        "preferred_by_aic": "equilibrium",
+        "rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              1403.7793680419002,
+              15576.988798750768
+            ],
+            "rho_per_dose": [
+              0.017547242100523754,
+              0.1947123599843846
+            ],
+            "M_over_dose": [
+              1403.7793680419002,
+              1557.6988798750767
+            ],
+            "loglog_slope_M_vs_dose": 1.045184652498632,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.09358529120279334,
+              1.0384659199167179
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.008257525694364118,
+              0.09162934587500451
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 13.421913796517398,
+            "M_per_dose_molecules_per_cell": [
+              1404.362218002157,
+              32684.315368242398
+            ],
+            "rho_per_dose": [
+              0.017554527725026962,
+              0.40855394210303
+            ],
+            "M_over_dose": [
+              1404.362218002157,
+              3268.4315368242396
+            ],
+            "loglog_slope_M_vs_dose": 1.366860255328724,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.09362414786681048,
+              2.1789543578828265
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.0082609542235421,
+              0.19226067863672
+            ]
+          }
+        ],
+        "class_fit": {
+          "pool_per_dose": [
+            1e-06,
+            98.11754308416498
+          ],
+          "log10_pool_per_dose": [
+            -6.0,
+            1.9917466647040487
+          ],
+          "K_by_class_molecules_per_cell": {
+            "7mer-m8": 46.972697928,
+            "6mer": 363.0355401040396,
+            "7mer-A1": 206.93953362548413,
+            "8mer": 0.019565428030965077
+          },
+          "log10_K_by_class": {
+            "7mer-m8": 1.6718455050755958,
+            "6mer": 2.5599491432607184,
+            "7mer-A1": 2.3158434659933897,
+            "8mer": -1.7085106466412547
+          },
+          "anchor_class": "7mer-m8",
+          "K_anchor_molecules_per_cell": 46.972697928,
+          "class_order_by_increasing_K": [
+            "8mer",
+            "7mer-m8",
+            "7mer-A1",
+            "6mer"
+          ],
+          "class_ordering_is_8mer_strongest": true,
+          "expected_ordering_if_model_sane": [
+            "8mer",
+            "7mer-m8",
+            "7mer-A1",
+            "6mer"
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.01863275775708437,
+          "rss": 873.7179230220335,
+          "n_observations": 34634,
+          "sigma_pooled": 0.15883064372208408,
+          "mean_bound_fraction_per_dose": [
+            2.5309733540081117e-06,
+            0.17604436885854563
+          ],
+          "n_transcripts_with_no_site": 11692,
+          "optimiser_converged": true,
+          "u_hat": [
+            2.5599491432607184,
+            2.3158434659933897,
+            -1.7085106466412547,
+            -6.000012379081448,
+            1.9917466647040487
+          ],
+          "nll": -63723.67769768298
+        },
+        "class_fit_n_genes": 17317,
+        "class_fit_loglog_slope_pool_vs_dose": {
+          "slope": 7.991746664704048,
+          "intercept": -5.999999999999999,
+          "n_points": 2,
+          "residual_df": 0,
+          "residual_rms_log10": 7.021666937153402e-16
+        },
+        "class_fit_rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              0.21734681021382404,
+              13365.83725518274
+            ],
+            "rho_per_dose": [
+              2.7168351276728004e-06,
+              0.16707296568978425
+            ],
+            "M_over_dose": [
+              0.21734681021382404,
+              1336.583725518274
+            ],
+            "loglog_slope_M_vs_dose": 4.788842897913792,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              1.448978734758827e-05,
+              0.8910558170121826
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              1.278510648316612e-06,
+              0.07862257208931023
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 13.418530137241934,
+            "M_per_dose_molecules_per_cell": [
+              0.2173602287439613,
+              14682.430464049741
+            ],
+            "rho_per_dose": [
+              2.7170028592995162e-06,
+              0.18353038080062176
+            ],
+            "M_over_dose": [
+              0.2173602287439613,
+              1468.2430464049742
+            ],
+            "loglog_slope_M_vs_dose": 4.829617870252682,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              1.4490681916264087e-05,
+              0.978828697603316
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              1.2785895808468312e-06,
+              0.08636723802382201
+            ]
+          }
+        ],
+        "class_fit_model_comparison": {
+          "n_folds_completed": 5,
+          "fold_assignment": "random over genes, one draw, shared by all three",
+          "aic_free_unconstrained": -127429.35539536596,
+          "n_parameters_free": 9,
+          "aic_independent": -127425.89595059589,
+          "aic_equilibrium": -127427.7785291199,
+          "aic_equilibrium_minus_independent": -1.8825785240042023,
+          "aic_free_minus_best_constrained": -1.5768662460613996,
+          "preferred_by_aic": "free",
+          "constrained_independent": {
+            "mode": "independent",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 1000000000000.0,
+              "7mer-A1": 83.21911299431446,
+              "8mer": 20.539746945046023
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-m8",
+              "7mer-A1",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 0.4151776001775086,
+            "log10_kappa": -0.38176608575142545,
+            "M_per_dose": [
+              0.4151776001775086,
+              4.151776001775086
+            ],
+            "pool_per_dose": [
+              0.4151776001775086,
+              4.151776001775086
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.08482414598598792,
+            "intercept_per_dose": [
+              0.0017983399431290396,
+              0.011483305596028774
+            ],
+            "rss": 873.8556602374819,
+            "n_observations": 34634,
+            "sigma_pooled": 0.15884316265290283,
+            "n_parameters": 8,
+            "aic": -127425.89595059589,
+            "nll": -63720.947975297946,
+            "optimiser_converged": true,
+            "u_hat": [
+              12.00781327850078,
+              1.920223082476784,
+              1.312595088674739,
+              -0.38176608575142545
+            ]
+          },
+          "constrained_equilibrium": {
+            "mode": "equilibrium",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 368.32822137352457,
+              "7mer-A1": 144.9045754282642,
+              "8mer": 7.657747228445273
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-m8",
+              "7mer-A1",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 1104.257651674977,
+            "log10_kappa": 3.043070417274967,
+            "M_per_dose": [
+              1104.257651674977,
+              11042.57651674977
+            ],
+            "pool_per_dose": [
+              1.4279696632560879,
+              56.70541902386674
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.019490937317802347,
+            "intercept_per_dose": [
+              0.0018254923572729722,
+              0.012219986573296548
+            ],
+            "rss": 873.8081619066807,
+            "n_observations": 34634,
+            "sigma_pooled": 0.15883884564269432,
+            "n_parameters": 8,
+            "aic": -127427.7785291199,
+            "nll": -63721.88926455995,
+            "optimiser_converged": true,
+            "u_hat": [
+              2.566234995849858,
+              2.1610820987346364,
+              0.8841010267931813,
+              3.043070417274967
+            ]
+          },
+          "heldout_gene_rmse_free": 0.15885645085307148,
+          "heldout_gene_n_free": 34634,
+          "heldout_gene_rmse_independent": 0.1588734550500629,
+          "heldout_gene_n_independent": 34634,
+          "heldout_gene_rmse_equilibrium": 0.15887127654214273,
+          "heldout_gene_n_equilibrium": 34634,
+          "preferred_by_heldout_gene_rmse": "free",
+          "heldout_rmse_equilibrium_minus_independent": -2.1785079201697144e-06
+        },
+        "class_fit_positive_control": [
+          {
+            "dose_nM": 1.0,
+            "n_no_site": 11692,
+            "median_log2fc_no_site": 0.0008171302500001865,
+            "n_6mer": 1842,
+            "median_log2fc_6mer": 0.0007840617500001201,
+            "delta_vs_no_site_6mer": -3.3068500000066336e-05,
+            "mann_whitney_p_less_6mer": 0.6079294439680893,
+            "n_7mer-A1": 989,
+            "median_log2fc_7mer-A1": 0.0012853234999994356,
+            "delta_vs_no_site_7mer-A1": 0.00046819324999924916,
+            "mann_whitney_p_less_7mer-A1": 0.3715885930834324,
+            "n_7mer-m8": 1992,
+            "median_log2fc_7mer-m8": 0.007158049249998966,
+            "delta_vs_no_site_7mer-m8": 0.006340918999998779,
+            "mann_whitney_p_less_7mer-m8": 0.999781745925409,
+            "n_8mer": 802,
+            "median_log2fc_8mer": 0.009677396999999921,
+            "delta_vs_no_site_8mer": 0.008860266749999735,
+            "mann_whitney_p_less_8mer": 0.995050840097744
+          },
+          {
+            "dose_nM": 10.0,
+            "n_no_site": 11692,
+            "median_log2fc_no_site": 0.015947320499999584,
+            "n_6mer": 1842,
+            "median_log2fc_6mer": 0.014805095749998998,
+            "delta_vs_no_site_6mer": -0.0011422247500005867,
+            "mann_whitney_p_less_6mer": 0.11323805857596991,
+            "n_7mer-A1": 989,
+            "median_log2fc_7mer-A1": 0.00856633499999937,
+            "delta_vs_no_site_7mer-A1": -0.0073809855000002145,
+            "mann_whitney_p_less_7mer-A1": 0.23494490253601963,
+            "n_7mer-m8": 1992,
+            "median_log2fc_7mer-m8": 0.0037176940000001046,
+            "delta_vs_no_site_7mer-m8": -0.01222962649999948,
+            "mann_whitney_p_less_7mer-m8": 0.0010073995723993833,
+            "n_8mer": 802,
+            "median_log2fc_8mer": -0.0014507995000010432,
+            "delta_vs_no_site_8mer": -0.017398120000000628,
+            "mann_whitney_p_less_8mer": 0.0002905126710483712
+          }
+        ],
+        "sensitivity": {
+          "strong_sites_only": {
+            "n_transcripts": 3335,
+            "site_classes": [
+              "7mer-m8",
+              "8mer",
+              "7mer-A1"
+            ],
+            "pool_per_dose": [
+              100000000.0,
+              273205.2749387925
+            ],
+            "slope": -2.563510919724422,
+            "amplitude_c": -0.02868616161416865
+          }
+        },
+        "predictor_diagnostics_per_dose": [
+          {
+            "dose_nM": 1.0,
+            "spearman_minus_log10K_vs_log2fc": 0.010102713660103395,
+            "p": 0.44871775186509955,
+            "median_log2fc": 0.0044785145000005855,
+            "mean_log2fc": 0.004914605945066677
+          },
+          {
+            "dose_nM": 10.0,
+            "spearman_minus_log10K_vs_log2fc": -0.015306256751309543,
+            "p": 0.2510588351560192,
+            "median_log2fc": 0.0073334789999996985,
+            "mean_log2fc": 0.0022965770043555647
+          }
+        ],
+        "bootstrap": {
+          "n_resamples": 300,
+          "n_successful": 300,
+          "slope_ci95": [
+            1.9735973129410713,
+            11.138609484128708
+          ],
+          "slope_median": 4.5755521171203055,
+          "slope_sd": 2.077849477514159,
+          "M_vs_dose_slope_ci95": [
+            0.43751766848515666,
+            4.007901051544073
+          ],
+          "aic_equilibrium_minus_independent_ci95": [
+            -8.430763380395728,
+            2.0007662662223
+          ],
+          "frac_resamples_preferring_equilibrium": 0.7633333333333333,
+          "frac_resamples_slope_above_1": 0.98,
+          "pool_ci95_per_dose": [
+            [
+              1e-08,
+              1.1318009087371876
+            ],
+            [
+              12.15274906894001,
+              6458892.554852731
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              4.37713152361982e-05,
+              0.04649048585804026
+            ],
+            [
+              0.0797769629182212,
+              81.03342716327376
+            ]
+          ],
+          "rho_ci95_per_dose_max_background": [
+            [
+              4.377131691393742e-05,
+              0.046680807804248714
+            ],
+            [
+              0.08181587729814645,
+              1164.667165815791
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            0.015985445079885488,
+            0.19924721268928308
+          ]
+        },
+        "class_fit_bootstrap": {
+          "n_successful": 300,
+          "slope_ci95": [
+            3.6989425268560274,
+            17.999698417120104
+          ],
+          "slope_median": 7.949356468575791,
+          "frac_resamples_slope_above_1": 1.0,
+          "M_vs_dose_slope_ci95": [
+            1.6655013695481364,
+            15.512641049466062
+          ],
+          "pool_ci95_per_dose": [
+            [
+              1e-06,
+              1.0000230545117232e-06
+            ],
+            [
+              0.005000798662520192,
+              999305820823.489
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              3.1690402458381385e-09,
+              0.01063893712383297
+            ],
+            [
+              3.153552798861944e-05,
+              12491323.035956712
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            1.4675483004794408e-06,
+            0.16702742541702734
+          ]
+        }
+      },
+      {
+        "construct": "STAT3-1676",
+        "status": "OK",
+        "cell_line": "MCF-7 breast cancer cells",
+        "target_gene": "STAT3",
+        "doses_nM": [
+          1.0,
+          10.0,
+          25.0
+        ],
+        "n_transcripts_retrieved_at_every_dose": 5091,
+        "n_transcripts_strong_site_classes": 2744,
+        "total_retrieved_abundance_molecules_per_cell": 20257.674449030743,
+        "background_beta_bracket_high": 14.377458774087353,
+        "free_fit": {
+          "pool_per_dose": [
+            273.1748205036085,
+            5.9297508998186235,
+            146.82428800777
+          ],
+          "log10_pool_per_dose": [
+            2.4364406663846854,
+            0.7730364496700834,
+            2.166797903504122
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.04937274280844569,
+          "rss": 1031.8130776979742,
+          "n_observations": 15273,
+          "sigma_pooled": 0.25991918593789765,
+          "residual_sd_per_dose": [
+            0.14183448071530952,
+            0.27234495553233373,
+            0.32927947551727743
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.8385462626147107,
+            0.5695270352827226,
+            0.8041048890245601
+          ],
+          "max_bound_fraction_per_dose": [
+            0.9999999999822152,
+            0.9999999991806816,
+            0.9999999999669105
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.8601453545472403,
+            0.5698291101944608,
+            0.8241995678648596
+          ],
+          "optimiser_converged": true,
+          "nll": -20578.603767819743
+        },
+        "loglog_slope_pool_vs_dose": {
+          "slope": -0.4773240214422081,
+          "intercept": 2.1736231292251293,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 0.672724498214833
+        },
+        "constrained_independent": {
+          "mode": "independent",
+          "log10_kappa": 0.015379117313326408,
+          "kappa_complexes_per_cell_per_nM": 1.0360461884289134,
+          "pool_per_dose": [
+            1.0360461884289134,
+            10.360461884289133,
+            25.901154710722835
+          ],
+          "M_per_dose": [
+            1.0360461884289134,
+            10.360461884289133,
+            25.901154710722835
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.04091988992794852,
+          "rss": 1032.1510925999028,
+          "n_observations": 15273,
+          "sigma_pooled": 0.25996175632487933,
+          "n_parameters": 6,
+          "aic": -41140.205024726165,
+          "nll": -20576.102512363082
+        },
+        "constrained_equilibrium": {
+          "mode": "equilibrium",
+          "log10_kappa": 2.8360828637412663,
+          "kappa_complexes_per_cell_per_nM": 685.6190306435849,
+          "pool_per_dose": [
+            0.0001609539881614913,
+            0.3229397186819649,
+            292.65077268662753
+          ],
+          "M_per_dose": [
+            685.6190306435849,
+            6856.1903064358485,
+            17140.47576608962
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.05237074800478022,
+          "rss": 1032.446516015009,
+          "n_observations": 15273,
+          "sigma_pooled": 0.25999895693234315,
+          "n_parameters": 6,
+          "aic": -41135.83419543635,
+          "nll": -20573.917097718175
+        },
+        "aic_free_unconstrained": -41141.207535639485,
+        "aic_independent": -41140.205024726165,
+        "aic_equilibrium": -41135.83419543635,
+        "aic_equilibrium_minus_independent": 4.370829289815447,
+        "preferred_by_aic": "independent",
+        "rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              17045.348210335673,
+              11250.508624916694,
+              16181.876825853404
+            ],
+            "rho_per_dose": [
+              0.21306685262919592,
+              0.1406313578114587,
+              0.20227346032316754
+            ],
+            "M_over_dose": [
+              17045.348210335673,
+              1125.0508624916695,
+              647.2750730341362
+            ],
+            "loglog_slope_M_vs_dose": -0.04792708408119114,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              1.1363565473557116,
+              0.7500339083277796,
+              1.078791788390227
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.10026675417844513,
+              0.06617946249950997,
+              0.09518751074031415
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.377458774087353,
+            "M_per_dose_molecules_per_cell": [
+              20972.907930245015,
+              11335.763374019443,
+              18292.836973719845
+            ],
+            "rho_per_dose": [
+              0.2621613491280627,
+              0.14169704217524304,
+              0.22866046217149805
+            ],
+            "M_over_dose": [
+              20972.907930245015,
+              1133.5763374019443,
+              731.7134789487937
+            ],
+            "loglog_slope_M_vs_dose": -0.08594449557298806,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              1.3981938620163343,
+              0.7557175582679629,
+              1.2195224649146563
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.12337004664850008,
+              0.06668096102364378,
+              0.10760492337482261
+            ]
+          }
+        ],
+        "class_fit": {
+          "pool_per_dose": [
+            9.110538335795468,
+            78.59586066919407,
+            55.481823804547865
+          ],
+          "log10_pool_per_dose": [
+            0.9595440399101894,
+            1.8953996740818315,
+            1.7441507288113516
+          ],
+          "K_by_class_molecules_per_cell": {
+            "7mer-m8": 46.972697928,
+            "6mer": 195.0373198476406,
+            "7mer-A1": 39.04999839140639,
+            "8mer": 20.39834818569611
+          },
+          "log10_K_by_class": {
+            "7mer-m8": 1.6718455050755958,
+            "6mer": 2.2901177203529683,
+            "7mer-A1": 1.5916210203233487,
+            "8mer": 1.3095950006179469
+          },
+          "anchor_class": "7mer-m8",
+          "K_anchor_molecules_per_cell": 46.972697928,
+          "class_order_by_increasing_K": [
+            "8mer",
+            "7mer-A1",
+            "7mer-m8",
+            "6mer"
+          ],
+          "class_ordering_is_8mer_strongest": true,
+          "expected_ordering_if_model_sane": [
+            "8mer",
+            "7mer-m8",
+            "7mer-A1",
+            "6mer"
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.15766751255279177,
+          "rss": 3117.191788962015,
+          "n_observations": 51951,
+          "sigma_pooled": 0.24495415243174742,
+          "mean_bound_fraction_per_dose": [
+            0.04989158691894027,
+            0.16416427264401662,
+            0.14335660976240022
+          ],
+          "n_transcripts_with_no_site": 12226,
+          "optimiser_converged": true,
+          "u_hat": [
+            2.2901177203529683,
+            1.5916210203233487,
+            1.3095950006179469,
+            0.9595440399101894,
+            1.8953996740818315,
+            1.7441507288113516
+          ],
+          "nll": -73078.65185506632
+        },
+        "class_fit_n_genes": 17317,
+        "class_fit_loglog_slope_pool_vs_dose": {
+          "slope": 0.6337163304988844,
+          "intercept": 1.0264935665837547,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 0.1713682702606421
+        },
+        "class_fit_rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              3337.515871808855,
+              11241.264917653712,
+              9778.149590260375
+            ],
+            "rho_per_dose": [
+              0.041718948397610686,
+              0.1405158114706714,
+              0.12222686987825468
+            ],
+            "M_over_dose": [
+              3337.515871808855,
+              1124.1264917653712,
+              391.125983610415
+            ],
+            "loglog_slope_M_vs_dose": 0.3713618739137652,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.22250105812059034,
+              0.7494176611769142,
+              0.6518766393506916
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.01963244630475797,
+              0.06612508775090419,
+              0.057518527001531615
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.375960215783723,
+            "M_per_dose_molecules_per_cell": [
+              3468.488608468623,
+              12371.155883759326,
+              10575.754081973677
+            ],
+            "rho_per_dose": [
+              0.04335610760585779,
+              0.15463944854699158,
+              0.13219692602467095
+            ],
+            "M_over_dose": [
+              3468.488608468623,
+              1237.1155883759325,
+              423.0301632789471
+            ],
+            "loglog_slope_M_vs_dose": 0.38617738108237964,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.23123257389790822,
+              0.824743725583955,
+              0.7050502721315784
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.02040287416746249,
+              0.07277150519858427,
+              0.062210318129256925
+            ]
+          }
+        ],
+        "class_fit_model_comparison": {
+          "n_folds_completed": 5,
+          "fold_assignment": "random over genes, one draw, shared by all three",
+          "aic_free_unconstrained": -146135.30371013263,
+          "n_parameters_free": 11,
+          "aic_independent": -146108.43315968904,
+          "aic_equilibrium": -146099.91364409783,
+          "aic_equilibrium_minus_independent": 8.519515591207892,
+          "aic_free_minus_best_constrained": -26.870550443592947,
+          "preferred_by_aic": "free",
+          "constrained_independent": {
+            "mode": "independent",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 482.7360089622584,
+              "7mer-A1": 47.45428594131675,
+              "8mer": 18.297834007502587
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-m8",
+              "7mer-A1",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 14.939315782245608,
+            "log10_kappa": 1.1743307073321376,
+            "M_per_dose": [
+              14.939315782245608,
+              149.3931578224561,
+              373.4828945561402
+            ],
+            "pool_per_dose": [
+              14.939315782245608,
+              149.3931578224561,
+              373.4828945561402
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.12306078480448848,
+            "intercept_per_dose": [
+              0.019927984092666544,
+              0.03982001232341795,
+              0.14452575623669525
+            ],
+            "rss": 3119.044650754141,
+            "n_observations": 51951,
+            "sigma_pooled": 0.2450269421084819,
+            "n_parameters": 9,
+            "aic": -146108.43315968904,
+            "nll": -73063.21657984452,
+            "optimiser_converged": true,
+            "u_hat": [
+              2.6837096955668347,
+              1.6762754428245252,
+              1.2623996834865312,
+              1.1743307073321376
+            ]
+          },
+          "constrained_equilibrium": {
+            "mode": "equilibrium",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 88200.5970203036,
+              "7mer-A1": 36.21863266254335,
+              "8mer": 17.674952210665566
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-A1",
+              "7mer-m8",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 4398.823477926017,
+            "log10_kappa": 3.643336534356755,
+            "M_per_dose": [
+              4398.823477926017,
+              43988.23477926017,
+              109970.58694815043
+            ],
+            "pool_per_dose": [
+              16.667686523249095,
+              29710.119718614107,
+              93511.77809234624
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.10667604095135931,
+            "intercept_per_dose": [
+              0.019193716422190997,
+              0.04064229274955668,
+              0.14354270687345994
+            ],
+            "rss": 3119.556189097998,
+            "n_observations": 51951,
+            "sigma_pooled": 0.24504703408399098,
+            "n_parameters": 9,
+            "aic": -146099.91364409783,
+            "nll": -73058.95682204892,
+            "optimiser_converged": true,
+            "u_hat": [
+              4.945471524834154,
+              1.5589320506627067,
+              1.2473582482300518,
+              3.643336534356755
+            ]
+          },
+          "heldout_gene_rmse_free": 0.24508920509556958,
+          "heldout_gene_n_free": 51951,
+          "heldout_gene_rmse_independent": 0.24515679217475037,
+          "heldout_gene_n_independent": 51951,
+          "heldout_gene_rmse_equilibrium": 0.24515350133491956,
+          "heldout_gene_n_equilibrium": 51951,
+          "preferred_by_heldout_gene_rmse": "free",
+          "heldout_rmse_equilibrium_minus_independent": -3.2908398308051368e-06
+        },
+        "class_fit_positive_control": [
+          {
+            "dose_nM": 1.0,
+            "n_no_site": 12226,
+            "median_log2fc_no_site": 0.01989485183333306,
+            "n_6mer": 2036,
+            "median_log2fc_6mer": 0.002559000000001088,
+            "delta_vs_no_site_6mer": -0.017335851833331972,
+            "mann_whitney_p_less_6mer": 9.223181111558326e-09,
+            "n_7mer-A1": 938,
+            "median_log2fc_7mer-A1": -0.0156980046666666,
+            "delta_vs_no_site_7mer-A1": -0.03559285649999966,
+            "mann_whitney_p_less_7mer-A1": 3.963363644881946e-15,
+            "n_7mer-m8": 1370,
+            "median_log2fc_7mer-m8": -0.008943473833333826,
+            "delta_vs_no_site_7mer-m8": -0.028838325666666886,
+            "mann_whitney_p_less_7mer-m8": 3.3172381874254292e-18,
+            "n_8mer": 747,
+            "median_log2fc_8mer": -0.02298105433333575,
+            "delta_vs_no_site_8mer": -0.04287590616666881,
+            "mann_whitney_p_less_8mer": 1.2852268638342376e-20
+          },
+          {
+            "dose_nM": 10.0,
+            "n_no_site": 12226,
+            "median_log2fc_no_site": 0.029394477499999905,
+            "n_6mer": 2036,
+            "median_log2fc_6mer": 0.00025964166666669897,
+            "delta_vs_no_site_6mer": -0.029134835833333206,
+            "mann_whitney_p_less_6mer": 3.914629722200741e-15,
+            "n_7mer-A1": 938,
+            "median_log2fc_7mer-A1": -0.0250187555000001,
+            "delta_vs_no_site_7mer-A1": -0.054413233000000005,
+            "mann_whitney_p_less_7mer-A1": 3.797163125791279e-31,
+            "n_7mer-m8": 1370,
+            "median_log2fc_7mer-m8": -0.04589889066666686,
+            "delta_vs_no_site_7mer-m8": -0.07529336816666676,
+            "mann_whitney_p_less_7mer-m8": 1.0293270172164783e-60,
+            "n_8mer": 747,
+            "median_log2fc_8mer": -0.040996964333333,
+            "delta_vs_no_site_8mer": -0.0703914418333329,
+            "mann_whitney_p_less_8mer": 7.80906271157844e-30
+          },
+          {
+            "dose_nM": 25.0,
+            "n_no_site": 12226,
+            "median_log2fc_no_site": 0.1777871544999996,
+            "n_6mer": 2036,
+            "median_log2fc_6mer": 0.14058317333333337,
+            "delta_vs_no_site_6mer": -0.03720398116666623,
+            "mann_whitney_p_less_6mer": 3.126486763251573e-14,
+            "n_7mer-A1": 938,
+            "median_log2fc_7mer-A1": 0.09942284766666654,
+            "delta_vs_no_site_7mer-A1": -0.07836430683333306,
+            "mann_whitney_p_less_7mer-A1": 2.074150697198247e-28,
+            "n_7mer-m8": 1370,
+            "median_log2fc_7mer-m8": 0.11777650516666682,
+            "delta_vs_no_site_7mer-m8": -0.06001064933333278,
+            "mann_whitney_p_less_7mer-m8": 5.456957485049985e-23,
+            "n_8mer": 747,
+            "median_log2fc_8mer": 0.08568972066666802,
+            "delta_vs_no_site_8mer": -0.09209743383333158,
+            "mann_whitney_p_less_8mer": 4.722752927357796e-27
+          }
+        ],
+        "sensitivity": {
+          "strong_sites_only": {
+            "n_transcripts": 2744,
+            "site_classes": [
+              "7mer-m8",
+              "8mer",
+              "7mer-A1"
+            ],
+            "pool_per_dose": [
+              15.034447715152979,
+              2.833727332631963,
+              10.261410106870601
+            ],
+            "slope": -0.23589080192227907,
+            "amplitude_c": 0.03175779728963534
+          },
+          "excluding_top_dose": {
+            "doses": [
+              1.0,
+              10.0
+            ],
+            "pool_per_dose": [
+              1.04525341366016e-06,
+              6.696659198282735
+            ],
+            "slope": 6.806636603112747
+          }
+        },
+        "predictor_diagnostics_per_dose": [
+          {
+            "dose_nM": 1.0,
+            "spearman_minus_log10K_vs_log2fc": -0.0567636858799641,
+            "p": 5.06878467119295e-05,
+            "median_log2fc": -0.00727620266666662,
+            "mean_log2fc": -0.009872089599096438
+          },
+          {
+            "dose_nM": 10.0,
+            "spearman_minus_log10K_vs_log2fc": -0.0730569255258414,
+            "p": 1.8047876180890976e-07,
+            "median_log2fc": -0.019048358333334292,
+            "mean_log2fc": -0.0442645545905192
+          },
+          {
+            "dose_nM": 25.0,
+            "spearman_minus_log10K_vs_log2fc": -0.04608751360217741,
+            "p": 0.0010042201825851468,
+            "median_log2fc": 0.11792849766666658,
+            "mean_log2fc": 0.06305978102010085
+          }
+        ],
+        "bootstrap": {
+          "n_resamples": 300,
+          "n_successful": 300,
+          "slope_ci95": [
+            -4.837075099610085,
+            1.7665687204994862
+          ],
+          "slope_median": -0.5423406126629384,
+          "slope_sd": 1.477010859534411,
+          "M_vs_dose_slope_ci95": [
+            -2.975657833130136,
+            0.24150803894532458
+          ],
+          "aic_equilibrium_minus_independent_ci95": [
+            -10.884024412174403,
+            25.28914033530163
+          ],
+          "frac_resamples_preferring_equilibrium": 0.25666666666666665,
+          "frac_resamples_slope_above_1": 0.05,
+          "pool_ci95_per_dose": [
+            [
+              0.11031783876813614,
+              100000000.0
+            ],
+            [
+              0.9345875225462213,
+              42.84145374668253
+            ],
+            [
+              2.4424442575318115,
+              541.0639673147607
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              0.07200813633423431,
+              1250.2528955225182
+            ],
+            [
+              0.10381082433800144,
+              0.1796356472634919
+            ],
+            [
+              0.12351752874891411,
+              0.23331069709863417
+            ]
+          ],
+          "rho_ci95_per_dose_max_background": [
+            [
+              0.07204022822459662,
+              19222.07636313171
+            ],
+            [
+              0.10404983343966628,
+              0.18718369780300004
+            ],
+            [
+              0.12389498498663791,
+              0.32612941542581114
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            0.21448535709960004,
+            0.14094334909793438,
+            0.20010320541625837
+          ]
+        },
+        "class_fit_bootstrap": {
+          "n_successful": 300,
+          "slope_ci95": [
+            0.4695689733459587,
+            0.8648290486141881
+          ],
+          "slope_median": 0.6381545313096157,
+          "frac_resamples_slope_above_1": 0.006666666666666667,
+          "M_vs_dose_slope_ci95": [
+            0.322398051826875,
+            0.4305937461765674
+          ],
+          "pool_ci95_per_dose": [
+            [
+              5.110986171873607,
+              13.964804261686744
+            ],
+            [
+              29.478046074026583,
+              176.70938390188283
+            ],
+            [
+              21.68031810749827,
+              148.15930457097764
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              0.02841710316511147,
+              0.05076818321213641
+            ],
+            [
+              0.09260491144318413,
+              0.17131671326661027
+            ],
+            [
+              0.07760918365583676,
+              0.16960325364895482
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            0.04040788402747897,
+            0.13878516025473947,
+            0.11863751585107266
+          ]
+        }
+      },
+      {
+        "construct": "STAT3-1676M",
+        "status": "OK",
+        "cell_line": "MCF-7 breast cancer cells",
+        "target_gene": "STAT3",
+        "doses_nM": [
+          1.0,
+          10.0,
+          25.0
+        ],
+        "n_transcripts_retrieved_at_every_dose": 5091,
+        "n_transcripts_strong_site_classes": 2744,
+        "total_retrieved_abundance_molecules_per_cell": 20257.674449030743,
+        "background_beta_bracket_high": 14.377458774087353,
+        "free_fit": {
+          "pool_per_dose": [
+            9849.902482884328,
+            2.419270200161063,
+            9.434289001402579
+          ],
+          "log10_pool_per_dose": [
+            3.9934319308676756,
+            0.3836843759624172,
+            0.9747091758944166
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.052971098545986244,
+          "rss": 1014.1661888906854,
+          "n_observations": 15273,
+          "sigma_pooled": 0.2576869278765364,
+          "residual_sd_per_dose": [
+            0.13005260031399649,
+            0.23560790608735424,
+            0.3561208098392454
+          ],
+          "mean_bound_fraction_per_dose": [
+            0.9562952361098581,
+            0.4964533768907329,
+            0.6071515513170499
+          ],
+          "max_bound_fraction_per_dose": [
+            0.9999999999995067,
+            0.99999999799181,
+            0.9999999994850324
+          ],
+          "frac_sites_above_half_saturation_per_dose": [
+            0.9670005892751915,
+            0.49302691023374584,
+            0.6138283244942054
+          ],
+          "optimiser_converged": true,
+          "nll": -20710.339030718536
+        },
+        "loglog_slope_pool_vs_dose": {
+          "slope": -2.4399430411764302,
+          "intercept": 3.734220840014131,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 0.66349320867544
+        },
+        "constrained_independent": {
+          "mode": "independent",
+          "log10_kappa": -0.49803916840997875,
+          "kappa_complexes_per_cell_per_nM": 0.3176587565754636,
+          "pool_per_dose": [
+            0.3176587565754636,
+            3.176587565754636,
+            7.94146891438659
+          ],
+          "M_per_dose": [
+            0.3176587565754636,
+            3.176587565754636,
+            7.94146891438659
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.042977097066501296,
+          "rss": 1014.6488411538123,
+          "n_observations": 15273,
+          "sigma_pooled": 0.25774823853063683,
+          "n_parameters": 6,
+          "aic": -41401.41121054664,
+          "nll": -20706.70560527332
+        },
+        "constrained_equilibrium": {
+          "mode": "equilibrium",
+          "log10_kappa": 2.7301201139895266,
+          "kappa_complexes_per_cell_per_nM": 537.1803452356887,
+          "pool_per_dose": [
+            8.75384415688189e-05,
+            0.10156208421155791,
+            23.247990610093744
+          ],
+          "M_per_dose": [
+            537.1803452356887,
+            5371.803452356888,
+            13429.508630892218
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.054380785031059885,
+          "rss": 1014.729546767634,
+          "n_observations": 15273,
+          "sigma_pooled": 0.2577584890307755,
+          "n_parameters": 6,
+          "aic": -41400.19643773947,
+          "nll": -20706.098218869734
+        },
+        "aic_free_unconstrained": -41404.67806143707,
+        "aic_independent": -41401.41121054664,
+        "aic_equilibrium": -41400.19643773947,
+        "aic_equilibrium_minus_independent": 1.2147728071722668,
+        "preferred_by_aic": "independent",
+        "rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              29079.280888156845,
+              9817.700660705244,
+              11997.381533105685
+            ],
+            "rho_per_dose": [
+              0.3634910111019606,
+              0.12272125825881555,
+              0.14996726916382105
+            ],
+            "M_over_dose": [
+              29079.280888156845,
+              981.7700660705244,
+              479.8952613242274
+            ],
+            "loglog_slope_M_vs_dose": -0.3130594776888665,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              1.938618725877123,
+              0.6545133773803496,
+              0.799825435540379
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.17105459345974616,
+              0.057751180357089676,
+              0.0705728325476805
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.377458774087353,
+            "M_per_dose_molecules_per_cell": [
+              170695.84776460694,
+              9852.483618271437,
+              12133.022634286175
+            ],
+            "rho_per_dose": [
+              2.1336980970575867,
+              0.12315604522839296,
+              0.15166278292857718
+            ],
+            "M_over_dose": [
+              170695.84776460694,
+              985.2483618271438,
+              485.320905371447
+            ],
+            "loglog_slope_M_vs_dose": -0.9021046960378989,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              11.37972318430713,
+              0.6568322412180958,
+              0.8088681756190783
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              1.0040932221447467,
+              0.05795578598983198,
+              0.07137072137815398
+            ]
+          }
+        ],
+        "class_fit": {
+          "pool_per_dose": [
+            19.069155285659605,
+            53.451068707710434,
+            146.24360975185104
+          ],
+          "log10_pool_per_dose": [
+            1.2803314553479428,
+            1.7279563929726995,
+            2.1650768982746165
+          ],
+          "K_by_class_molecules_per_cell": {
+            "7mer-m8": 46.972697928,
+            "6mer": 1459.7814968230753,
+            "7mer-A1": 226.32682477204034,
+            "8mer": 45.46958706296049
+          },
+          "log10_K_by_class": {
+            "7mer-m8": 1.6718455050755958,
+            "6mer": 3.1642878545339688,
+            "7mer-A1": 2.354736030578965,
+            "8mer": 1.6577210101300706
+          },
+          "anchor_class": "7mer-m8",
+          "K_anchor_molecules_per_cell": 46.972697928,
+          "class_order_by_increasing_K": [
+            "8mer",
+            "7mer-m8",
+            "7mer-A1",
+            "6mer"
+          ],
+          "class_ordering_is_8mer_strongest": true,
+          "expected_ordering_if_model_sane": [
+            "8mer",
+            "7mer-m8",
+            "7mer-A1",
+            "6mer"
+          ],
+          "amplitude_c_log2_per_unit_bound_fraction": 0.14129557533018247,
+          "rss": 2895.5728741289213,
+          "n_observations": 51951,
+          "sigma_pooled": 0.23608603256883562,
+          "mean_bound_fraction_per_dose": [
+            0.04627791911433206,
+            0.08601865065916947,
+            0.13077144167166652
+          ],
+          "n_transcripts_with_no_site": 12226,
+          "optimiser_converged": true,
+          "u_hat": [
+            3.1642878545339688,
+            2.354736030578965,
+            1.6577210101300706,
+            1.2803314553479428,
+            1.7279563929726995,
+            2.1650768982746165
+          ],
+          "nll": -74994.33338060422
+        },
+        "class_fit_n_genes": 17317,
+        "class_fit_loglog_slope_pool_vs_dose": {
+          "slope": 0.5970565425760251,
+          "intercept": 1.2472196585709356,
+          "n_points": 3,
+          "residual_df": 1,
+          "residual_rms_log10": 0.08475506281865908
+        },
+        "class_fit_rho_inversion": [
+          {
+            "beta_case": "zero_background",
+            "beta": 0.0,
+            "M_per_dose_molecules_per_cell": [
+              3033.8923878730375,
+              5729.569824442729,
+              8887.8333430236
+            ],
+            "rho_per_dose": [
+              0.037923654848412966,
+              0.07161962280553412,
+              0.111097916787795
+            ],
+            "M_over_dose": [
+              3033.8923878730375,
+              572.956982444273,
+              355.513333720944
+            ],
+            "loglog_slope_M_vs_dose": 0.32273772849240373,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.20225949252486916,
+              0.3819713216295153,
+              0.59252222286824
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.017846425811017867,
+              0.033703351908486646,
+              0.05228137260602118
+            ]
+          },
+          {
+            "beta_case": "max_background_bracket",
+            "beta": 14.375960215783723,
+            "M_per_dose_molecules_per_cell": [
+              3308.029805608282,
+              6497.980261675896,
+              10990.225658628811
+            ],
+            "rho_per_dose": [
+              0.04135037257010352,
+              0.0812247532709487,
+              0.13737782073286015
+            ],
+            "M_over_dose": [
+              3308.029805608282,
+              649.7980261675896,
+              439.6090263451525
+            ],
+            "loglog_slope_M_vs_dose": 0.3575694621008961,
+            "implied_alpha_loaded_fraction_low_ago2": [
+              0.22053532037388546,
+              0.4331986841117264,
+              0.7326817105752541
+            ],
+            "implied_alpha_loaded_fraction_high_ago2": [
+              0.019458998856519305,
+              0.03822341330397586,
+              0.06464838622722831
+            ]
+          }
+        ],
+        "class_fit_model_comparison": {
+          "n_folds_completed": 5,
+          "fold_assignment": "random over genes, one draw, shared by all three",
+          "aic_free_unconstrained": -149966.66676120844,
+          "n_parameters_free": 11,
+          "aic_independent": -149959.49775852278,
+          "aic_equilibrium": -149916.42677989363,
+          "aic_equilibrium_minus_independent": 43.07097862914088,
+          "aic_free_minus_best_constrained": -7.169002685666783,
+          "preferred_by_aic": "free",
+          "constrained_independent": {
+            "mode": "independent",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 4153.804131089008,
+              "7mer-A1": 538.6232511048821,
+              "8mer": 34.644232228394124
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "8mer",
+              "7mer-m8",
+              "7mer-A1",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": true,
+            "kappa_complexes_per_cell_per_nM": 19.891810013579637,
+            "log10_kappa": 1.2986743026390117,
+            "M_per_dose": [
+              19.891810013579637,
+              198.91810013579635,
+              497.2952503394909
+            ],
+            "pool_per_dose": [
+              19.891810013579637,
+              198.91810013579635,
+              497.2952503394909
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.11078223163514142,
+            "intercept_per_dose": [
+              0.005871728781103672,
+              0.007290683732008317,
+              0.011469918411270388
+            ],
+            "rss": 2896.195463452207,
+            "n_observations": 51951,
+            "sigma_pooled": 0.23611141213093711,
+            "n_parameters": 9,
+            "aic": -149959.49775852278,
+            "nll": -74988.74887926139,
+            "optimiser_converged": true,
+            "u_hat": [
+              3.6184460139148324,
+              2.7312850969562854,
+              1.539630941115624,
+              1.2986743026390117
+            ]
+          },
+          "constrained_equilibrium": {
+            "mode": "equilibrium",
+            "parameterisation": "site_class",
+            "K_by_class_molecules_per_cell": {
+              "7mer-m8": 46.972697928,
+              "6mer": 34758.20682196933,
+              "7mer-A1": 3845.0168414225986,
+              "8mer": 48.482784799067936
+            },
+            "anchor_class": "7mer-m8",
+            "class_order_by_increasing_K": [
+              "7mer-m8",
+              "8mer",
+              "7mer-A1",
+              "6mer"
+            ],
+            "class_ordering_is_8mer_strongest": false,
+            "kappa_complexes_per_cell_per_nM": 606.3111346038337,
+            "log10_kappa": 2.7826955439113648,
+            "M_per_dose": [
+              606.3111346038337,
+              6063.111346038337,
+              15157.778365095843
+            ],
+            "pool_per_dose": [
+              3.4301967714452646,
+              116.12551542815629,
+              4104.176662181926
+            ],
+            "amplitude_c_log2_per_unit_bound_fraction": 0.11298290496452545,
+            "intercept_per_dose": [
+              0.0019097573846328139,
+              0.0037985468238932356,
+              0.012860084489480963
+            ],
+            "rss": 2898.5976057993203,
+            "n_observations": 51951,
+            "sigma_pooled": 0.23620930878059335,
+            "n_parameters": 9,
+            "aic": -149916.42677989363,
+            "nll": -74967.21338994682,
+            "optimiser_converged": true,
+            "u_hat": [
+              4.541057363075485,
+              3.5848982463795522,
+              1.6855875572831014,
+              2.7826955439113648
+            ]
+          },
+          "heldout_gene_rmse_free": 0.23614089621931633,
+          "heldout_gene_n_free": 51951,
+          "heldout_gene_rmse_independent": 0.23615816770771647,
+          "heldout_gene_n_independent": 51951,
+          "heldout_gene_rmse_equilibrium": 0.23625266263177108,
+          "heldout_gene_n_equilibrium": 51951,
+          "preferred_by_heldout_gene_rmse": "free",
+          "heldout_rmse_equilibrium_minus_independent": 9.449492405461113e-05
+        },
+        "class_fit_positive_control": [
+          {
+            "dose_nM": 1.0,
+            "n_no_site": 12226,
+            "median_log2fc_no_site": 0.010574265333333166,
+            "n_6mer": 2036,
+            "median_log2fc_6mer": -0.002364901500000016,
+            "delta_vs_no_site_6mer": -0.012939166833333182,
+            "mann_whitney_p_less_6mer": 2.1787731027874385e-06,
+            "n_7mer-A1": 938,
+            "median_log2fc_7mer-A1": -0.011623496999999539,
+            "delta_vs_no_site_7mer-A1": -0.022197762333332705,
+            "mann_whitney_p_less_7mer-A1": 7.668116177962157e-11,
+            "n_7mer-m8": 1370,
+            "median_log2fc_7mer-m8": -0.022248754999999676,
+            "delta_vs_no_site_7mer-m8": -0.03282302033333284,
+            "mann_whitney_p_less_7mer-m8": 3.7345943751604864e-28,
+            "n_8mer": 747,
+            "median_log2fc_8mer": -0.02189049333333415,
+            "delta_vs_no_site_8mer": -0.032464758666667315,
+            "mann_whitney_p_less_8mer": 3.3970885606219476e-16
+          },
+          {
+            "dose_nM": 10.0,
+            "n_no_site": 12226,
+            "median_log2fc_no_site": -0.013455142000000198,
+            "n_6mer": 2036,
+            "median_log2fc_6mer": -0.007826516166665964,
+            "delta_vs_no_site_6mer": 0.005628625833334233,
+            "mann_whitney_p_less_6mer": 0.3668951004932422,
+            "n_7mer-A1": 938,
+            "median_log2fc_7mer-A1": -0.027044055333333095,
+            "delta_vs_no_site_7mer-A1": -0.013588913333332897,
+            "mann_whitney_p_less_7mer-A1": 0.0002088851629526177,
+            "n_7mer-m8": 1370,
+            "median_log2fc_7mer-m8": -0.06392833483333282,
+            "delta_vs_no_site_7mer-m8": -0.050473192833332625,
+            "mann_whitney_p_less_7mer-m8": 3.8067458773701256e-32,
+            "n_8mer": 747,
+            "median_log2fc_8mer": -0.03463006333333141,
+            "delta_vs_no_site_8mer": -0.02117492133333121,
+            "mann_whitney_p_less_8mer": 3.7508245381661295e-09
+          },
+          {
+            "dose_nM": 25.0,
+            "n_no_site": 12226,
+            "median_log2fc_no_site": -0.01465330850000024,
+            "n_6mer": 2036,
+            "median_log2fc_6mer": -0.015284235666665591,
+            "delta_vs_no_site_6mer": -0.0006309271666653515,
+            "mann_whitney_p_less_6mer": 0.10220111699330142,
+            "n_7mer-A1": 938,
+            "median_log2fc_7mer-A1": -0.036673200666666794,
+            "delta_vs_no_site_7mer-A1": -0.022019892166666555,
+            "mann_whitney_p_less_7mer-A1": 6.066411405720856e-07,
+            "n_7mer-m8": 1370,
+            "median_log2fc_7mer-m8": -0.08188792049999938,
+            "delta_vs_no_site_7mer-m8": -0.06723461199999914,
+            "mann_whitney_p_less_7mer-m8": 5.727962329514894e-30,
+            "n_8mer": 747,
+            "median_log2fc_8mer": -0.05601216299999923,
+            "delta_vs_no_site_8mer": -0.04135885449999899,
+            "mann_whitney_p_less_8mer": 4.5513159651413445e-10
+          }
+        ],
+        "sensitivity": {
+          "strong_sites_only": {
+            "n_transcripts": 2744,
+            "site_classes": [
+              "7mer-m8",
+              "8mer",
+              "7mer-A1"
+            ],
+            "pool_per_dose": [
+              2103.6174043867354,
+              0.29960049107949643,
+              0.5221230311213011
+            ],
+            "slope": -2.824100418397036,
+            "amplitude_c": 0.029862489386058188
+          },
+          "excluding_top_dose": {
+            "doses": [
+              1.0,
+              10.0
+            ],
+            "pool_per_dose": [
+              128.8957617864612,
+              2.2931258491657878
+            ],
+            "slope": -1.7498107476549476
+          }
+        },
+        "predictor_diagnostics_per_dose": [
+          {
+            "dose_nM": 1.0,
+            "spearman_minus_log10K_vs_log2fc": -0.052272754981319454,
+            "p": 0.00019044791113708318,
+            "median_log2fc": -0.012265998666666889,
+            "mean_log2fc": -0.019733192267138117
+          },
+          {
+            "dose_nM": 10.0,
+            "spearman_minus_log10K_vs_log2fc": -0.06628136492299862,
+            "p": 2.208965610383774e-06,
+            "median_log2fc": -0.031165465000000836,
+            "mean_log2fc": -0.03562721783670531
+          },
+          {
+            "dose_nM": 25.0,
+            "spearman_minus_log10K_vs_log2fc": -0.056922091471380165,
+            "p": 4.828855176376512e-05,
+            "median_log2fc": -0.04026889533333211,
+            "mean_log2fc": -0.049774251063314366
+          }
+        ],
+        "bootstrap": {
+          "n_resamples": 300,
+          "n_successful": 300,
+          "slope_ci95": [
+            -6.154037367058387,
+            -0.39951495698029243
+          ],
+          "slope_median": -2.381361073532992,
+          "slope_sd": 1.2018060923197142,
+          "M_vs_dose_slope_ci95": [
+            -3.123384534192967,
+            -0.04513349581700166
+          ],
+          "aic_equilibrium_minus_independent_ci95": [
+            -9.99817778240813,
+            19.46420808520321
+          ],
+          "frac_resamples_preferring_equilibrium": 0.32,
+          "frac_resamples_slope_above_1": 0.0,
+          "pool_ci95_per_dose": [
+            [
+              56.45943054423111,
+              100000000.0
+            ],
+            [
+              0.10744367998570058,
+              83.85218062852505
+            ],
+            [
+              0.2631548209852121,
+              142.37758081214358
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              0.1821821107304035,
+              1250.2510703420498
+            ],
+            [
+              0.06814641047258893,
+              0.18956715775433855
+            ],
+            [
+              0.08392756642120498,
+              0.20225725391939653
+            ]
+          ],
+          "rho_ci95_per_dose_max_background": [
+            [
+              0.19335933748562006,
+              19222.07453795124
+            ],
+            [
+              0.0681706451193835,
+              0.2062327763014459
+            ],
+            [
+              0.08397820098341816,
+              0.22349933841381883
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            0.37167576820186066,
+            0.12046601423930717,
+            0.14888451536407493
+          ]
+        },
+        "class_fit_bootstrap": {
+          "n_successful": 300,
+          "slope_ci95": [
+            0.36794125847427633,
+            0.8615801735285057
+          ],
+          "slope_median": 0.5902480177816867,
+          "frac_resamples_slope_above_1": 0.0,
+          "M_vs_dose_slope_ci95": [
+            0.27091720839629024,
+            0.3755362202742622
+          ],
+          "pool_ci95_per_dose": [
+            [
+              7.042351061835297,
+              28.108860422131123
+            ],
+            [
+              15.329000407532424,
+              104.1833217631501
+            ],
+            [
+              26.407947962430715,
+              481.8135758118696
+            ]
+          ],
+          "rho_ci95_per_dose_zero_background": [
+            [
+              0.01962234751899644,
+              0.04772790234875482
+            ],
+            [
+              0.03509218117351341,
+              0.0901135106323388
+            ],
+            [
+              0.05287461807359176,
+              0.13973028236297746
+            ]
+          ],
+          "rho_median_per_dose_zero_background": [
+            0.03587220289265149,
+            0.06884910239392711,
+            0.10676893928265141
+          ]
+        }
+      }
+    ],
+    "AFFINITY_MODEL_FINDING": "the purely thermodynamic K used by e4, e5 and e7 does not rank off-target transcripts against the measured response in this dataset either: the Spearman correlation between -log10 K and the measured log2 fold change is within 0.06 of zero at every dose of every construct, which reproduces on MCF-7 and Hep3B the limitation e7 already recorded on HeLa. A pool fitted through an affinity model with no discriminative power is fitted to noise, and the unstable per-construct exponents of the thermodynamic fit below are exactly that. The positive control shows the seed signal itself is present and strong, so the failure is in the affinity model and not in the data. The site-class fit is therefore reported alongside, with affinity carried by site class, one parameter per class shared across doses, the 7mer-m8 class pinned to the published seed-match Kd, and every measured gene included so that no-site transcripts pin the per-dose intercept.",
+    "class_fit_pooled_slope_construct_fixed_effects": {
+      "slope": 1.4244891646525235,
+      "n_points": 14,
+      "n_constructs": 5,
+      "residual_df": 8,
+      "residual_rms_log10": 1.339217907816803,
+      "construct_intercepts": {
+        "HK2-3581": 0.2821669012034722,
+        "HK2-3581M": -0.771867915498603,
+        "HK2-4031": -2.7163712499742365,
+        "STAT3-1676": 0.3944182943210919,
+        "STAT3-1676M": 0.5858417289183868
+      }
+    },
+    "class_fit_pooled_slope_bootstrap_ci95": [
+      0.95602597682162,
+      2.51793758769985
+    ],
+    "class_fit_pooled_slope_bootstrap_median": 1.432671604818998,
+    "class_fit_pooled_slope_frac_resamples_above_1": 0.9466666666666667,
+    "class_fit_n_constructs_with_sane_class_ordering": 5,
+    "class_fit_rho_all_construct_dose_zero_background": [
+      0.09355595224525051,
+      0.10826270771163952,
+      0.13433645850290915,
+      0.00696463534730159,
+      0.01695650476086773,
+      0.12471869673098986,
+      2.7168351276728004e-06,
+      0.16707296568978425,
+      0.041718948397610686,
+      0.1405158114706714,
+      0.12222686987825468,
+      0.037923654848412966,
+      0.07161962280553412,
+      0.111097916787795
+    ],
+    "class_fit_rho_median_zero_background": 0.10090932997844501,
+    "class_fit_rho_median_bootstrap_ci95": [
+      0.06236413734013383,
+      0.11060889271332765
+    ],
+    "class_fit_rho_median_bootstrap_n": 300,
+    "class_fit_rho_per_dose_intervals_are_reported_separately_in": "per_construct[].class_fit_bootstrap.rho_ci95_per_dose_zero_background",
+    "class_fit_rho_point_estimate_spread_decades": 4.788842897913792,
+    "RHO_IS_NOT_IDENTIFIED": "the point estimates of rho span class_fit_rho_point_estimate_spread_decades decades across construct-dose cells and the median carries a bootstrap interval of its own on top of that, so no single number here is a calibrated cellular estimate of the competition parameter. The median is reported as a location of a spread, not as a measurement, and it does not resolve the alpha-driven uncertainty of e5: it replaces one unmeasured quantity with a heterogeneous fit.",
+    "leave_one_construct_out_class_fit": [
+      {
+        "construct_excluded": "HK2-3581",
+        "slope": 1.7732508906459414,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 1.4501344337964686
+      },
+      {
+        "construct_excluded": "HK2-3581M",
+        "slope": 1.5199210963915726,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 1.4935672941348836
+      },
+      {
+        "construct_excluded": "HK2-4031",
+        "slope": 0.6332768398775154,
+        "n_points": 12,
+        "n_constructs": 4,
+        "residual_df": 7,
+        "residual_rms_log10": 0.28085900846681805
+      },
+      {
+        "construct_excluded": "STAT3-1676",
+        "slope": 1.6515978679635537,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 1.4828057275172408
+      },
+      {
+        "construct_excluded": "STAT3-1676M",
+        "slope": 1.6621265008897586,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 1.4824171181879604
+      }
+    ],
+    "leave_one_construct_out_thermo_fit": [
+      {
+        "construct_excluded": "HK2-3581",
+        "slope": 1.898649351553001,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 2.787218103756505
+      },
+      {
+        "construct_excluded": "HK2-3581M",
+        "slope": -0.8046824264597963,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 1.3830911128660621
+      },
+      {
+        "construct_excluded": "HK2-4031",
+        "slope": 0.605087049728235,
+        "n_points": 12,
+        "n_constructs": 4,
+        "residual_df": 7,
+        "residual_rms_log10": 2.7581433946410003
+      },
+      {
+        "construct_excluded": "STAT3-1676",
+        "slope": 1.4505474813377814,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 2.9169147407419325
+      },
+      {
+        "construct_excluded": "STAT3-1676M",
+        "slope": 2.014208549870146,
+        "n_points": 11,
+        "n_constructs": 4,
+        "residual_df": 6,
+        "residual_rms_log10": 2.707460081232819
+      }
+    ],
+    "class_fit_pooled_slope_all_constructs": 1.4244891646525235,
+    "class_fit_pooled_slope_loco_range": [
+      0.6332768398775154,
+      1.7732508906459414
+    ],
+    "class_fit_pooled_slope_excluding_HK2_4031": 0.6332768398775154,
+    "LOCO_NOTE": "HK2-4031 has two dose points, so its individual slope has zero residual degrees of freedom and is the line through two points. Dropping it moves the pooled exponent from class_fit_pooled_slope_all_constructs to class_fit_pooled_slope_excluding_HK2_4031, which is the sensitivity that decides whether the pooled superlinear estimate is a property of the panel or of one construct.",
+    "M_vs_dose_slope_summary": {
+      "per_construct": [
+        {
+          "construct": "HK2-3581",
+          "n_doses": 3,
+          "loglog_slope_M_vs_dose": 0.10292005787736384,
+          "bootstrap_ci95": [
+            0.05754863924707973,
+            0.14098123205342034
+          ],
+          "ci_excludes_one": true
+        },
+        {
+          "construct": "HK2-3581M",
+          "n_doses": 3,
+          "loglog_slope_M_vs_dose": 0.7977131820687425,
+          "bootstrap_ci95": [
+            0.6560871180954891,
+            1.0110749177618108
+          ],
+          "ci_excludes_one": false
+        },
+        {
+          "construct": "HK2-4031",
+          "n_doses": 2,
+          "loglog_slope_M_vs_dose": 4.788842897913792,
+          "bootstrap_ci95": [
+            1.6655013695481364,
+            15.512641049466062
+          ],
+          "ci_excludes_one": true
+        },
+        {
+          "construct": "STAT3-1676",
+          "n_doses": 3,
+          "loglog_slope_M_vs_dose": 0.3713618739137652,
+          "bootstrap_ci95": [
+            0.322398051826875,
+            0.4305937461765674
+          ],
+          "ci_excludes_one": true
+        },
+        {
+          "construct": "STAT3-1676M",
+          "n_doses": 3,
+          "loglog_slope_M_vs_dose": 0.32273772849240373,
+          "bootstrap_ci95": [
+            0.27091720839629024,
+            0.3755362202742622
+          ],
+          "ci_excludes_one": true
+        }
+      ],
+      "n_constructs": 5,
+      "n_with_ci_excluding_one": 4,
+      "test": "the assumed proportionality M_d = kappa * dose_d implies a log-log slope of exactly 1 for the conservation-inverted M against dose. These are the measured slopes. A slope away from 1 whose interval excludes 1 falsifies the assumption for that construct, or the affinity model through which the inversion runs, and the two cannot be separated here."
+    },
+    "class_fit_model_comparison_summary": {
+      "n_constructs": 5,
+      "preferred_by_aic": {
+        "HK2-3581": "free",
+        "HK2-3581M": "free",
+        "HK2-4031": "free",
+        "STAT3-1676": "free",
+        "STAT3-1676M": "free"
+      },
+      "preferred_by_heldout_gene_rmse": {
+        "HK2-3581": "free",
+        "HK2-3581M": "free",
+        "HK2-4031": "free",
+        "STAT3-1676": "free",
+        "STAT3-1676M": "free"
+      },
+      "n_preferring_equilibrium_by_aic": 0,
+      "n_preferring_equilibrium_by_heldout": 0,
+      "n_preferring_free_unconstrained_by_aic": 5,
+      "aic_equilibrium_minus_independent": {
+        "HK2-3581": 71.15361380181275,
+        "HK2-3581M": -67.24632095781271,
+        "HK2-4031": -1.8825785240042023,
+        "STAT3-1676": 8.519515591207892,
+        "STAT3-1676M": 43.07097862914088
+      },
+      "heldout_rmse_equilibrium_minus_independent": {
+        "HK2-3581": 0.00018808119304503101,
+        "HK2-3581M": -0.00014473319035779308,
+        "HK2-4031": -2.1785079201697144e-06,
+        "STAT3-1676": -3.2908398308051368e-06,
+        "STAT3-1676M": 9.449492405461113e-05
+      },
+      "note": "three dose mechanisms in the site-class parameterisation: free pools per dose, M proportional to dose with the pool equal to M, and M proportional to dose with the pool the equilibrium free level. The class affinities are free in all three, so this compares the dose mechanism and nothing else. A preference for the FREE model says the data reject proportional loading in either mechanistic form."
+    },
+    "pooled_slope_construct_fixed_effects": {
+      "slope": 1.0204027336128014,
+      "n_points": 14,
+      "n_constructs": 5,
+      "residual_df": 8,
+      "residual_rms_log10": 2.6450192357903646,
+      "construct_intercepts": {
+        "HK2-3581": 3.70160727452026,
+        "HK2-3581M": -4.001588029496148,
+        "HK2-4031": 0.36135364654938906,
+        "STAT3-1676": 0.9764701598901437,
+        "STAT3-1676M": 0.968320314278684
+      }
+    },
+    "pooled_slope_bootstrap_ci95": [
+      -0.15150613241588706,
+      1.8058867214599283
+    ],
+    "pooled_slope_bootstrap_median": 0.8610863312455379,
+    "pooled_slope_bootstrap_n": 300,
+    "pooled_slope_frac_resamples_above_1": 0.4,
+    "rho_data_driven_zero_background_all_construct_dose": [
+      17.269913095082625,
+      0.3940783233351393,
+      0.20689188744322437,
+      2.9861644228248805e-05,
+      0.0004766303397569743,
+      0.32163659977998194,
+      0.017547242100523754,
+      0.1947123599843846,
+      0.21306685262919592,
+      0.1406313578114587,
+      0.20227346032316754,
+      0.3634910111019606,
+      0.12272125825881555,
+      0.14996726916382105
+    ],
+    "rho_data_driven_max_background_all_construct_dose": [
+      263.72490606187694,
+      2.946796286029333,
+      0.5423312216179355,
+      2.9861646037738138e-05,
+      0.0004766309073124185,
+      1.9182663245035463,
+      0.017554527725026962,
+      0.40855394210303,
+      0.2621613491280627,
+      0.14169704217524304,
+      0.22866046217149805,
+      2.1336980970575867,
+      0.12315604522839296,
+      0.15166278292857718
+    ],
+    "rho_data_driven_median_zero_background": 0.19849291015377607,
+    "rho_data_driven_median_bootstrap_ci95": [
+      0.14063585906867238,
+      0.2179807859361019
+    ],
+    "rho_data_driven_pooled_draw_spread_2p5_97p5": [
+      2.9401508063213007e-05,
+      108.32477215562601
+    ],
+    "rho_data_driven_spread_note": "rho_data_driven_median_bootstrap_ci95 is an interval for the median rho over construct-dose cells, recomputed inside each resample. rho_data_driven_pooled_draw_spread_2p5_97p5 is the spread of the individual rho draws themselves and is a description of heterogeneity, not a confidence interval.",
+    "rho_data_driven_range_zero_background": [
+      2.9861644228248805e-05,
+      17.269913095082625
+    ],
+    "e5_alpha_swept_band_for_comparison": [
+      0.0001875,
+      2.125
+    ],
+    "e5_alpha_swept_band_width_decades": 4.054357662322593,
+    "e5_tau_0.9_contour_rho": 0.0703872016148075,
+    "comparison_note": "e5 could only bracket rho between 1.875e-04 and 2.125e+00, a span of 4.05 decades, because the loaded fraction alpha is unmeasured. The rho reported here uses no alpha and no Argonaute copy number: it is the total complex the fitted free pool implies through conservation, divided by the measured abundance total. The two are compared, not merged.",
+    "POWER_LIMITATION": "Three dose points per construct, two for HK2-4031. A slope from three points has one residual degree of freedom and from two points has none, so the per-construct interval is wide by construction and the bootstrap resamples transcripts, not doses: it propagates uncertainty in each fitted pool, and it cannot represent uncertainty about the dose grid itself. The pooled fit borrows strength across constructs but assumes one common exponent, which is an assumption and not a measurement. Two of the five constructs are the 2'-O-methyl modified versions of the other two rather than independent guides, and the two cell lines differ between the STAT3 and HK2 arms, so the five constructs are not five independent replications.",
+    "SCALE_LIMITATION": "The molecules-per-cell scale uses the same published total mRNA count per cell as e5, which was measured in neither MCF-7 nor Hep3B. rho and the implied alpha inherit that, and they are an order-of-magnitude scale rather than a calibration. The SLOPE is invariant to it: rescaling every K and x by a common factor rescales the fitted pools by the same factor and leaves the exponent untouched."
+  },
+  "seed": 0,
+  "elapsed_s": 1651.6711,
+  "traceback": null,
+  "timestamp_utc": "2026-09-05T03:52:38Z"
+}

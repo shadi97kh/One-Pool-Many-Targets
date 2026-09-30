@@ -1,0 +1,175 @@
+[
+  {
+    "submission_figure": 1,
+    "title": "Coupling versus independent scoring",
+    "assets": [
+      "figures/fig_assoc.pdf",
+      "figures/fig_assoc.png"
+    ],
+    "results": [
+      "results/e7_offtarget_ranking.json",
+      "results/e7b_null_calibration.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_e7.py",
+      "scripts/run_e7b.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  },
+  {
+    "submission_figure": 2,
+    "title": "Held-out competitor compression",
+    "assets": [
+      "figures/fig_approx.pdf",
+      "figures/fig_approx.png"
+    ],
+    "results": [
+      "results/pxb_approximation_cost.json",
+      "results/pxb_audit.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_px_audit.py",
+      "scripts/run_pxb_approx.py",
+      "scripts/run_pxb_audit.py"
+    ],
+    "plot_script": "scripts/make_px_figures.py"
+  },
+  {
+    "submission_figure": 3,
+    "title": "Dose exponent by construct",
+    "assets": [
+      "figures/fig_dose.pdf",
+      "figures/fig_dose.png"
+    ],
+    "results": [
+      "results/e9_dose_response.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_e9.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  },
+  {
+    "submission_figure": 4,
+    "title": "Workflow schematic",
+    "assets": [
+      "figures/workflow_GEM.png"
+    ],
+    "results": [],
+    "experiment_scripts": [],
+    "plot_script": null
+  },
+  {
+    "submission_figure": 5,
+    "title": "Loaded-pool budget",
+    "assets": [
+      "figures/fig1_mechanism.pdf",
+      "figures/fig1_mechanism.png"
+    ],
+    "results": [
+      "results/e5b_budget_curve.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_figseries.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  },
+  {
+    "submission_figure": 6,
+    "title": "Competition regime",
+    "assets": [
+      "figures/fig2_regime.pdf",
+      "figures/fig2_regime.png"
+    ],
+    "results": [
+      "results/e5_hela_regime.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_e5.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  },
+  {
+    "submission_figure": 7,
+    "title": "Redistribution and high-resource limit",
+    "assets": [
+      "figures/figA3_theory.pdf",
+      "figures/figA3_theory.png"
+    ],
+    "results": [
+      "results/e2b_redistribution_curve.json",
+      "results/e3_pairwise_limit.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_figseries.py",
+      "scripts/run_theory.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  },
+  {
+    "submission_figure": 8,
+    "title": "Compression selection, timing and gradient audit",
+    "assets": [
+      "figures/px_B_approx.pdf",
+      "figures/px_B_approx.png"
+    ],
+    "results": [
+      "results/pxb_approximation_cost.json",
+      "results/pxb_audit.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_pxb_approx.py",
+      "scripts/run_pxb_audit.py"
+    ],
+    "plot_script": "scripts/make_px_figures.py"
+  },
+  {
+    "submission_figure": 9,
+    "title": "Measured seed-class repression",
+    "assets": [
+      "figures/fig_hier.pdf",
+      "figures/fig_hier.png"
+    ],
+    "results": [
+      "results/e7b_null_calibration.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_e7b.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  },
+  {
+    "submission_figure": 10,
+    "title": "Retrieval-depth approximation error",
+    "assets": [
+      "figures/fig4_retrieval.pdf",
+      "figures/fig4_retrieval.png"
+    ],
+    "results": [
+      "results/e4_retrieval_invariance.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_e4.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  },
+  {
+    "submission_figure": 11,
+    "title": "Regime surface and dose-fit detail",
+    "assets": [
+      "figures/figA1_phase_2d.pdf",
+      "figures/figA1_phase_2d.png",
+      "figures/figA2_dose_detail.pdf",
+      "figures/figA2_dose_detail.png"
+    ],
+    "results": [
+      "results/e5_hela_regime.json",
+      "results/e9_dose_response.json"
+    ],
+    "experiment_scripts": [
+      "scripts/run_e5.py",
+      "scripts/run_e9.py"
+    ],
+    "plot_script": "scripts/make_figures.py"
+  }
+]

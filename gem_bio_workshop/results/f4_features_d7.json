@@ -1,0 +1,41 @@
+{
+  "name": "f4_features_d7",
+  "status": "OK",
+  "values": {
+    "n_site_rows": 40796,
+    "n_construct_transcript_pairs": 25076,
+    "constructs": [
+      "HK2-3581",
+      "HK2-3581M",
+      "HK2-4031",
+      "STAT3-1676",
+      "STAT3-1676M"
+    ],
+    "n_transcripts_per_construct": {
+      "HK2-3581": 4634,
+      "HK2-3581M": 4634,
+      "HK2-4031": 5626,
+      "STAT3-1676": 5091,
+      "STAT3-1676M": 5091
+    },
+    "site_class_counts": {
+      "6mer": 19975,
+      "7mer-m8": 8746,
+      "7mer-A1": 8743,
+      "8mer": 3332
+    },
+    "frac_sites_with_finite_ddG": 1.0,
+    "ddG_kcal_median": -7.681520251830539,
+    "ddG_kcal_min": -22.383868652577984,
+    "ddG_kcal_max": 11.129829454861932,
+    "log10_K_transcript_uncalibrated_min": -15.77270192534136,
+    "log10_K_transcript_uncalibrated_max": 7.842589017837349,
+    "viennarna_version": "2.6.4",
+    "gencode_release": 50,
+    "path": "data/features_gse28786.parquet"
+  },
+  "seed": 0,
+  "elapsed_s": 16.708,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T19:43:01Z"
+}

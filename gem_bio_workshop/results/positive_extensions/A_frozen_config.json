@@ -1,0 +1,20 @@
+{
+ "lambda": 1.0,
+ "offsets_thermo_plus_class": {
+  "6mer": -0.02777371399140542,
+  "7mer-A1": -0.0003700504164132457,
+  "8mer": 0.0071827411837012585
+ },
+ "anchor": {
+  "7mer-m8": 0.0
+ },
+ "class_only_constants": {
+  "6mer": 0.008346200847129288,
+  "7mer-A1": -0.0015471730788597482,
+  "8mer": -0.004447652361237556
+ },
+ "optimiser_success": true,
+ "n_iter": 2,
+ "final_objective": 2.8121228315022466,
+ "training_pairs_with_exact_response_ties_dropped": 65
+}

@@ -1,0 +1,14 @@
+{
+  "name": "d8_candidates",
+  "status": "OK",
+  "values": {
+    "n_candidate_transcripts": 14576,
+    "total_utr3_nucleotides": 26954037,
+    "gencode_release": 50,
+    "path": "data/candidate_utr3_gse14073.parquet"
+  },
+  "seed": 0,
+  "elapsed_s": 3.3208,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T16:21:04Z"
+}

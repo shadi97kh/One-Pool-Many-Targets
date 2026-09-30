@@ -1,0 +1,510 @@
+{
+  "name": "e5b_budget_curve",
+  "status": "OK",
+  "values": {
+    "construct": "MAPK14-193_parent",
+    "n_retrieved_transcripts": 951,
+    "sum_x_retrieved_molecules_per_cell": 5437.124568714143,
+    "total_mrna_molecules_per_cell": 80000.0,
+    "curve": [
+      {
+        "rho": 1e-05,
+        "M": 0.8,
+        "independent_total_occupancy": 1192.913587171554,
+        "equilibrium_total_occupancy": 0.7999999385832142,
+        "independent_over_M": 1491.1419839644423,
+        "equilibrium_over_M": 0.9999999232290177
+      },
+      {
+        "rho": 1.3141473626117553e-05,
+        "M": 1.0513178900894042,
+        "independent_total_occupancy": 1259.311018653038,
+        "equilibrium_total_occupancy": 1.0513177953813528,
+        "independent_over_M": 1197.8403778004254,
+        "equilibrium_over_M": 0.9999999099149246
+      },
+      {
+        "rho": 1.726983290659436e-05,
+        "M": 1.3815866325275488,
+        "independent_total_occupancy": 1326.8583677702288,
+        "equilibrium_total_occupancy": 1.3815864749733318,
+        "independent_over_M": 960.3873810958947,
+        "equilibrium_over_M": 0.9999998859613916
+      },
+      {
+        "rho": 2.2695105366946683e-05,
+        "M": 1.8156084293557346,
+        "independent_total_occupancy": 1395.4440321699894,
+        "equilibrium_total_occupancy": 1.8156081381019813,
+        "independent_over_M": 768.5820409333306,
+        "equilibrium_over_M": 0.9999998395833878
+      },
+      {
+        "rho": 2.982471286216888e-05,
+        "M": 2.3859770289735103,
+        "independent_total_occupancy": 1465.145079944464,
+        "equilibrium_total_occupancy": 2.385976446030387,
+        "independent_over_M": 614.0650400874963,
+        "equilibrium_over_M": 0.9999997556794906
+      },
+      {
+        "rho": 3.9194067748472215e-05,
+        "M": 3.1355254198777773,
+        "independent_total_occupancy": 1536.1916703928139,
+        "equilibrium_total_occupancy": 3.1355243015708414,
+        "independent_over_M": 489.9311804822474,
+        "equilibrium_over_M": 0.999999643343049
+      },
+      {
+        "rho": 5.1506780761681216e-05,
+        "M": 4.120542460934497,
+        "independent_total_occupancy": 1608.9047778243862,
+        "equilibrium_total_occupancy": 4.120540528213787,
+        "independent_over_M": 390.4594584518619,
+        "equilibrium_over_M": 0.9999995309547883
+      },
+      {
+        "rho": 6.768750009458542e-05,
+        "M": 5.415000007566833,
+        "independent_total_occupancy": 1683.6276360934207,
+        "equilibrium_total_occupancy": 5.414996932212592,
+        "independent_over_M": 310.91923060770944,
+        "equilibrium_over_M": 0.9999994320675463
+      },
+      {
+        "rho": 8.895134973108236e-05,
+        "M": 7.116107978486589,
+        "independent_total_occupancy": 1760.6710151541079,
+        "equilibrium_total_occupancy": 7.116103335925665,
+        "independent_over_M": 247.42050295989984,
+        "equilibrium_over_M": 0.9999993475983026
+      },
+      {
+        "rho": 0.00011689518164985776,
+        "M": 9.351614531988622,
+        "independent_total_occupancy": 1840.2845803002454,
+        "equilibrium_total_occupancy": 9.35160774510285,
+        "independent_over_M": 196.78789945899413,
+        "equilibrium_over_M": 0.9999992742551836
+      },
+      {
+        "rho": 0.0001536174946671828,
+        "M": 12.289399573374624,
+        "independent_total_occupancy": 1922.6543730089084,
+        "equilibrium_total_occupancy": 12.289389835736042,
+        "independent_over_M": 156.4481943588522,
+        "equilibrium_over_M": 0.9999992076391915
+      },
+      {
+        "rho": 0.00020187602546790388,
+        "M": 16.15008203743231,
+        "independent_total_occupancy": 2007.915114911806,
+        "equilibrium_total_occupancy": 16.15006819617366,
+        "independent_over_M": 124.32847772896163,
+        "equilibrium_over_M": 0.9999991429604743
+      },
+      {
+        "rho": 0.0002652948464431895,
+        "M": 21.223587715455157,
+        "independent_total_occupancy": 2096.1605333358775,
+        "equilibrium_total_occupancy": 21.223568082231935,
+        "independent_over_M": 98.76560746651894,
+        "equilibrium_over_M": 0.9999990749338197
+      },
+      {
+        "rho": 0.0003486365227678088,
+        "M": 27.890921821424705,
+        "independent_total_occupancy": 2187.437693741746,
+        "equilibrium_total_occupancy": 27.890893855573935,
+        "independent_over_M": 78.42830393871897,
+        "equilibrium_over_M": 0.9999989973135005
+      },
+      {
+        "rho": 0.0004581597669054491,
+        "M": 36.65278135243593,
+        "independent_total_occupancy": 2281.721367040979,
+        "equilibrium_total_occupancy": 36.652741114696,
+        "independent_over_M": 62.252338918048764,
+        "equilibrium_over_M": 0.9999989021913632
+      },
+      {
+        "rho": 0.0006020894493336132,
+        "M": 48.16715594668905,
+        "independent_total_occupancy": 2378.8771670105107,
+        "equilibrium_total_occupancy": 48.16709714145062,
+        "independent_over_M": 49.38795160842441,
+        "equilibrium_over_M": 0.9999987791423995
+      },
+      {
+        "rho": 0.0007912342618981327,
+        "M": 63.29874095185061,
+        "independent_total_occupancy": 2478.6306085302986,
+        "equilibrium_total_occupancy": 63.29865324511357,
+        "independent_over_M": 39.157660504112016,
+        "equilibrium_over_M": 0.9999986143999751
+      },
+      {
+        "rho": 0.00103979841848149,
+        "M": 83.18387347851919,
+        "independent_total_occupancy": 2580.557819475801,
+        "equilibrium_total_occupancy": 83.18373956166114,
+        "independent_over_M": 31.022332954261692,
+        "equilibrium_over_M": 0.999998390110337
+      },
+      {
+        "rho": 0.0013664483492953259,
+        "M": 109.31586794362607,
+        "independent_total_occupancy": 2684.1030395554662,
+        "equilibrium_total_occupancy": 109.31565829217836,
+        "independent_over_M": 24.55364523053187,
+        "equilibrium_over_M": 0.999998082149905
+      },
+      {
+        "rho": 0.001795714494371641,
+        "M": 143.6571595497313,
+        "independent_total_occupancy": 2788.6158332342893,
+        "equilibrium_total_occupancy": 143.6568220604151,
+        "independent_over_M": 19.411603584358254,
+        "equilibrium_over_M": 0.9999976507309677
+      },
+      {
+        "rho": 0.0023598334667821936,
+        "M": 188.7866773425755,
+        "independent_total_occupancy": 2893.395897534921,
+        "equilibrium_total_occupancy": 188.7861130527756,
+        "independent_over_M": 15.326271632423065,
+        "equilibrium_over_M": 0.9999970109659863
+      },
+      {
+        "rho": 0.0031011689265747783,
+        "M": 248.09351412598227,
+        "independent_total_occupancy": 2997.7378118514875,
+        "equilibrium_total_occupancy": 248.09250877454264,
+        "independent_over_M": 12.083096256717262,
+        "equilibrium_over_M": 0.9999959476915663
+      },
+      {
+        "rho": 0.004075392965871778,
+        "M": 326.03143726974224,
+        "independent_total_occupancy": 3100.976020833802,
+        "equilibrium_total_occupancy": 326.0294189846196,
+        "independent_over_M": 9.511279178480596,
+        "equilibrium_over_M": 0.9999938095383085
+      },
+      {
+        "rho": 0.005355666917706902,
+        "M": 428.45335341655215,
+        "independent_total_occupancy": 3202.5332643591855,
+        "equilibrium_total_occupancy": 428.44819770921,
+        "independent_over_M": 7.474636944306069,
+        "equilibrium_over_M": 0.999987966700923
+      },
+      {
+        "rho": 0.007038135554931555,
+        "M": 563.0508443945243,
+        "independent_total_occupancy": 3301.9706372526157,
+        "equilibrium_total_occupancy": 563.0311692502714,
+        "independent_over_M": 5.86442711191275,
+        "equilibrium_over_M": 0.9999650561855137
+      },
+      {
+        "rho": 0.009249147277217335,
+        "M": 739.9317821773868,
+        "independent_total_occupancy": 3399.0294303789437,
+        "equilibrium_total_occupancy": 739.8478955229747,
+        "independent_over_M": 4.593706490585751,
+        "equilibrium_over_M": 0.9998866292049717
+      },
+      {
+        "rho": 0.012154742500762872,
+        "M": 972.3794000610297,
+        "independent_total_occupancy": 3493.6516306524295,
+        "equilibrium_total_occupancy": 972.0760288545347,
+        "independent_over_M": 3.592889391150364,
+        "equilibrium_over_M": 0.9996880114835053
+      },
+      {
+        "rho": 0.01597312280060254,
+        "M": 1277.8498240482031,
+        "independent_total_occupancy": 3585.9709111744705,
+        "equilibrium_total_occupancy": 1276.7213421877361,
+        "independent_over_M": 2.806253789521358,
+        "equilibrium_over_M": 0.999116890076416
+      },
+      {
+        "rho": 0.020991037201085545,
+        "M": 1679.2829760868435,
+        "independent_total_occupancy": 3676.275658879749,
+        "equilibrium_total_occupancy": 1674.05193103264,
+        "independent_over_M": 2.1891936685063085,
+        "equilibrium_over_M": 0.9968849532040197
+      },
+      {
+        "rho": 0.02758531617629184,
+        "M": 2206.8252941033475,
+        "independent_total_occupancy": 3764.953222375022,
+        "equilibrium_total_occupancy": 2179.57357275661,
+        "independent_over_M": 1.7060495148551194,
+        "equilibrium_over_M": 0.9876511650380506
+      },
+      {
+        "rho": 0.036251170499885355,
+        "M": 2900.0936399908283,
+        "independent_total_occupancy": 3852.4260368258006,
+        "equilibrium_total_occupancy": 2765.0140936925786,
+        "independent_over_M": 1.3283798783952314,
+        "equilibrium_over_M": 0.9534223500801592
+      },
+      {
+        "rho": 0.047639380104013404,
+        "M": 3811.1504083210725,
+        "independent_total_occupancy": 3939.087385472627,
+        "equilibrium_total_occupancy": 3280.556172332746,
+        "independent_over_M": 1.0335691230847839,
+        "equilibrium_over_M": 0.8607784581710934
+      },
+      {
+        "rho": 0.06260516572014821,
+        "M": 5008.413257611856,
+        "independent_total_occupancy": 4025.2422264873703,
+        "equilibrium_total_occupancy": 3614.831122686178,
+        "independent_over_M": 0.8036961048231694,
+        "equilibrium_over_M": 0.7217517678263284
+      },
+      {
+        "rho": 0.08227241341700474,
+        "M": 6581.793073360379,
+        "independent_total_occupancy": 4111.0592027673665,
+        "equilibrium_total_occupancy": 3835.1011781588086,
+        "independent_over_M": 0.6246108251878598,
+        "equilibrium_over_M": 0.5826833410611574
+      },
+      {
+        "rho": 0.10811807510766078,
+        "M": 8649.446008612862,
+        "independent_total_occupancy": 4196.541247796236,
+        "equilibrium_total_occupancy": 4001.709784433143,
+        "independent_over_M": 0.48518035069730997,
+        "equilibrium_over_M": 0.46265503946129716
+      },
+      {
+        "rho": 0.1420830832533924,
+        "M": 11366.646660271392,
+        "independent_total_occupancy": 4281.520247183528,
+        "equilibrium_total_occupancy": 4140.334023841904,
+        "independent_over_M": 0.37667399851077116,
+        "equilibrium_over_M": 0.36425290128118126
+      },
+      {
+        "rho": 0.18671810912919207,
+        "M": 14937.448730335365,
+        "independent_total_occupancy": 4365.675520247988,
+        "equilibrium_total_occupancy": 4262.0623513580595,
+        "independent_over_M": 0.2922637994654374,
+        "equilibrium_over_M": 0.2853273292046553
+      },
+      {
+        "rho": 0.24537511066398168,
+        "M": 19630.008853118536,
+        "independent_total_occupancy": 4448.569707085515,
+        "equilibrium_total_occupancy": 4372.166447499909,
+        "independent_over_M": 0.22662087115558227,
+        "equilibrium_over_M": 0.2227287048220216
+      },
+      {
+        "rho": 0.3224590545296398,
+        "M": 25796.724362371184,
+        "independent_total_occupancy": 4529.692296249602,
+        "equilibrium_total_occupancy": 4473.352054759244,
+        "independent_over_M": 0.17559176245093008,
+        "equilibrium_over_M": 0.1734077548731099
+      },
+      {
+        "rho": 0.4237587160604063,
+        "M": 33900.69728483251,
+        "independent_total_occupancy": 4608.501271328237,
+        "equilibrium_total_occupancy": 4567.079510288966,
+        "independent_over_M": 0.13594119414735825,
+        "equilibrium_over_M": 0.13471933842293918
+      },
+      {
+        "rho": 0.5568813990945267,
+        "M": 44550.51192756214,
+        "independent_total_occupancy": 4684.456284343523,
+        "equilibrium_total_occupancy": 4654.155970116386,
+        "independent_over_M": 0.10514932560057481,
+        "equilibrium_over_M": 0.10446919168255374
+      },
+      {
+        "rho": 0.7318242219076182,
+        "M": 58545.937752609454,
+        "independent_total_occupancy": 4757.041392410703,
+        "equilibrium_total_occupancy": 4735.022927241046,
+        "independent_over_M": 0.0812531419773642,
+        "equilibrium_over_M": 0.08087705328505053
+      },
+      {
+        "rho": 0.9617248711152965,
+        "M": 76937.98968922372,
+        "independent_total_occupancy": 4825.780406629586,
+        "equilibrium_total_occupancy": 4809.907358615794,
+        "independent_over_M": 0.06272298543440506,
+        "equilibrium_over_M": 0.06251667580663979
+      },
+      {
+        "rho": 1.2638482029342972,
+        "M": 101107.85623474378,
+        "independent_total_occupancy": 4890.250989793164,
+        "equilibrium_total_occupancy": 4878.912603793187,
+        "independent_over_M": 0.04836667665507008,
+        "equilibrium_over_M": 0.04825453516159749
+      },
+      {
+        "rho": 1.6608827826277166,
+        "M": 132870.62261021734,
+        "independent_total_occupancy": 4950.1027045801,
+        "equilibrium_total_occupancy": 4942.08504402761,
+        "independent_over_M": 0.03725505764431823,
+        "equilibrium_over_M": 0.03719471578398082
+      },
+      {
+        "rho": 2.182644728397487,
+        "M": 174611.57827179896,
+        "independent_total_occupancy": 5005.079578347405,
+        "equilibrium_total_occupancy": 4999.47039255185,
+        "independent_over_M": 0.028664076161985883,
+        "equilibrium_over_M": 0.02863195237127812
+      },
+      {
+        "rho": 2.8683168133420147,
+        "M": 229465.34506736117,
+        "independent_total_occupancy": 5055.042502423645,
+        "equilibrium_total_occupancy": 5051.160327898356,
+        "independent_over_M": 0.022029655506105732,
+        "equilibrium_over_M": 0.0220127371582648
+      },
+      {
+        "rho": 3.7693909753883634,
+        "M": 301551.2780310691,
+        "independent_total_occupancy": 5099.984378310139,
+        "equilibrium_total_occupancy": 5097.32494124073,
+        "independent_over_M": 0.016912494656330667,
+        "equilibrium_over_M": 0.01690367546946874
+      },
+      {
+        "rho": 4.9535352089591695,
+        "M": 396282.81671673356,
+        "independent_total_occupancy": 5140.032410651405,
+        "equilibrium_total_occupancy": 5138.227266654718,
+        "independent_over_M": 0.012970616422981432,
+        "equilibrium_over_M": 0.012966061231788326
+      },
+      {
+        "rho": 6.5096752304581775,
+        "M": 520774.0184366542,
+        "independent_total_occupancy": 5175.4356727235645,
+        "equilibrium_total_occupancy": 5174.219676941049,
+        "independent_over_M": 0.009937968273186987,
+        "equilibrium_over_M": 0.00993563329536654
+      },
+      {
+        "rho": 8.554672535565684,
+        "M": 684373.8028452548,
+        "independent_total_occupancy": 5206.539758629186,
+        "equilibrium_total_occupancy": 5205.725246728261,
+        "independent_over_M": 0.0076077426356520655,
+        "equilibrium_over_M": 0.007606552479194383
+      },
+      {
+        "rho": 11.242100350620863,
+        "M": 899368.028049669,
+        "independent_total_occupancy": 5233.752870921519,
+        "equilibrium_total_occupancy": 5233.209239854499,
+        "independent_over_M": 0.005819367275342455,
+        "equilibrium_over_M": 0.005818762816377865
+      },
+      {
+        "rho": 14.773776525985127,
+        "M": 1181902.1220788101,
+        "independent_total_occupancy": 5257.508982800171,
+        "equilibrium_total_occupancy": 5257.146775333005,
+        "independent_over_M": 0.004448345497132119,
+        "equilibrium_over_M": 0.004448039035657519
+      },
+      {
+        "rho": 19.414919457438817,
+        "M": 1553193.5565951054,
+        "independent_total_occupancy": 5278.233787986163,
+        "equilibrium_total_occupancy": 5277.992564120284,
+        "independent_over_M": 0.0033983103815837684,
+        "equilibrium_over_M": 0.00339815507327409
+      },
+      {
+        "rho": 25.514065200312874,
+        "M": 2041125.21602503,
+        "independent_total_occupancy": 5296.318013106823,
+        "equilibrium_total_occupancy": 5296.1573590670705,
+        "independent_over_M": 0.002594803087789532,
+        "equilibrium_over_M": 0.0025947243792230554
+      },
+      {
+        "rho": 33.5292414924956,
+        "M": 2682339.319399648,
+        "independent_total_occupancy": 5312.100703541412,
+        "equilibrium_total_occupancy": 5311.993762592007,
+        "independent_over_M": 0.001980398477225599,
+        "equilibrium_over_M": 0.001980358608686734
+      },
+      {
+        "rho": 44.06236427773573,
+        "M": 3524989.1422188585,
+        "independent_total_occupancy": 5325.863020834986,
+        "equilibrium_total_occupancy": 5325.791973689892,
+        "independent_over_M": 0.001510887780347187,
+        "equilibrium_over_M": 0.001510867625066638
+      },
+      {
+        "rho": 57.90443980602483,
+        "M": 4632355.184481987,
+        "independent_total_occupancy": 5337.831412454105,
+        "equilibrium_total_occupancy": 5337.784404147345,
+        "independent_over_M": 0.0011522932072081619,
+        "equilibrium_over_M": 0.0011522830593881249
+      },
+      {
+        "rho": 76.09496685459884,
+        "M": 6087597.348367907,
+        "independent_total_occupancy": 5348.187769739514,
+        "equilibrium_total_occupancy": 5348.156868142266,
+        "independent_over_M": 0.0008785383565444535,
+        "equilibrium_over_M": 0.000878533280387888
+      },
+      {
+        "rho": 100.0,
+        "M": 8000000.0,
+        "independent_total_occupancy": 5357.083289568836,
+        "equilibrium_total_occupancy": 5357.063152968898,
+        "independent_over_M": 0.0006696354111961045,
+        "equilibrium_over_M": 0.0006696328941211123
+      }
+    ],
+    "max_independent_over_M": 1491.1419839644423,
+    "independent_over_M_at_ago2_measured_low": 0.29112878658418406,
+    "independent_over_M_at_ago2_measured_high": 0.029409802144033662,
+    "crossover_M_where_independent_equals_budget": 3950.289821979689,
+    "alpha_threshold_for_over_allocation_vs_ago2_low": 0.26335265479864595,
+    "alpha_threshold_for_over_allocation_vs_ago2_high": 0.0232369989528217,
+    "over_allocation_note": "max_independent_over_M is attained at a pool of well under one complex per cell, outside any defensible range, and should not be quoted as a headline. At the measured Argonaute copy numbers with alpha = 1 the independent counterfactual allocates LESS than the budget, so the over-allocation is conditional: it occurs only when the loaded fraction falls below alpha_threshold_for_over_allocation_vs_ago2_low against the HeLa-specific measurement.",
+    "max_independent_over_M_at_rho": 1e-05,
+    "max_independent_over_M_at_M": 0.8,
+    "equilibrium_plateau_equals_sum_x": true,
+    "ago2_measured_low_copies_per_cell": 15000.0,
+    "ago2_measured_high_copies_per_cell": 170000.0,
+    "ago2_measurement_note": "the low value is the only HeLa-specific measurement found (Janas et al., AQUA mass spectrometry, Ago1-4); the high value is from a different cell type and method. Both are measured copy numbers and neither is a sweep, which is why the figure marks them differently from the alpha-swept band.",
+    "interpretation": "independent_over_M above 1 means the independent pairwise counterfactual allocates more loaded RISC than the cell contains. It is a counterfactual about what those affinities imply if transcripts are scored in isolation, not a claim about any published predictor's output."
+  },
+  "seed": 0,
+  "elapsed_s": 18.6449,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T19:45:27Z"
+}

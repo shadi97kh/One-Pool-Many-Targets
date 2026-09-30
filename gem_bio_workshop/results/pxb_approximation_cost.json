@@ -1,0 +1,177 @@
+{
+  "name": "pxb_approximation_cost",
+  "status": "OK",
+  "values": {
+    "WHAT_THIS_TESTS": "whether a saturable-bin background reproduces the full-reference solution and its gradients cheaply enough to be worth using. It is a computational claim, not evidence about coupling or rho.",
+    "reference_universe": "the construct's full retrieved competitor set, a site-filtered universe of order a thousand transcripts. NOT the whole transcriptome.",
+    "n_constructs": 39,
+    "n_families": 15,
+    "development_families": [
+      "ATTGGAA",
+      "CACCGTA",
+      "CTTGATC",
+      "GGTGAAG",
+      "MAPK14",
+      "PLK1",
+      "TCTCCTG",
+      "TTGTAGC"
+    ],
+    "test_families": [
+      "CAAATCT",
+      "CACGATG",
+      "GAACCTC",
+      "GTTGCTT",
+      "PIK3CB",
+      "TTGAGGC",
+      "TTTTGGA"
+    ],
+    "grid": {
+      "rho": [
+        0.001,
+        0.01,
+        0.1,
+        0.5,
+        1.0,
+        10.0
+      ],
+      "R": [
+        25,
+        50,
+        100,
+        200,
+        500
+      ],
+      "B": [
+        1,
+        5,
+        10,
+        25,
+        50,
+        100,
+        200
+      ]
+    },
+    "n_grid_rows": 10518,
+    "n_exact_cases_excluded_from_selection": 0,
+    "tolerances": {
+      "focal_rel_occupancy": 0.01,
+      "grad_rel_l2": 0.01,
+      "near_zero_abs": 1e-12,
+      "note": "engineering targets, not biological efficacy thresholds"
+    },
+    "full_reference_gradient_check": {
+      "per_coordinate": [
+        {
+          "coord": 0,
+          "analytic": -0.0004996941592929102,
+          "central_difference": -0.0004996941610491135
+        },
+        {
+          "coord": 8,
+          "analytic": -0.00013381712485391317,
+          "central_difference": -0.0001338171032316815
+        },
+        {
+          "coord": 16,
+          "analytic": -2.1402693550799057e-06,
+          "central_difference": -2.140260191296761e-06
+        },
+        {
+          "coord": 24,
+          "analytic": -0.0019707894960558385,
+          "central_difference": -0.001970789489935676
+        },
+        {
+          "coord": 32,
+          "analytic": -0.002706470568946989,
+          "central_difference": -0.0027064705684920476
+        }
+      ],
+      "max_abs_rel_err": 4.28162107662935e-06
+    },
+    "selected_on_development": {
+      "method": "bins",
+      "R": 100,
+      "B": 100,
+      "cost_terms": 200,
+      "n_dev_cases": 180,
+      "worst_dev_focal_rel_err": 1.4930307266183918e-05,
+      "worst_dev_grad_rel_err": 0.006227439349469615
+    },
+    "held_out_result": {
+      "n_cases": 54,
+      "n_families": 7,
+      "median_focal_rel_err": 3.9968029100880555e-14,
+      "p90_focal_rel_err": 5.098954171053748e-07,
+      "worst_focal_rel_err": 1.160881721184173e-05,
+      "median_grad_rel_err": 5.372371232584981e-05,
+      "p90_grad_rel_err": 0.001097290949419895,
+      "worst_grad_rel_err": 0.004661335177260349,
+      "worst_dimensionless_residual": 2.6957602816679583e-16,
+      "meets_both_tolerances_on_all_test_cases": true
+    },
+    "timing": {
+      "construct": "MAPK14-193_pos04mut",
+      "N_reference": 4919,
+      "threads": 1,
+      "dtype": "float64",
+      "device": "cpu",
+      "torch": "2.11.0+cu130",
+      "warmup": 10,
+      "repetitions": 50,
+      "note": "timing repetitions are not independent biological samples",
+      "full_forward": {
+        "median_s": 0.007176482526119798,
+        "p90_s": 0.007343936117831617,
+        "min_s": 0.007023041951470077,
+        "iqr_s": 5.092375795356929e-05
+      },
+      "full_forward_backward": {
+        "median_s": 0.007353082473855466,
+        "p90_s": 0.0074185528908856215,
+        "min_s": 0.007280961028300226,
+        "iqr_s": 6.3724146457389e-05
+      },
+      "selected_forward": {
+        "median_s": 0.014909211953636259,
+        "p90_s": 0.015163744846358896,
+        "min_s": 0.01479929406195879,
+        "iqr_s": 8.632999379187822e-05
+      },
+      "selected_forward_backward": {
+        "median_s": 0.025598122971132398,
+        "p90_s": 0.02587726302444935,
+        "min_s": 0.025465015089139342,
+        "iqr_s": 0.00013560522347688675
+      },
+      "setup_bin_construction": {
+        "median_s": 0.0076358134974725544,
+        "p90_s": 0.00771017000079155,
+        "min_s": 0.007595204981043935,
+        "iqr_s": 3.474074765108526e-05
+      },
+      "selected_forward_amortised": {
+        "median_s": 0.0068878395250067115,
+        "p90_s": 0.007075374433770776,
+        "min_s": 0.006831299979239702,
+        "iqr_s": 6.321989349089563e-05
+      },
+      "full_forward_amortised": {
+        "median_s": 0.006507161015179008,
+        "p90_s": 0.006655890063848346,
+        "min_s": 0.006373608950525522,
+        "iqr_s": 0.00015276312478818
+      },
+      "amortised_forward_speedup": 0.9447317974750098,
+      "speedup_forward_backward_median": 0.2872508457806734,
+      "solves_to_amortise_setup": null
+    },
+    "worst_full_reference_dimensionless_residual": 7.275957614183426e-12,
+    "frontier_path": "results/positive_extensions/B_frontier.csv",
+    "grid_path": "results/positive_extensions/B_grid.csv"
+  },
+  "seed": 0,
+  "elapsed_s": 311.7536,
+  "traceback": null,
+  "timestamp_utc": "2026-09-06T19:36:15Z"
+}

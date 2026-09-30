@@ -1,0 +1,16 @@
+{
+  "name": "d7_candidates",
+  "status": "OK",
+  "values": {
+    "n_candidate_transcripts": 16492,
+    "total_utr3_nucleotides": 30493209,
+    "median_utr3_len": 1149.0,
+    "gencode_release": 50,
+    "path": "data/candidate_utr3_gse28786.parquet",
+    "note": "both cell lines were run on the same array, so the retrieval universe is shared and only the abundance vector differs between them"
+  },
+  "seed": 0,
+  "elapsed_s": 3.2891,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T16:07:45Z"
+}

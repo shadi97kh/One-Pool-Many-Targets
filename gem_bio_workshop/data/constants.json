@@ -1,0 +1,127 @@
+{
+  "_README": "Written by scripts/write_constants.py. Sources and verbatim quotes in data/lit/constants/CONSTANTS_SOURCES.md.",
+  "ago2_copies_per_cell": {
+    "low": 15000.0,
+    "central": 15000.0,
+    "high": 170000.0,
+    "units": "molecules per cell",
+    "what_is_counted": "Argonaute proteins available to be loaded with a transfected guide. Ago1-4 total, because a transfected siRNA is not restricted to AGO2.",
+    "low_and_central_source": {
+      "value": 15000.0,
+      "cell_type": "HeLa",
+      "method": "AQUA absolute quantification by tandem MS with heavy tryptic peptide standards",
+      "citation": "Janas MM, Wang B, Harris AS, Aguiar M, Shaffer JM, Subrahmanyam YVBK, Behlke MA, Wucherpfennig KW, Gygi SP, Gagnon E, Novina CD. RNA 2012;18(11):2041-2055.",
+      "doi": "10.1261/rna.035675.112",
+      "pmcid": "PMC3479394",
+      "quote": "we determined that there are approximately 15,000 Ago1-4 molecules per HeLa cell based on the YTPVGR peptide standard",
+      "local_file": "data/lit/constants/janas2012_PMC3479394.pdf"
+    },
+    "high_source": {
+      "value_range": [
+        140000.0,
+        170000.0
+      ],
+      "cell_type": "mouse P4 epidermis and human WM239A melanoma; NOT HeLa",
+      "method": "quantitative western blot against recombinant Ago standards assuming 80% extraction efficiency; shotgun 2D-LC-MS/MS set the Ago1:Ago2:Ago3 ratios",
+      "citation": "Wang D, Zhang Z, O'Loughlin E, Lee T, Houel S, O'Carroll D, Tarakhovsky A, Ahn NG, Yi R. Genes Dev 2012;26(7):693-704.",
+      "doi": "10.1101/gad.182758.111",
+      "pmcid": "PMC3323880",
+      "quote": "the total copy number of Argonaute proteins is ~1.4 x 10^5 to 1.7 x 10^5 molecules per cell in mice and humans",
+      "local_file": "data/lit/constants/wang2012_genesdev_PMC3323880.pdf"
+    },
+    "erratum": {
+      "citation": "ERRATA. RNA 2012;18(12):2345.",
+      "pmcid": "PMC3504684",
+      "quote": "the authors incorrectly stated that Wang et al. (2012) found 14,000-17,000 Ago1-4 molecules per cell ... when in fact they found 140,000-170,000 molecules per cell",
+      "local_file": "data/lit/constants/rna_errata_PMC3504684.pdf"
+    },
+    "ago2_only_hela_derived": 6000.0,
+    "ago2_only_hela_derived_note": "0.4 x 15,000, using Janas' own statement that ~40% of HeLa Ago is Ago2. Derived arithmetic, not stated in the paper.",
+    "brief_said": "1.4e5 to 1.7e5 attributed to AGO2 measured by shotgun proteomics; that attribution is incorrect on both counts and the HeLa-specific value is tenfold lower"
+  },
+  "mrna_molecules_per_cell": {
+    "low": 50000.0,
+    "central": 80000.0,
+    "high": 300000.0,
+    "units": "mRNA molecules per cell",
+    "cell_type": "GM12878 lymphoblastoid; no HeLa-specific spike-in calibrated measurement was found",
+    "method": "SMART-seq with ERCC spike-in quantification standards",
+    "citation": "Marinov GK, Williams BA, McCue K, Schroth GP, Gertz J, Myers RM, Wold BJ. Genome Res 2014;24(3):496-510.",
+    "doi": "10.1101/gr.161034.113",
+    "pmcid": "PMC3941114",
+    "quote": "we estimate the absolute number of RNA molecules per cell for each gene and find significant variation in total mRNA content: between 50,000 and 300,000 transcripts per cell",
+    "local_file": "data/lit/constants/marinov2014_PMC3941114.xml",
+    "cross_check": {
+      "value": 158000.0,
+      "cell_type": "mouse ESC",
+      "citation": "Bosson AD, Zamudio JR, Sharp PA. Mol Cell 2014;56(3):347-359.",
+      "pmcid": "PMC5048918"
+    },
+    "rejected_value": {
+      "value": 360000.0,
+      "why": "traces to a QIAGEN FAQ page with no citation, for 'a mammalian cell', not a measurement and not HeLa",
+      "local_file": "data/lit/constants/qiagen_faq_rna_per_cell.html"
+    }
+  },
+  "kd_seed_match_molar": {
+    "low": 2.4e-11,
+    "central": 2.6e-11,
+    "high": 2.8e-11,
+    "units": "molar",
+    "reported_as": "26 +/- 2 pM",
+    "target": "seed-matching target, guide positions 2-8, 7-mer seed pairing only",
+    "system": "mouse AGO2-RISC loaded with let-7, MEF S100 lysate, 25 C, nitrocellulose filter binding",
+    "citation": "Wee LM, Flores-Jasso CF, Salomon WE, Zamore PD. Cell 2012;151(5):1055-1067.",
+    "doi": "10.1016/j.cell.2012.10.036",
+    "pmcid": "PMC3595543",
+    "quote": "direct binding assays found no substantive difference in affinity between a seed-matching (KD = 26 +/- 2 pM) and a fully complementary target (20 +/- 10 pM)",
+    "local_file": "data/lit/constants/wee2012_PMC3595543.html",
+    "caveats": [
+      "KM is not KD; the paper says so explicitly",
+      "measured on a fully accessible unstructured oligo target in lysate at 25 C, not an mRNA in a cell, so using it as an absolute in-cell scale overestimates affinity",
+      "the article carries a published correction (Cell 2013;152:366) whose content could not be retrieved"
+    ]
+  },
+  "kd_seed_match_site_class": "7mer-m8",
+  "kd_full_complementarity_molar": {
+    "low": 1e-11,
+    "central": 2e-11,
+    "high": 3e-11,
+    "units": "molar",
+    "reported_as": "20 +/- 10 pM",
+    "system": "mouse AGO2-RISC, same assay as the seed-match value",
+    "citation": "Wee LM et al. Cell 2012;151(5):1055-1067.",
+    "pmcid": "PMC3595543",
+    "note": "the measured affinity gain from full complementarity over seed pairing alone is small, which is why the on-target column is anchored on this measured value rather than extrapolated from a duplex free energy"
+  },
+  "kd_seed_mismatched_molar": {
+    "central": 2.3e-09,
+    "units": "molar",
+    "reported_as": "2.3 +/- 0.6 nM",
+    "target": "target with a g4g5 seed mismatch, i.e. no functional seed match; used only to bracket the background term beta",
+    "system": "FLY Ago2-RISC by equilibrium competition; species caveat applies, the mouse equivalent was not reported",
+    "citation": "Wee LM et al. Cell 2012;151(5):1055-1067.",
+    "pmcid": "PMC3595543"
+  },
+  "hela_cell_volume_litres": {
+    "low": 1.2e-12,
+    "central": 3e-12,
+    "high": 5e-12,
+    "units": "litres",
+    "reported_as": "1,200-5,000 um^3, central cluster 2,400-3,700 um^3",
+    "sources": [
+      "Cohen & Studzinski 1967, BNID 103719, 4400-5000 um^3",
+      "Zhao et al. 2008, BNID 103725, 2425 um^3",
+      "Puck, Marcus & Cieciura 1956, BNID 105879, 3700 +/- 1500 um^3",
+      "Luciani et al. 2001, BNID 109386, 2600 um^3",
+      "Guillaume-Gentil et al. 2016, BNID 112928, cytoplasmic median 1.6 +/- 0.7 pL"
+    ],
+    "local_files": [
+      "data/lit/constants/bn_103719.html",
+      "data/lit/constants/bn_103725.html",
+      "data/lit/constants/bn_105879.html",
+      "data/lit/constants/bn_109386.html",
+      "data/lit/constants/bn_112928.html"
+    ]
+  }
+}

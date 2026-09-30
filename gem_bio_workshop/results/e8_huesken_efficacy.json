@@ -1,0 +1,161 @@
+{
+  "name": "e8_huesken_efficacy",
+  "status": "OK",
+  "values": {
+    "OFF_TARGET_CLAIM": "NONE. This dataset observes on-target knockdown only. No off-target conclusion of any kind is drawn from it, and none may be drawn from these numbers.",
+    "dataset": "Huesken et al. Nat Biotechnol 2005;23:995-1001, redistributed in the OligoFormer repository",
+    "d5_acquisition": {
+      "n_sirnas": 2361,
+      "n_assigned_to_a_target_gene": 2361,
+      "n_target_genes": 30,
+      "n_tiled_sequences_searched": 26459,
+      "efficacy_mean": 0.514468110777052,
+      "efficacy_sd": 0.15002114559039798,
+      "remaining_expression_pct_min": 0.0,
+      "remaining_expression_pct_max": 100.0
+    },
+    "n_sirnas_used": 2361,
+    "n_target_genes": 30,
+    "n_features": 12,
+    "feature_names": [
+      "dg_duplex_full",
+      "dg_5p_end",
+      "dg_3p_end",
+      "asymmetry",
+      "dg_guide_selffold",
+      "seed_pairing_stability",
+      "gc_fraction",
+      "gc_seed",
+      "a_at_pos1",
+      "u_at_pos1",
+      "g_at_pos19",
+      "c_at_pos19"
+    ],
+    "split": "GroupKFold by target gene; no gene appears in both train and test in any fold",
+    "n_splits": 5,
+    "training_steps": 600,
+    "learning_rate": 0.003,
+    "M_pool_units": 1.0,
+    "M_note": "dimensionless; the efficacy assay carries no absolute pool scale, so K is expressed in units of the pool",
+    "folds": [
+      {
+        "fold": 0,
+        "n_train": 1871,
+        "n_test": 490,
+        "n_train_genes": 24,
+        "n_test_genes": 6,
+        "genes_shared_between_train_and_test": 0,
+        "test_genes": [
+          "C6orf110",
+          "HIP2",
+          "Rn_cacnb1",
+          "UBE2M",
+          "UBE2V1",
+          "Ufc1"
+        ],
+        "spearman": 0.4992623138958166,
+        "spearman_p": 2.989491617000194e-32,
+        "pearson": 0.4656711449509124,
+        "pearson_p": 9.649493362828422e-28,
+        "final_train_loss": 0.00996164220468644
+      },
+      {
+        "fold": 1,
+        "n_train": 1871,
+        "n_test": 490,
+        "n_train_genes": 24,
+        "n_test_genes": 6,
+        "genes_shared_between_train_and_test": 0,
+        "test_genes": [
+          "Rn_Mmp7_1",
+          "Rn_TCAP",
+          "TC10",
+          "UBE2C",
+          "UBE2G1",
+          "UBE2J1"
+        ],
+        "spearman": 0.4473895906225492,
+        "spearman_p": 1.723648444678471e-25,
+        "pearson": 0.4598637434037096,
+        "pearson_p": 5.183861257816573e-27,
+        "final_train_loss": 0.009238247375426712
+      },
+      {
+        "fold": 2,
+        "n_train": 1880,
+        "n_test": 481,
+        "n_train_genes": 24,
+        "n_test_genes": 6,
+        "genes_shared_between_train_and_test": 0,
+        "test_genes": [
+          "HSPC150",
+          "NOG",
+          "RAB6IP1",
+          "Rn_Mmp7_2",
+          "UBE2B",
+          "UBE2L3"
+        ],
+        "spearman": 0.44490354161479273,
+        "spearman_p": 9.275687223072896e-25,
+        "pearson": 0.42597999149508387,
+        "pearson_p": 1.2628892695177296e-22,
+        "final_train_loss": 0.008994396348755268
+      },
+      {
+        "fold": 3,
+        "n_train": 1909,
+        "n_test": 452,
+        "n_train_genes": 24,
+        "n_test_genes": 6,
+        "genes_shared_between_train_and_test": 0,
+        "test_genes": [
+          "CDC34",
+          "P2RX3",
+          "Rn_Fxyd6",
+          "SOST",
+          "UBE2D3",
+          "UBE2E3"
+        ],
+        "spearman": 0.45799082897335364,
+        "spearman_p": 8.072520301267405e-25,
+        "pearson": 0.43808817401237465,
+        "pearson_p": 1.2783647961348677e-22,
+        "final_train_loss": 0.009363640595625031
+      },
+      {
+        "fold": 4,
+        "n_train": 1913,
+        "n_test": 448,
+        "n_train_genes": 24,
+        "n_test_genes": 6,
+        "genes_shared_between_train_and_test": 0,
+        "test_genes": [
+          "FLJ11011",
+          "Rn_P2rx2",
+          "UBE2I",
+          "UBE2L6",
+          "UBE2N",
+          "UBE2S"
+        ],
+        "spearman": 0.5478754936044471,
+        "spearman_p": 1.8612031198532627e-36,
+        "pearson": 0.5206946073002815,
+        "pearson_p": 1.697428162205152e-32,
+        "final_train_loss": 0.009735465593889485
+      }
+    ],
+    "mean_spearman_heldout_genes": 0.4794843537421919,
+    "sd_spearman_heldout_genes": 0.04403519533731524,
+    "mean_pearson_heldout_genes": 0.4620595322324724,
+    "sd_pearson_heldout_genes": 0.03651128776814525,
+    "pooled_out_of_fold_spearman": 0.47974499733607573,
+    "pooled_out_of_fold_spearman_p": 3.518977446587405e-136,
+    "pooled_out_of_fold_pearson": 0.4612962975651405,
+    "pooled_out_of_fold_pearson_p": 9.704126592641951e-125,
+    "max_genes_shared_any_fold": 0
+  },
+  "seed": 0,
+  "elapsed_s": 9.312,
+  "traceback": null,
+  "timestamp_utc": "2026-09-05T06:39:12Z"
+}

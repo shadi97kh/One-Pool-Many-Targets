@@ -1,0 +1,23 @@
+{
+  "name": "f5_accessibility_d8",
+  "status": "OK",
+  "values": {
+    "n_transcripts": 14576,
+    "n_reused_from_existing_caches": 13349,
+    "n_computed_here": 1227,
+    "n_errors": 0,
+    "errors": {},
+    "total_positions": 26954037,
+    "pfl_fold_W": 80,
+    "pfl_fold_L": 40,
+    "pfl_fold_u_max": 15,
+    "reused_from": [
+      "data/accessibility_gse28786_u8_u15.npz"
+    ],
+    "path": "data/accessibility_gse14073_u8_u15.npz"
+  },
+  "seed": 0,
+  "elapsed_s": 31.934,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T16:21:36Z"
+}

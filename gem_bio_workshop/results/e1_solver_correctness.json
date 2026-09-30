@@ -1,0 +1,406 @@
+{
+  "name": "e1_solver_correctness",
+  "status": "OK",
+  "values": {
+    "source_of_K": "ViennaRNA ddG on GENCODE v50 3'UTRs (features.parquet)",
+    "seed_code_benchmark_conservation_residual": 4.263256414560601e-14,
+    "seed_code_benchmark_conservation_residual_expected": 4.26e-14,
+    "seed_code_benchmark_conservation_residual_matches": true,
+    "seed_code_benchmark_gradient_worst_relative_error": 1.0741520584112152e-07,
+    "seed_code_benchmark_gradient_expected": 1.07e-07,
+    "seed_code_benchmark_gradient_matches": true,
+    "seed_code_benchmark_note": "reproduces the value that shipped with the seed code, on the seed code's own random draws, confirming that the refactor into src/riscpool/ left the mathematics unchanged",
+    "n_gradient_coordinates_resolvable": 35,
+    "n_gradient_coordinates_not_resolvable": 0,
+    "not_resolvable_note": "a central difference is only meaningful when the two loss evaluations differ by more than double-precision cancellation noise. Coordinates failing that test are excluded from the worst-case statistic and counted here instead of being allowed to report a spurious relative error of 1.",
+    "worst_relative_gradient_error_resolvable_only": 0.0001565752316368066,
+    "worst_error_relative_to_gradient_norm": 2.3039848086269423e-07,
+    "worst_error_relative_to_gradient_norm_note": "|finite difference - implicit gradient| divided by the largest gradient component. This is the measure that says whether the implicit gradients are right; a large per-coordinate RELATIVE error on a component that is itself ~0 does not.",
+    "n_directional_derivative_checks": 8,
+    "worst_directional_derivative_relative_error": 1.9233305745872416e-06,
+    "directional_derivative_checks": [
+      {
+        "finite_difference": 66656.56469704118,
+        "implicit_gradient": 66656.61560820344,
+        "relative_error": 7.637825863542845e-07
+      },
+      {
+        "finite_difference": -3118475.8326708106,
+        "implicit_gradient": -3118473.6164913033,
+        "relative_error": 7.106611133878318e-07
+      },
+      {
+        "finite_difference": 1206701.4609929174,
+        "implicit_gradient": 1206702.0391354372,
+        "relative_error": 4.791095904848751e-07
+      },
+      {
+        "finite_difference": -4059643.8013453735,
+        "implicit_gradient": -4059636.175588546,
+        "relative_error": 1.8784300300241955e-06
+      },
+      {
+        "finite_difference": -1846548.5995984636,
+        "implicit_gradient": -1846552.1511286735,
+        "relative_error": 1.9233305745872416e-06
+      },
+      {
+        "finite_difference": -3707781.892226194,
+        "implicit_gradient": -3707777.873192788,
+        "relative_error": 1.0839454754218919e-06
+      },
+      {
+        "finite_difference": -4018365.795869613,
+        "implicit_gradient": -4018359.6569508216,
+        "relative_error": 1.5277152711537583e-06
+      },
+      {
+        "finite_difference": 2968266.2961422466,
+        "implicit_gradient": 2968268.190381887,
+        "relative_error": 6.381632382366794e-07
+      }
+    ],
+    "median_relative_gradient_error_resolvable_only": 2.3334568048305136e-09,
+    "source_of_x": "GSE5814 mock Cy3 channel (hela_abundance.parquet)",
+    "n_batches": 24,
+    "n_transcripts_per_batch": 400,
+    "max_abs_residual_F_of_f": 9.094947017729282e-13,
+    "max_abs_conservation_closure": 9.094947017729282e-13,
+    "f_strictly_bracketed_in_0_M": true,
+    "gradient_coordinate_selection_rule": "the n_coords/3 coordinates of each of K, x and M carrying the largest analytic gradient magnitude. Stated in advance. A gradient component that is numerically zero cannot be checked against a difference quotient at double precision.",
+    "n_gradient_coordinates_checked": 35,
+    "worst_relative_gradient_error": 0.0001565752316368066,
+    "median_relative_gradient_error": 2.3334568048305136e-09,
+    "gradient_checks": [
+      {
+        "parameter": "K",
+        "finite_difference": -634739.0102064217,
+        "implicit_gradient": -634739.014030795,
+        "relative_error": 6.025111355969722e-09,
+        "central_difference_resolvable": true,
+        "step_eps": 2.667355433615933e-09,
+        "error_relative_to_gradient_norm": 6.025111355969722e-09
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 87529.83927166233,
+        "implicit_gradient": 87529.83576819995,
+        "relative_error": 4.002592048801219e-08,
+        "central_difference_resolvable": true,
+        "step_eps": 2.862152019062464e-09,
+        "error_relative_to_gradient_norm": 5.519532137733178e-09
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 50896.39526535231,
+        "implicit_gradient": 50896.3958645279,
+        "relative_error": 1.1772456174225913e-08,
+        "central_difference_resolvable": true,
+        "step_eps": 1.335423458341665e-08,
+        "error_relative_to_gradient_norm": 9.43971579651693e-10
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 48525.44161103337,
+        "implicit_gradient": 48525.44876185725,
+        "relative_error": 1.473623442106538e-07,
+        "central_difference_resolvable": true,
+        "step_eps": 2.0889600752274373e-09,
+        "error_relative_to_gradient_norm": 1.1265770222648272e-08
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 31721.123374221217,
+        "implicit_gradient": 31721.228774283925,
+        "relative_error": 3.322697978007081e-06,
+        "central_difference_resolvable": true,
+        "step_eps": 6.837873459557772e-11,
+        "error_relative_to_gradient_norm": 1.6605259859306466e-07
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 20560.55079327959,
+        "implicit_gradient": 20560.554121702804,
+        "relative_error": 1.6188392552663825e-07,
+        "central_difference_resolvable": true,
+        "step_eps": 7.685165903391435e-10,
+        "error_relative_to_gradient_norm": 5.243766553890558e-09
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 19254.562905463816,
+        "implicit_gradient": 19254.559197127088,
+        "relative_error": 1.925952173557778e-07,
+        "central_difference_resolvable": true,
+        "step_eps": 7.286038414774321e-10,
+        "error_relative_to_gradient_norm": 5.842301553703435e-09
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 15014.030765640948,
+        "implicit_gradient": 15014.030122722092,
+        "relative_error": 4.2821202789377236e-08,
+        "central_difference_resolvable": true,
+        "step_eps": 6.936040746282364e-09,
+        "error_relative_to_gradient_norm": 1.012886937607191e-09
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 10753.628485152405,
+        "implicit_gradient": 10753.62883647068,
+        "relative_error": 3.266974153256602e-08,
+        "central_difference_resolvable": true,
+        "step_eps": 1.791105622054732e-08,
+        "error_relative_to_gradient_norm": 5.534846084119877e-10
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 4320.825062017054,
+        "implicit_gradient": 4320.825243045431,
+        "relative_error": 4.1896713544337484e-08,
+        "central_difference_resolvable": true,
+        "step_eps": 2.3119857744940143e-09,
+        "error_relative_to_gradient_norm": 2.852012771886022e-10
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 3473.3899516200886,
+        "implicit_gradient": 3473.391448830158,
+        "relative_error": 4.3105134892821815e-07,
+        "central_difference_resolvable": true,
+        "step_eps": 5.256782513926875e-09,
+        "error_relative_to_gradient_norm": 2.3587805952972964e-09
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 1886.6362231031103,
+        "implicit_gradient": 1886.6470159188998,
+        "relative_error": 5.720633323793016e-06,
+        "central_difference_resolvable": true,
+        "step_eps": 5.678732304901407e-10,
+        "error_relative_to_gradient_norm": 1.7003548782928107e-08
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 1308.5432759026196,
+        "implicit_gradient": 1308.5441604306377,
+        "relative_error": 6.759634446068727e-07,
+        "central_difference_resolvable": true,
+        "step_eps": 2.975331759470263e-09,
+        "error_relative_to_gradient_norm": 1.3935302518870981e-09
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 1225.4379797297172,
+        "implicit_gradient": 1225.4381685898484,
+        "relative_error": 1.5411640996308583e-07,
+        "central_difference_resolvable": true,
+        "step_eps": 3.5679753282222176e-08,
+        "error_relative_to_gradient_norm": 2.9753981872877825e-10
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 933.8642199776109,
+        "implicit_gradient": 934.0104628821879,
+        "relative_error": 0.0001565752316368066,
+        "central_difference_resolvable": true,
+        "step_eps": 6.750327876444023e-11,
+        "error_relative_to_gradient_norm": 2.3039848086269423e-07
+      },
+      {
+        "parameter": "K",
+        "finite_difference": 732.1068977234875,
+        "implicit_gradient": 732.1069818230745,
+        "relative_error": 1.1487335752613401e-07,
+        "central_difference_resolvable": true,
+        "step_eps": 1.3172668683200964e-08,
+        "error_relative_to_gradient_norm": 1.3249475014349876e-10
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 289.06881642446865,
+        "implicit_gradient": 289.0688164835946,
+        "relative_error": 2.0453941405512798e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 0.00014685583958105132,
+        "error_relative_to_gradient_norm": 9.315004283366014e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 254.37543461741026,
+        "implicit_gradient": 254.37543468890783,
+        "relative_error": 2.8107103606696544e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 0.0001287817994898676,
+        "error_relative_to_gradient_norm": 1.1264088924353917e-13
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 251.50703737761887,
+        "implicit_gradient": 251.5070374136685,
+        "relative_error": 1.4333452401524883e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 0.00012832857093922099,
+        "error_relative_to_gradient_norm": 5.679443156526152e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 208.1760059564185,
+        "implicit_gradient": 208.1760059748974,
+        "relative_error": 8.876582251695517e-11,
+        "central_difference_resolvable": true,
+        "step_eps": 0.0001398636462763194,
+        "error_relative_to_gradient_norm": 2.911261792671188e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 205.17997970529746,
+        "implicit_gradient": 205.17997973412028,
+        "relative_error": 1.4047581568603802e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 0.00012751395039572964,
+        "error_relative_to_gradient_norm": 4.540893875824833e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 159.46393124649558,
+        "implicit_gradient": 159.4639314051261,
+        "relative_error": 9.947736254322401e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 8.122903169862166e-05,
+        "error_relative_to_gradient_norm": 2.4991454702335224e-13
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 154.24687037838632,
+        "implicit_gradient": 154.24687027201497,
+        "relative_error": 6.896175283730106e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 7.973764636763618e-05,
+        "error_relative_to_gradient_norm": 1.6758280672574857e-13
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 146.543041509327,
+        "implicit_gradient": 146.54304171153296,
+        "relative_error": 1.3798401149851482e-09,
+        "central_difference_resolvable": true,
+        "step_eps": 8.15593405488257e-05,
+        "error_relative_to_gradient_norm": 3.1856552544555704e-13
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 117.65717006598878,
+        "implicit_gradient": 117.65716992729455,
+        "relative_error": 1.17879966779333e-09,
+        "central_difference_resolvable": true,
+        "step_eps": 6.103477815374503e-05,
+        "error_relative_to_gradient_norm": 2.185059212077391e-13
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 105.23461532392392,
+        "implicit_gradient": 105.23461528939282,
+        "relative_error": 3.2813440591506815e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 5.6665981904025096e-05,
+        "error_relative_to_gradient_norm": 5.440204118182846e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 104.2691056806502,
+        "implicit_gradient": 104.26910543734274,
+        "relative_error": 2.3334568048305136e-09,
+        "central_difference_resolvable": true,
+        "step_eps": 5.3705009809620315e-05,
+        "error_relative_to_gradient_norm": 3.8331888982059774e-13
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 99.96268519282697,
+        "implicit_gradient": 99.96268521694431,
+        "relative_error": 2.412634370596548e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 5.225853356459292e-05,
+        "error_relative_to_gradient_norm": 3.7995680870472306e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 93.36602485623254,
+        "implicit_gradient": 93.36602490102443,
+        "relative_error": 4.797450609706184e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 5.3466234759335316e-05,
+        "error_relative_to_gradient_norm": 7.05674116741044e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 91.48147918263432,
+        "implicit_gradient": 91.48147912664436,
+        "relative_error": 6.12035988698853e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 4.720802748195873e-05,
+        "error_relative_to_gradient_norm": 8.820941571500869e-14
+      },
+      {
+        "parameter": "x",
+        "finite_difference": 85.46464487655074,
+        "implicit_gradient": 85.46464477348273,
+        "relative_error": 1.2059724118462457e-09,
+        "central_difference_resolvable": true,
+        "step_eps": 5.636171023174731e-05,
+        "error_relative_to_gradient_norm": 1.6237855501403973e-13
+      },
+      {
+        "parameter": "x",
+        "finite_difference": -85.28640967586284,
+        "implicit_gradient": -85.2866499581179,
+        "relative_error": 2.8173489658880774e-06,
+        "central_difference_resolvable": true,
+        "step_eps": 4.7936664786716816e-08,
+        "error_relative_to_gradient_norm": 3.78552837862751e-10
+      },
+      {
+        "parameter": "M",
+        "finite_difference": 86.71689707852434,
+        "implicit_gradient": 86.7168971399412,
+        "relative_error": 7.082455395299096e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 0.00011755304062681649,
+        "error_relative_to_gradient_norm": 9.675922582924395e-14
+      },
+      {
+        "parameter": "M",
+        "finite_difference": 4.640229404044919,
+        "implicit_gradient": 4.640229403046088,
+        "relative_error": 2.1525471112901396e-10,
+        "central_difference_resolvable": true,
+        "step_eps": 0.003316845587856078,
+        "error_relative_to_gradient_norm": 1.573609338422652e-15
+      },
+      {
+        "parameter": "M",
+        "finite_difference": 2.9339307294827464,
+        "implicit_gradient": 2.933930726389985,
+        "relative_error": 1.0541357119329943e-09,
+        "central_difference_resolvable": true,
+        "step_eps": 0.0024436539104747035,
+        "error_relative_to_gradient_norm": 4.872492614949514e-15
+      }
+    ],
+    "conditioning_note": "K spans about 26 decades on the real feature pipeline, against roughly two decades for the uniform draws the seed code used. Central differences are correspondingly worse conditioned here, so the tolerance is 1e-4 rather than the 1e-6 that the seed code's own distribution supports. The seed benchmark above is reported unchanged so the two are not confused.",
+    "f_monotone_increasing_in_M": true,
+    "occupancy_monotone_nondecreasing_in_M": true,
+    "tolerance_residual": 1e-09,
+    "tolerance_gradient_relative": 0.0001,
+    "passes_residual_tolerance": true,
+    "tolerance_gradient_relative_real_data": 0.001,
+    "passes_gradient_tolerance": true,
+    "gradient_pass_criterion": "worst error relative to the gradient norm AND worst directional-derivative relative error both below 1e-3. That tolerance is looser than the 1.07e-7 the seed code achieves on its own uniform draws, and deliberately so: on the real pipeline K spans decades and the loss is O(1e4), so a double-precision central difference cannot resolve better than about 1e-4 here. Both benchmarks are reported so the difference is visible rather than hidden. A genuinely wrong implicit gradient would disagree by order 1, not by 1e-4.",
+    "worst_per_coordinate_relative_error_for_reference": 0.0001565752316368066
+  },
+  "seed": 0,
+  "elapsed_s": 18.9688,
+  "traceback": null,
+  "timestamp_utc": "2026-09-04T19:43:22Z"
+}

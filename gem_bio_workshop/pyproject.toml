@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+
+[tool.ruff.lint.per-file-ignores]
+# The four seed modules are carried verbatim from the prior work they came
+# from. Their mathematics must not change, and e1 asserts that it has not by
+# reproducing the conservation residual 4.263256e-14 and the implicit-gradient
+# error 1.074152e-07 exactly. Reformatting them for style would put that
+# guarantee at risk for no benefit, so they are exempt rather than edited.
+"src/riscpool/equilibrium.py" = ["E", "F", "W"]
+"src/riscpool/theory.py" = ["E", "F", "W"]
+"src/riscpool/khead.py" = ["E", "F", "W"]
+"src/riscpool/checks.py" = ["E", "F", "W"]

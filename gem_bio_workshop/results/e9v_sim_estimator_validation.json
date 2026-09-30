@@ -1,0 +1,188 @@
+{
+  "name": "e9v_sim_estimator_validation",
+  "status": "OK",
+  "values": {
+    "SIMULATION_NOTE": "every value here is simulated. Ground-truth pools and affinities do not exist in nature; this validates the estimators used in e9 and claims nothing about any cell.",
+    "sim_doses_nM": [
+      1.0,
+      10.0,
+      25.0
+    ],
+    "sim_n_transcripts_continuous": 4000,
+    "sim_n_genes_class": 12000,
+    "sim_noise_levels": [
+      0.05,
+      0.15,
+      0.3
+    ],
+    "sim_continuous_K": [
+      {
+        "sim_noise_sd": 0.05,
+        "sim_true_pool_per_dose": [
+          0.021055806183960066,
+          1.5296115647981363,
+          79.21592458193544
+        ],
+        "sim_fitted_pool_per_dose_equilibrium_data": [
+          0.02080089795131454,
+          1.5341420596095379,
+          78.9666117889188
+        ],
+        "sim_max_rel_pool_error_equilibrium_data": 0.012106315494094473,
+        "sim_true_slope_equilibrium": 2.4229390663285244,
+        "sim_fitted_slope_equilibrium_data": 2.426472890272288,
+        "sim_true_slope_independent": 0.9999999999999994,
+        "sim_fitted_slope_independent_data": 1.003512099979075,
+        "sim_amplitude_recovered_equilibrium_data": 1.9976097448583572,
+        "sim_true_amplitude": 2.0
+      },
+      {
+        "sim_noise_sd": 0.15,
+        "sim_true_pool_per_dose": [
+          0.021055806183960066,
+          1.5296115647981363,
+          79.21592458193544
+        ],
+        "sim_fitted_pool_per_dose_equilibrium_data": [
+          0.02074712676605665,
+          1.5458450933247319,
+          79.12209797177634
+        ],
+        "sim_max_rel_pool_error_equilibrium_data": 0.01466006170490695,
+        "sim_true_slope_equilibrium": 2.4229390663285244,
+        "sim_fitted_slope_equilibrium_data": 2.428470202042264,
+        "sim_true_slope_independent": 0.9999999999999994,
+        "sim_fitted_slope_independent_data": 1.0193971103308714,
+        "sim_amplitude_recovered_equilibrium_data": 1.9972237571041909,
+        "sim_true_amplitude": 2.0
+      },
+      {
+        "sim_noise_sd": 0.3,
+        "sim_true_pool_per_dose": [
+          0.021055806183960066,
+          1.5296115647981363,
+          79.21592458193544
+        ],
+        "sim_fitted_pool_per_dose_equilibrium_data": [
+          0.021005190524622484,
+          1.575374262142766,
+          79.93537367953375
+        ],
+        "sim_max_rel_pool_error_equilibrium_data": 0.029917855224028074,
+        "sim_true_slope_equilibrium": 2.4229390663285244,
+        "sim_fitted_slope_equilibrium_data": 2.4284861845400534,
+        "sim_true_slope_independent": 0.9999999999999994,
+        "sim_fitted_slope_independent_data": 1.0188635195857836,
+        "sim_amplitude_recovered_equilibrium_data": 1.9931350457334547,
+        "sim_true_amplitude": 2.0
+      }
+    ],
+    "sim_site_class_K": [
+      {
+        "sim_noise_sd": 0.05,
+        "sim_true_pool_per_dose": [
+          50.0,
+          300.0,
+          600.0
+        ],
+        "sim_fitted_pool_per_dose": [
+          49.9217323377864,
+          302.9916459228208,
+          604.9317303178555
+        ],
+        "sim_max_rel_pool_error": 0.009972153076069313,
+        "sim_true_K_by_class": {
+          "6mer": 3000.0,
+          "7mer-A1": 800.0,
+          "7mer-m8": 300.0,
+          "8mer": 80.0
+        },
+        "sim_fitted_K_by_class": {
+          "7mer-m8": 300.0,
+          "6mer": 3024.9097130686173,
+          "7mer-A1": 805.6594613973461,
+          "8mer": 79.7843225180316
+        },
+        "sim_max_rel_K_error": 0.008303237689539097,
+        "sim_true_slope": 0.7731734095424109,
+        "sim_fitted_slope": 0.7765823143201773,
+        "sim_class_ordering_correct": true,
+        "sim_amplitude_recovered": 1.9924121887196147
+      },
+      {
+        "sim_noise_sd": 0.15,
+        "sim_true_pool_per_dose": [
+          50.0,
+          300.0,
+          600.0
+        ],
+        "sim_fitted_pool_per_dose": [
+          48.88392292197725,
+          297.9463500019579,
+          593.9993028641883
+        ],
+        "sim_max_rel_pool_error": 0.02232154156045496,
+        "sim_true_K_by_class": {
+          "6mer": 3000.0,
+          "7mer-A1": 800.0,
+          "7mer-m8": 300.0,
+          "8mer": 80.0
+        },
+        "sim_fitted_K_by_class": {
+          "7mer-m8": 300.0,
+          "6mer": 3002.134468721534,
+          "7mer-A1": 808.3511659902947,
+          "8mer": 79.7721318579486
+        },
+        "sim_max_rel_K_error": 0.010438957487868378,
+        "sim_true_slope": 0.7731734095424109,
+        "sim_fitted_slope": 0.7776306759680278,
+        "sim_class_ordering_correct": true,
+        "sim_amplitude_recovered": 2.010178142202855
+      },
+      {
+        "sim_noise_sd": 0.3,
+        "sim_true_pool_per_dose": [
+          50.0,
+          300.0,
+          600.0
+        ],
+        "sim_fitted_pool_per_dose": [
+          50.931653713381614,
+          306.3379148667833,
+          624.5101823363806
+        ],
+        "sim_max_rel_pool_error": 0.040850303893967634,
+        "sim_true_K_by_class": {
+          "6mer": 3000.0,
+          "7mer-A1": 800.0,
+          "7mer-m8": 300.0,
+          "8mer": 80.0
+        },
+        "sim_fitted_K_by_class": {
+          "7mer-m8": 300.0,
+          "6mer": 3096.509280051739,
+          "7mer-A1": 807.8124906506637,
+          "8mer": 77.79696850323646
+        },
+        "sim_max_rel_K_error": 0.03216976001724636,
+        "sim_true_slope": 0.7731734095424109,
+        "sim_fitted_slope": 0.7787852958388879,
+        "sim_class_ordering_correct": true,
+        "sim_amplitude_recovered": 1.9812045996677317
+      }
+    ],
+    "sim_worst_slope_error_independent_data": 0.01939711033087199,
+    "sim_worst_slope_error_equilibrium_data": 0.0055471182115289785,
+    "sim_worst_slope_error_class_estimator": 0.00561188629647702,
+    "sim_worst_rel_pool_error_class_estimator": 0.040850303893967634,
+    "sim_worst_rel_K_error_class_estimator": 0.03216976001724636,
+    "sim_class_ordering_correct_in_all_runs": true,
+    "sim_equilibrium_true_slope_exceeds_one": true,
+    "sim_interpretation": "the estimator returns 1 on independent-generated data and the model's own exponent on equilibrium-generated data, so an exponent away from 1 in e9 is a property of the measurement and not an artefact of the fit."
+  },
+  "seed": 0,
+  "elapsed_s": 5.7055,
+  "traceback": null,
+  "timestamp_utc": "2026-09-05T06:39:19Z"
+}
