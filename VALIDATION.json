@@ -50,5 +50,22 @@
     "Full scientific experiment reruns",
     "LaTeX PDF compilation"
   ],
-  "scope": "Artifact extraction, source integrity, saved-result figure regeneration, manuscript source generation and original solver checks. Historical saved validation files are not claimed as newly executed."
+  "scope": "Artifact extraction, source integrity, saved-result figure regeneration, manuscript source generation and original solver checks. Historical saved validation files are not claimed as newly executed.",
+  "root_layout_validation": {
+    "date": "2026-09-30",
+    "historical_files_preserved": 154,
+    "documentation_links_checked": 64,
+    "readme_images": [
+      "figures/workflow_GEM.png",
+      "figures/fig_assoc.png",
+      "figures/fig_approx.png",
+      "figures/fig_dose.png"
+    ],
+    "scientific_modules_resolve_repository_root": true,
+    "historical_metadata_locations": "EXTRACTION_MANIFEST.json historical_paths",
+    "original_solver_checks": "PASS",
+    "base_run_plan": "PASS",
+    "regenerated_plot_pngs_byte_identical": 12,
+    "skipped_plot_panels": 0
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source_repository": "https://github.com/shadi97kh/RISCPOOL_GEM",
   "source_commit": "bd7850d3cac09b9564ea4b394fbdad111d399f3e",
   "source_commit_date": "2026-09-07T04:55:32-04:00",
@@ -631,5 +631,10 @@
       "bytes": 12165
     }
   },
-  "note": "All historical files are unmodified, including the original README, .gitignore and older MANIFEST.json. Added guide, maps, verification and validation files describe this extraction. Raw downloads and manuscript builds were excluded in the original tree."
+  "note": "All 154 historical files remain byte-identical. The original README and ignore file are archived under provenance/; historical_paths maps those two original names to their current locations. The root README and .gitignore describe the current publication layout. Raw downloads and manuscript builds remain excluded.",
+  "historical_paths": {
+    "README.md": "provenance/README.workshop-original.md",
+    ".gitignore": "provenance/gitignore.workshop-original"
+  },
+  "layout": "Workshop code, scripts, data provenance, results and figures live at the repository root."
 }

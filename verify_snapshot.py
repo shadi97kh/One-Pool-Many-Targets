@@ -13,10 +13,11 @@ def main():
     manifest = json.loads((ROOT / 'EXTRACTION_MANIFEST.json').read_text())
     errors = []
     historical = manifest['historical_files']
+    historical_paths = manifest.get('historical_paths', {})
     if len(historical) != manifest['historical_file_count']:
         errors.append('Historical file count does not match the manifest')
     for name, expected in historical.items():
-        path = ROOT / name
+        path = ROOT / historical_paths.get(name, name)
         if not path.is_file():
             errors.append(f'Missing historical file: {name}')
             continue
